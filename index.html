@@ -570,33 +570,74 @@
             background: var(--off-white);
         }
 
-        .blog-placeholder {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .blog-card {
             background: var(--white);
+            padding: 2rem;
             border-left: 4px solid var(--forest);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: all 0.3s ease;
         }
 
-        .placeholder-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.3;
+        .blog-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
 
-        .placeholder-title {
+        .blog-card-label {
             font-family: 'Space Mono', monospace;
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--steel);
+            font-size: 0.7rem;
+            color: var(--forest);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
         }
 
-        .placeholder-text {
-            font-size: 1rem;
-            line-height: 1.7;
+        .blog-card-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .blog-card-excerpt {
+            font-size: 0.95rem;
             color: var(--steel-light);
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        .blog-card-meta {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--steel);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-card-link {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--forest);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+
+        .blog-card:hover .blog-card-link {
+            color: var(--black);
         }
 
         /* Contact Section */
@@ -891,14 +932,20 @@
         <div class="container">
             <div class="section-label">Gedachten</div>
             <h2>Blog</h2>
-            <div class="blog-placeholder">
-                <div class="placeholder-icon">✎</div>
-                <h3 class="placeholder-title">Binnenkort meer content</h3>
-                <p class="placeholder-text">
-                    Ik ben bezig met het schrijven van artikelen over productontwikkeling, 
-                    agile methodieken en digitale strategie. Houd deze ruimte in de gaten 
-                    voor inzichten en ervaringen uit het veld.
-                </p>
+            <div class="blog-grid">
+                <a href="/blog/ai-product-management" class="blog-card">
+                    <div class="blog-card-label">Product Management</div>
+                    <h3 class="blog-card-title">AI & Product Management: een visie vanuit de praktijk</h3>
+                    <p class="blog-card-excerpt">
+                        Tien stellingen over AI in product management. Hoe zet je AI slim in als
+                        hulpmiddel zonder creativiteit en eigenaarschap uit handen te geven?
+                    </p>
+                    <div class="blog-card-meta">
+                        <span>Februari 2026</span>
+                        <span>5 min leestijd</span>
+                    </div>
+                    <span class="blog-card-link">Lees artikel &rarr;</span>
+                </a>
             </div>
         </div>
     </section>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>AI & Product Management: een visie vanuit de praktijk — Andreas Willemse</title>
+    <meta name="title" content="AI & Product Management: een visie vanuit de praktijk — Andreas Willemse">
+    <meta name="description" content="Tien stellingen over AI in product management. Hoe zet je AI slim in als hulpmiddel zonder creativiteit en eigenaarschap uit handen te geven?">
+    <meta name="keywords" content="AI, Product Management, Artificial Intelligence, Agile, Product Owner, creativiteit, prompten, digitale strategie, Amsterdam">
+    <meta name="author" content="Andreas Willemse">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://andreaswillemse.nl/blog/ai-product-management">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://andreaswillemse.nl/blog/ai-product-management">
+    <meta property="og:title" content="AI & Product Management: een visie vanuit de praktijk">
+    <meta property="og:description" content="Tien stellingen over AI in product management. Hoe zet je AI slim in als hulpmiddel zonder creativiteit en eigenaarschap uit handen te geven?">
+    <meta property="og:image" content="https://andreaswillemse.nl/andreas-photo.jpg">
+    <meta property="og:locale" content="nl_NL">
+    <meta property="og:site_name" content="Andreas Willemse">
+    <meta property="article:author" content="Andreas Willemse">
+    <meta property="article:published_time" content="2026-02-17">
+    <meta property="article:section" content="Product Management">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Product Management">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://andreaswillemse.nl/blog/ai-product-management">
+    <meta property="twitter:title" content="AI & Product Management: een visie vanuit de praktijk">
+    <meta property="twitter:description" content="Tien stellingen over AI in product management. Hoe zet je AI slim in als hulpmiddel zonder creativiteit en eigenaarschap uit handen te geven?">
+    <meta property="twitter:image" content="https://andreaswillemse.nl/andreas-photo.jpg">
+
+    <!-- Structured Data - Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "AI & Product Management: een visie vanuit de praktijk",
+        "description": "Tien stellingen over AI in product management. Hoe zet je AI slim in als hulpmiddel zonder creativiteit en eigenaarschap uit handen te geven?",
+        "author": {
+            "@type": "Person",
+            "name": "Andreas Willemse",
+            "url": "https://andreaswillemse.nl/"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Andreas Willemse"
+        },
+        "datePublished": "2026-02-17",
+        "dateModified": "2026-02-17",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://andreaswillemse.nl/blog/ai-product-management"
+        },
+        "url": "https://andreaswillemse.nl/blog/ai-product-management",
+        "image": "https://andreaswillemse.nl/andreas-photo.jpg",
+        "articleSection": "Product Management",
+        "keywords": ["AI", "Product Management", "Agile", "creativiteit", "digitale strategie"],
+        "wordCount": 850,
+        "inLanguage": "nl"
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231a3a2e'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='%23fafafa' font-family='monospace' font-weight='bold'>AW</text></svg>">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1a3a2e">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --steel: #2d2d2d;
+            --steel-light: #404040;
+            --white: #fafafa;
+            --off-white: #e8e8e8;
+            --forest: #1a3a2e;
+            --forest-light: #2d5a45;
+            --spacing: 2rem;
+            --max-width: 1200px;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.7;
+            font-size: 18px;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(26, 58, 46, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(45, 45, 45, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--off-white);
+            z-index: 1000;
+            padding: 1.5rem var(--spacing);
+        }
+
+        nav .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -0.02em;
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--steel);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--forest);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--forest);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Article Layout */
+        .article-header {
+            padding: calc(80px + 4rem) var(--spacing) 3rem;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--forest);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--black);
+        }
+
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover svg {
+            transform: translateX(-3px);
+        }
+
+        .article-meta {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--forest);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .article-meta .divider {
+            width: 4px;
+            height: 4px;
+            background: var(--forest);
+            border-radius: 50%;
+        }
+
+        .article-header h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-intro {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: var(--steel);
+            font-weight: 300;
+            border-left: 4px solid var(--forest);
+            padding-left: 1.5rem;
+        }
+
+        /* Article Content */
+        .article-content {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 var(--spacing) 4rem;
+        }
+
+        .article-content h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .article-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.15em;
+            width: 4px;
+            height: 1em;
+            background: var(--forest);
+        }
+
+        .article-content p {
+            margin-bottom: 1.4rem;
+            color: var(--steel-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .article-content em {
+            font-style: italic;
+        }
+
+        /* Divider */
+        .article-divider {
+            border: none;
+            height: 1px;
+            background: var(--off-white);
+            margin: 3rem 0;
+        }
+
+        /* Article Footer / CTA */
+        .article-footer {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 var(--spacing) 5rem;
+        }
+
+        .article-cta {
+            background: var(--off-white);
+            padding: 2.5rem;
+            border-left: 4px solid var(--forest);
+        }
+
+        .article-cta p {
+            font-size: 1.05rem;
+            color: var(--steel-light);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-cta p:last-child {
+            margin-bottom: 0;
+        }
+
+        .article-cta a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--forest);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid var(--forest);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .article-cta a:hover {
+            color: var(--black);
+            border-bottom-color: var(--black);
+        }
+
+        /* Reading progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--forest);
+            z-index: 1001;
+            transition: width 0.1s linear;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 3rem var(--spacing);
+            text-align: center;
+        }
+
+        footer p {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .article-header {
+                padding: calc(80px + 2rem) 1.25rem 2rem;
+            }
+
+            .article-content {
+                padding: 0 1.25rem 3rem;
+            }
+
+            .article-footer {
+                padding: 0 1.25rem 3rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.15rem;
+                margin-top: 2.5rem;
+            }
+
+            .article-cta {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.1s; }
+        .fade-in-delay-2 { animation-delay: 0.2s; }
+        .fade-in-delay-3 { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Reading Progress -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation -->
+    <nav aria-label="Hoofdnavigatie">
+        <div class="container">
+            <a href="/" class="logo" aria-label="Andreas Willemse - Home">AW</a>
+            <ul>
+                <li><a href="/#about">Over</a></li>
+                <li><a href="/#experience">Ervaring</a></li>
+                <li><a href="/#skills">Vaardigheden</a></li>
+                <li><a href="/#blog">Blog</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Article Header -->
+        <header class="article-header">
+            <a href="/#blog" class="back-link fade-in">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Terug naar overzicht
+            </a>
+            <div class="article-meta fade-in fade-in-delay-1">
+                <span>Product Management</span>
+                <span class="divider"></span>
+                <span>Februari 2026</span>
+                <span class="divider"></span>
+                <span>5 min leestijd</span>
+            </div>
+            <h1 class="fade-in fade-in-delay-2">AI & Product Management: een visie vanuit de praktijk</h1>
+            <p class="article-intro fade-in fade-in-delay-3">
+                AI kan helpen bij het werk dat bij product management komt kijken, maar niet bij het creatieve deel. Het uiteindelijke eigenaarschap van producten en de beslissingen daarover moet bij mensen liggen.
+            </p>
+        </header>
+
+        <!-- Article Content -->
+        <article class="article-content">
+            <p>
+                Een belangrijk onderdeel van product management is om bestaande situaties op een creatieve en niet-default manier te beschouwen, en dus met niet-standaard oplossingen te komen voor problemen. AI kan helpen bij het werk dat daarbij komt kijken, maar niet bij het creatieve deel. Ook het uiteindelijke eigenaarschap van producten en de beslissingen daarover moet bij mensen liggen.
+            </p>
+            <p>Dat is, in een notendop, mijn kijk op AI vanuit mijn vak. Hieronder werk ik dat uit in tien stellingen.</p>
+
+            <h2>1. AI is een hulpmiddel, niet een vervanger</h2>
+            <p>
+                Laat ik beginnen met de basis. AI werkt voor jou, niet andersom. Het is krachtig gereedschap, sterk in herhaling, patroonherkenning en het verwerken van grote hoeveelheden informatie. Maar het blijft gereedschap. Jij bent en blijft de bron van onderscheidende creativiteit. Op het moment dat je AI als vervanging van je eigen denkvermogen gaat zien, verlies je juist dat wat je als product manager waardevol maakt.
+            </p>
+
+            <h2>2. Creativiteit zit in mensen</h2>
+            <p>
+                Sprankelende taal, beelden die raken, een onverwachte invalshoek: dat zijn menselijke kwaliteiten. AI mist gevoel, context en intuïtie. Het kan patronen herkennen en combineren, maar het verschil maak jij, niet het model. Dat klinkt misschien als een open deur, maar in de dagelijkse praktijk is het makkelijk om dat uit het oog te verliezen.
+            </p>
+
+            <h2>3. AI is niet gemaakt om écht origineel te creëren</h2>
+            <p>
+                AI voorspelt op basis van miljoenen voorbeelden. Het resultaat is een slim gemiddelde, best indrukwekkend qua snelheid en consistentie, maar zelden echt verrassend. Echte originaliteit ontstaat door grenzen op te zoeken, regels te breken en verbanden te leggen die niemand verwacht. Dat is geen kwestie van rekenkracht.
+            </p>
+
+            <h2>4. AI kent beperkingen by default</h2>
+            <p>
+                Wie met AI werkt, stuit vroeg of laat op de beperkingen. Redeneerfouten op onverwachte plekken. Zelfverzekerde maar onjuiste conclusies. Geen echte common sense of zelfreflectie zoals wij die kennen. Het is belangrijk om die beperkingen te kennen en te accepteren, niet om AI af te schrijven, maar om het op de juiste manier in te zetten.
+            </p>
+
+            <h2>5. Prompten is een menselijke kunst</h2>
+            <p>
+                De kwaliteit van je output staat of valt met de kwaliteit van je input. Waardevolle resultaten vragen scherpte en creativiteit in hoe je je vraag formuleert. Je moet sturen, itereren, bijschaven. Het gaat nooit vanzelf. Het is net werk. En dat is precies waarom AI geen vervanging is: er moet altijd iemand aan het stuur zitten die weet wat er nodig is.
+            </p>
+
+            <h2>6. Je zou AI niet blind moeten vertrouwen</h2>
+            <p>
+                Dit punt verdient extra nadruk. Persoonlijke of vertrouwelijke data kan worden misbruikt. Autonomie uit handen geven aan AI is, laat ik het voorzichtig zeggen, doodeng. Gezond wantrouwen is geen pessimisme, het is professionaliteit. Spring niet op de hype train zonder na te denken over de consequenties.
+            </p>
+
+            <h2>7. AI verandert Product Management</h2>
+            <p>
+                Nu de keerzijde: AI verandert het vak wel degelijk, en op positieve manieren. Je kunt sneller prototypen en mockups maken. Coding agents en andere slimme tooling kunnen worden ingezet, waardoor je met een kleiner team meer kunt bereiken. De drempel om van idee naar werkend concept te gaan wordt een stuk lager.
+            </p>
+
+            <h2>8. AI verandert de Product Manager</h2>
+            <p>
+                Ook op individueel niveau maakt AI een verschil. User stories en acceptatiecriteria draften gaat een stuk sneller. Meeting notes en actielijsten automatisch laten genereren is gewoon superfijn. En samenvattingen van eindeloze e-mailthreads besparen tijd en helpen je met inbox management. Het zijn precies die taken waar AI goed in is: structureren, samenvatten, herhaalbaar werk versnellen.
+            </p>
+
+            <h2>9. AI heeft zo z'n beperkingen voor de PM</h2>
+            <p>
+                Maar er zijn duidelijke grenzen. Een productvisie maken en bijhouden blijft mensenwerk. AI-output is vaak omslachtig en oppervlakkig en raakt nét niet de kern. Strategie vraagt visie, keuzes en lef, en dat heeft AI by default niet. Het kan je ondersteunen in de uitwerking, maar de richting bepaal je zelf.
+            </p>
+
+            <h2>10. Conclusie: Product Manager + AI = hogere productiviteit</h2>
+            <p>
+                AI versnelt en ondersteunt. De mens brengt creativiteit en kwaliteit. Samen sterk, maar jij moet aan het roer blijven. Niet omdat AI niet kan, maar omdat de waarde van een goede product manager precies zit in dat wat AI niet kan: visie, lef en het vermogen om buiten de gebaande paden te denken.
+            </p>
+
+            <hr class="article-divider">
+        </article>
+
+        <!-- Article Footer CTA -->
+        <div class="article-footer">
+            <div class="article-cta">
+                <p>
+                    Deze stellingen zijn onderdeel van een langere presentatie over dit onderwerp.
+                    Interesse om verder te praten over AI en product management?
+                </p>
+                <p>
+                    <a href="https://linkedin.com/in/andreaswillemse" target="_blank" rel="noopener noreferrer">Stuur me een bericht op LinkedIn &rarr;</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Andreas Willemse — Product Owner & Manager, Amsterdam</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Reading progress bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        });
+    </script>
+</body>
+</html>
