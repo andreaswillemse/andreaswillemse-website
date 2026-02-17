@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Andreas Willemse — Product Owner & Manager | Amsterdam</title>
+    <meta name="title" content="Andreas Willemse — Product Owner & Manager | Amsterdam">
+    <meta name="description" content="Product Owner met 15+ jaar ervaring in digitale productontwikkeling. Specialist in Agile, Scrum en digitale strategie voor retail, ecommerce en zorg. Amsterdam.">
+    <meta name="keywords" content="Product Owner, Product Manager, Agile, Scrum, digitale productontwikkeling, Amsterdam, interim, digital strategy, PSPO II, retail, zorg, ecommerce">
+    <meta name="author" content="Andreas Willemse">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://andreaswillemse.nl/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://andreaswillemse.nl/">
+    <meta property="og:title" content="Andreas Willemse — Product Owner & Manager | Amsterdam">
+    <meta property="og:description" content="Product Owner met 15+ jaar ervaring in digitale productontwikkeling. Specialist in Agile, Scrum en digitale strategie.">
+    <meta property="og:image" content="https://andreaswillemse.nl/andreas-photo.jpg">
+    <meta property="og:locale" content="nl_NL">
+    <meta property="og:site_name" content="Andreas Willemse">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://andreaswillemse.nl/">
+    <meta property="twitter:title" content="Andreas Willemse — Product Owner & Manager | Amsterdam">
+    <meta property="twitter:description" content="Product Owner met 15+ jaar ervaring in digitale productontwikkeling. Specialist in Agile, Scrum en digitale strategie.">
+    <meta property="twitter:image" content="https://andreaswillemse.nl/andreas-photo.jpg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Andreas Willemse",
+        "jobTitle": "Product Owner & Manager",
+        "description": "Product Owner met 15+ jaar ervaring in digitale productontwikkeling, gespecialiseerd in Agile, Scrum en digitale strategie.",
+        "url": "https://andreaswillemse.nl/",
+        "image": "https://andreaswillemse.nl/andreas-photo.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Amsterdam",
+            "addressCountry": "NL"
+        },
+        "sameAs": [
+            "https://linkedin.com/in/andreaswillemse"
+        ],
+        "knowsAbout": [
+            "Product Management",
+            "Agile",
+            "Scrum",
+            "Digital Strategy",
+            "Product Development",
+            "Lean Startup",
+            "Business Analysis"
+        ],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Zelfstandig / Interim"
+        },
+        "alumniOf": [
+            {
+                "@type": "Organization",
+                "name": "Albert Heijn"
+            },
+            {
+                "@type": "Organization", 
+                "name": "Product League"
+            },
+            {
+                "@type": "Organization",
+                "name": "Medux"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231a3a2e'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='%23fafafa' font-family='monospace' font-weight='bold'>AW</text></svg>">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#1a3a2e">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --steel: #2d2d2d;
+            --steel-light: #404040;
+            --white: #fafafa;
+            --off-white: #e8e8e8;
+            --forest: #1a3a2e;
+            --forest-light: #2d5a45;
+            --spacing: 2rem;
+            --max-width: 1200px;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.7;
+            font-size: 18px;
+            overflow-x: hidden;
+        }
+
+        /* Background texture */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(26, 58, 46, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(45, 45, 45, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--off-white);
+            z-index: 1000;
+            padding: 1.5rem var(--spacing);
+        }
+
+        nav .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -0.02em;
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--steel);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--forest);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--forest);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: var(--spacing);
+            padding-top: calc(80px + var(--spacing));
+            position: relative;
+            overflow: visible;
+        }
+
+        .hero-bg {
+            position: absolute;
+            right: -10%;
+            top: 10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(26, 58, 46, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-30px, -30px); }
+        }
+
+        .hero .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--forest);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.03em;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--steel);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            color: var(--steel-light);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.8s forwards;
+        }
+
+        .hero-image {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            justify-self: end;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(100%) contrast(1.1);
+            opacity: 0;
+            animation: fadeInRight 1s ease 0.4s forwards;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--forest);
+            z-index: -1;
+            opacity: 0;
+            animation: fadeInRight 1s ease 0.6s forwards;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .btn {
+            font-family: 'Space Mono', monospace;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: 2px solid var(--black);
+            color: var(--black);
+            background: transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--black);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            color: var(--white);
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn-secondary {
+            border-color: var(--forest);
+            color: var(--forest);
+        }
+
+        .btn-secondary::before {
+            background: var(--forest);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem var(--spacing);
+            position: relative;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--forest);
+            margin-bottom: 0.75rem;
+        }
+
+        h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .about-text p {
+            margin-bottom: 1.2rem;
+            color: var(--steel-light);
+        }
+
+        .about-stats {
+            background: var(--off-white);
+            padding: 2rem;
+            border-left: 4px solid var(--forest);
+        }
+
+        .stat {
+            margin-bottom: 1.5rem;
+        }
+
+        .stat:last-child {
+            margin-bottom: 0;
+        }
+
+        .stat-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--black);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--steel);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Experience Section */
+        .experience {
+            background: linear-gradient(to bottom, var(--white) 0%, var(--off-white) 50%, var(--white) 100%);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .experience-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-left: 4px solid var(--forest);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .experience-period {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--forest);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .experience-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            line-height: 1.3;
+        }
+
+        .experience-company {
+            font-size: 0.9rem;
+            color: var(--steel);
+            margin-bottom: 0.75rem;
+        }
+
+        .experience-description {
+            color: var(--steel-light);
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            padding: 2rem;
+            background: var(--white);
+            border: 1px solid var(--off-white);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--forest);
+            transition: height 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card:hover::before {
+            height: 100%;
+        }
+
+        .skill-icon {
+            font-family: 'Space Mono', monospace;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-description {
+            font-size: 0.95rem;
+            color: var(--steel-light);
+            line-height: 1.6;
+        }
+
+        /* Blog Section */
+        .blog {
+            background: var(--off-white);
+        }
+
+        .blog-placeholder {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            background: var(--white);
+            border-left: 4px solid var(--forest);
+        }
+
+        .placeholder-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.3;
+        }
+
+        .placeholder-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--steel);
+        }
+
+        .placeholder-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--steel-light);
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            padding: 6rem var(--spacing);
+        }
+
+        .contact h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-description {
+            font-size: 1.1rem;
+            color: var(--steel-light);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.1rem;
+            color: var(--black);
+            text-decoration: none;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            border-bottom-color: var(--forest);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 3rem var(--spacing);
+            text-align: center;
+        }
+
+        footer p {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero .container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-image {
+                justify-self: center;
+                order: -1;
+                max-width: 350px;
+            }
+
+            .hero-content {
+                text-align: center;
+                max-width: 100%;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .blog-placeholder {
+                padding: 2rem 1.5rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav aria-label="Hoofdnavigatie">
+        <div class="container">
+            <a href="#" class="logo" aria-label="Andreas Willemse - Home">AW</a>
+            <ul>
+                <li><a href="#about">Over</a></li>
+                <li><a href="#experience">Ervaring</a></li>
+                <li><a href="#skills">Vaardigheden</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+    <!-- Hero Section -->
+    <section class="hero" aria-label="Introductie">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">Product Owner & Manager</div>
+                <h1>Andreas<br>Willemse</h1>
+                <div class="hero-subtitle">Van idee naar werkend product</div>
+                <p class="hero-description">
+                    15+ jaar ervaring in digitale productontwikkeling. 
+                    Ik ben de spil in de vertaalslag tussen strategie en uitvoering, 
+                    met een natuurlijke focus op probleemoplossing.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn">Neem Contact Op</a>
+                    <a href="#experience" class="btn btn-secondary">Bekijk Mijn Werk</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="andreas-photo.jpg" alt="Andreas Willemse - Product Owner en Manager uit Amsterdam" width="500" height="750" loading="eager">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="fade-in-section" aria-label="Over Andreas Willemse">
+        <div class="container">
+            <div class="section-label">Over Mij</div>
+            <h2>Digitale Productontwikkeling</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        Ik ben een veelzijdig persoon die graag problemen oplost met digitale middelen. 
+                        In mijn meer dan 15 jaar IT-ervaring heb ik gave projecten gedaan in verschillende 
+                        branches zoals retail, ecommerce en zorg.
+                    </p>
+                    <p>
+                        Met behulp van lean startup, (scaled) scrum en andere agile tools en methodes 
+                        vertaal ik gebruikersinzichten naar slimme oplossingen. Ik ben dol op 
+                        productontwikkeling, digitale strategie en technologie in het algemeen.
+                    </p>
+                    <p>
+                        Als Product Owner en Manager help ik organisaties om digitale producten te 
+                        ontwikkelen die écht werken – voor gebruikers, teams en de business.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Jaar Ervaring</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">45</span>
+                        <span class="stat-label">Jaar Oud</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">AMS</span>
+                        <span class="stat-label">Amsterdam</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience fade-in-section" aria-label="Werkervaring">
+        <div class="container">
+            <div class="section-label">Werkervaring</div>
+            <h2>Recente Projecten</h2>
+            
+            <div class="experience-grid">
+                <article class="experience-item">
+                    <div class="experience-period"><time datetime="2024-02">02/2024</time></div>
+                    <h3 class="experience-title">Product Owner Zbj Platform</h3>
+                    <div class="experience-company">Zorg bij jou, Utrecht</div>
+                    <p class="experience-description">
+                        Digitaal platform dat zorg-ICT systemen koppelt voor efficiënte workflows. 
+                        Opzet agile productorganisatie met focus op eigenaarschap en continue verbetering.
+                    </p>
+                </article>
+
+                <article class="experience-item">
+                    <div class="experience-period"><time datetime="2023-12/2024-03">12/2023 — 03/2024</time></div>
+                    <h3 class="experience-title">Product Owner ESL</h3>
+                    <div class="experience-company">Albert Heijn, Zaandam</div>
+                    <p class="experience-description">
+                        Digitale prijscommunicatie voor 1300+ winkels met 20 miljoen elektronische 
+                        prijskaartjes. Productvisie, roadmap en team kickstart.
+                    </p>
+                </article>
+
+                <article class="experience-item">
+                    <div class="experience-period"><time datetime="2020-06/2023-06">06/2020 — 06/2023</time></div>
+                    <h3 class="experience-title">Product Owner & Interne Lead</h3>
+                    <div class="experience-company">Product League, Utrecht</div>
+                    <p class="experience-description">
+                        Lancering OutSystems applicaties voor PLUS Supermarkten en DetailResult Groep (DRG). 
+                        Later manager van alle PO's en analisten.
+                    </p>
+                </article>
+
+                <article class="experience-item">
+                    <div class="experience-period"><time datetime="2017-03/2020-05">03/2017 — 05/2020</time></div>
+                    <h3 class="experience-title">Product Management</h3>
+                    <div class="experience-company">Medux, Utrecht</div>
+                    <p class="experience-description">
+                        Duxxie platform voor zorgprofessionals en patiënten. 
+                        Ontwikkeling productstrategie en klantreizen.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="fade-in-section" aria-label="Vaardigheden en expertise">
+        <div class="container">
+            <div class="section-label">Vaardigheden</div>
+            <h2>Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">◆</div>
+                    <h3 class="skill-name">Digital Strategy</h3>
+                    <p class="skill-description">
+                        Ontwikkelen van digitale strategieën en productroadmaps die 
+                        gebruikers, business en technologie perfect combineren.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">◇</div>
+                    <h3 class="skill-name">Agile & Scrum</h3>
+                    <p class="skill-description">
+                        PSPO II gecertificeerd. Ervaring met Scrum, Kanban, Nexus en 
+                        scaled agile in multidisciplinaire teams.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">◆</div>
+                    <h3 class="skill-name">Project Management</h3>
+                    <p class="skill-description">
+                        Lean startup principes, MVP development en iteratieve 
+                        productontwikkeling van concept tot lancering.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">◇</div>
+                    <h3 class="skill-name">Business Analysis</h3>
+                    <p class="skill-description">
+                        Vertalen van business requirements naar technische specificaties 
+                        en user stories die waarde creëren.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog fade-in-section" aria-label="Blog artikelen">
+        <div class="container">
+            <div class="section-label">Gedachten</div>
+            <h2>Blog</h2>
+            <div class="blog-placeholder">
+                <div class="placeholder-icon">✎</div>
+                <h3 class="placeholder-title">Binnenkort meer content</h3>
+                <p class="placeholder-text">
+                    Ik ben bezig met het schrijven van artikelen over productontwikkeling, 
+                    agile methodieken en digitale strategie. Houd deze ruimte in de gaten 
+                    voor inzichten en ervaringen uit het veld.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact fade-in-section" aria-label="Contact opnemen">
+        <div class="container">
+            <div class="section-label">Contact</div>
+            <h2>Koffie?</h2>
+            <p class="contact-description">
+                Ik hou van goede koffie en een goed gesprek over digitale productontwikkeling. 
+                Interesse in samenwerking of gewoon sparren over een uitdaging? Laten we praten.
+            </p>
+            <div class="contact-links">
+                <a href="https://linkedin.com/in/andreaswillemse" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Bekijk mijn LinkedIn profiel">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Andreas Willemse — Product Owner & Manager, Amsterdam</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Scroll animations
+        const faders = document.querySelectorAll('.fade-in-section');
+        
+        const appearOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -100px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('is-visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
