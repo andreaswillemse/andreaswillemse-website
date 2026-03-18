@@ -1,19 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://andreaswillemse.nl/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://andreaswillemse.nl/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://andreaswillemse.nl/en/" />
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://andreaswillemse.nl/en/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://andreaswillemse.nl/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://andreaswillemse.nl/en/" />
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://andreaswillemse.nl/blog/ai-product-management</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://andreaswillemse.nl/blog/ai-product-management" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://andreaswillemse.nl/en/blog/ai-product-management" />
     <lastmod>2026-02-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://andreaswillemse.nl/en/blog/ai-product-management</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://andreaswillemse.nl/blog/ai-product-management" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://andreaswillemse.nl/en/blog/ai-product-management" />
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://andreaswillemse.nl/blog/ai-prototypes-pm</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://andreaswillemse.nl/blog/ai-prototypes-pm" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://andreaswillemse.nl/en/blog/ai-prototypes-pm" />
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://andreaswillemse.nl/en/blog/ai-prototypes-pm</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://andreaswillemse.nl/blog/ai-prototypes-pm" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://andreaswillemse.nl/en/blog/ai-prototypes-pm" />
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

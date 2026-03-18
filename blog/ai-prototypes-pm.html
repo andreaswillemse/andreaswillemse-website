@@ -11,6 +11,9 @@
     <meta name="author" content="Andreas Willemse">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://andreaswillemse.nl/blog/ai-prototypes-pm">
+    <link rel="alternate" hreflang="nl" href="https://andreaswillemse.nl/blog/ai-prototypes-pm">
+    <link rel="alternate" hreflang="en" href="https://andreaswillemse.nl/en/blog/ai-prototypes-pm">
+    <link rel="alternate" hreflang="x-default" href="https://andreaswillemse.nl/blog/ai-prototypes-pm">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://andreaswillemse.nl/blog/ai-prototypes-pm">
@@ -164,6 +167,25 @@
         }
         nav a:hover::after {
             width: 100%;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .lang-switch {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--steel);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+            border: 1px solid var(--off-white);
+            padding: 0.3rem 0.6rem;
+        }
+        .lang-switch:hover {
+            color: var(--forest);
+            border-color: var(--forest);
         }
         /* Article Layout */
         .article-header {
@@ -397,13 +419,16 @@
     <nav aria-label="Hoofdnavigatie">
         <div class="container">
             <a href="/" class="logo" aria-label="Andreas Willemse - Home">AW</a>
-            <ul>
-                <li><a href="/#about">Over</a></li>
-                <li><a href="/#experience">Ervaring</a></li>
-                <li><a href="/#skills">Vaardigheden</a></li>
-                <li><a href="/#blog">Blog</a></li>
-                <li><a href="/#contact">Contact</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="/#about">Over</a></li>
+                    <li><a href="/#experience">Ervaring</a></li>
+                    <li><a href="/#skills">Vaardigheden</a></li>
+                    <li><a href="/#blog">Blog</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+                <a href="/en/blog/ai-prototypes-pm" class="lang-switch" aria-label="Switch to English">EN</a>
+            </div>
         </div>
     </nav>
     <main>
