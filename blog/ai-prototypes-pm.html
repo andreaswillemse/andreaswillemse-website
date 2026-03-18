@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <title>AI-prototypes bouwen als PM: een superkracht met een schaduwkant — Andreas Willemse</title>
+    <meta name="title" content="AI-prototypes bouwen als PM: een superkracht met een schaduwkant — Andreas Willemse">
+    <meta name="description" content="Als PM kun je nu zelf werkende software bouwen. Dat is een echte verschuiving. Maar in gereguleerde markten zit er een serieuze schaduwkant aan die je niet kunt negeren.">
+    <meta name="keywords" content="AI, prototypes, Product Management, Product Owner, CI/CD, agents, compliance, gereguleerde markten, zorg, overheid, digitale strategie, Amsterdam">
+    <meta name="author" content="Andreas Willemse">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://andreaswillemse.nl/blog/ai-prototypes-pm">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://andreaswillemse.nl/blog/ai-prototypes-pm">
+    <meta property="og:title" content="AI-prototypes bouwen als PM: een superkracht met een schaduwkant">
+    <meta property="og:description" content="Als PM kun je nu zelf werkende software bouwen. Dat is een echte verschuiving. Maar in gereguleerde markten zit er een serieuze schaduwkant aan.">
+    <meta property="og:image" content="https://andreaswillemse.nl/andreas-photo.jpg">
+    <meta property="og:locale" content="nl_NL">
+    <meta property="og:site_name" content="Andreas Willemse">
+    <meta property="article:author" content="Andreas Willemse">
+    <meta property="article:published_time" content="2026-03-18">
+    <meta property="article:section" content="Product Management">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Prototypes">
+    <meta property="article:tag" content="Product Management">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://andreaswillemse.nl/blog/ai-prototypes-pm">
+    <meta property="twitter:title" content="AI-prototypes bouwen als PM: een superkracht met een schaduwkant">
+    <meta property="twitter:description" content="Als PM kun je nu zelf werkende software bouwen. Dat is een echte verschuiving. Maar in gereguleerde markten zit er een serieuze schaduwkant aan.">
+    <meta property="twitter:image" content="https://andreaswillemse.nl/andreas-photo.jpg">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "AI-prototypes bouwen als PM: een superkracht met een schaduwkant",
+        "description": "Als PM kun je nu zelf werkende software bouwen. Dat is een echte verschuiving. Maar in gereguleerde markten zit er een serieuze schaduwkant aan die je niet kunt negeren.",
+        "author": {
+            "@type": "Person",
+            "name": "Andreas Willemse",
+            "url": "https://andreaswillemse.nl/"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Andreas Willemse"
+        },
+        "datePublished": "2026-03-18",
+        "dateModified": "2026-03-18",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://andreaswillemse.nl/blog/ai-prototypes-pm"
+        },
+        "url": "https://andreaswillemse.nl/blog/ai-prototypes-pm",
+        "image": "https://andreaswillemse.nl/andreas-photo.jpg",
+        "articleSection": "Product Management",
+        "keywords": ["AI", "prototypes", "Product Management", "compliance", "CI/CD", "agents"],
+        "wordCount": 900,
+        "inLanguage": "nl"
+    }
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231a3a2e'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='%23fafafa' font-family='monospace' font-weight='bold'>AW</text></svg>">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1a3a2e">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --black: #0a0a0a;
+            --steel: #2d2d2d;
+            --steel-light: #404040;
+            --white: #fafafa;
+            --off-white: #e8e8e8;
+            --forest: #1a3a2e;
+            --forest-light: #2d5a45;
+            --spacing: 2rem;
+            --max-width: 1200px;
+        }
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.7;
+            font-size: 18px;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(26, 58, 46, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(45, 45, 45, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--off-white);
+            z-index: 1000;
+            padding: 1.5rem var(--spacing);
+        }
+        nav .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -0.02em;
+            color: var(--black);
+            text-decoration: none;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+        nav a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--steel);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        nav a:hover {
+            color: var(--forest);
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--forest);
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        /* Article Layout */
+        .article-header {
+            padding: calc(80px + 4rem) var(--spacing) 3rem;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        .back-link {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--forest);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--black);
+        }
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+        .back-link:hover svg {
+            transform: translateX(-3px);
+        }
+        .article-meta {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--forest);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .article-meta .divider {
+            width: 4px;
+            height: 4px;
+            background: var(--forest);
+            border-radius: 50%;
+        }
+        .article-header h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+        }
+        .article-intro {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: var(--steel);
+            font-weight: 300;
+            border-left: 4px solid var(--forest);
+            padding-left: 1.5rem;
+        }
+        /* Article Content */
+        .article-content {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 var(--spacing) 4rem;
+        }
+        .article-content h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        .article-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.15em;
+            width: 4px;
+            height: 1em;
+            background: var(--forest);
+        }
+        .article-content p {
+            margin-bottom: 1.4rem;
+            color: var(--steel-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .article-content strong {
+            color: var(--black);
+            font-weight: 600;
+        }
+        /* Block transition */
+        .block-transition {
+            margin: 3.5rem 0;
+            padding: 2rem 1.5rem;
+            background: var(--off-white);
+            border-left: 4px solid var(--black);
+        }
+        .block-transition p {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--steel);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        /* Divider */
+        .article-divider {
+            border: none;
+            height: 1px;
+            background: var(--off-white);
+            margin: 3rem 0;
+        }
+        /* Article Footer / CTA */
+        .article-footer {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 var(--spacing) 5rem;
+        }
+        .article-cta {
+            background: var(--off-white);
+            padding: 2.5rem;
+            border-left: 4px solid var(--forest);
+        }
+        .article-cta p {
+            font-size: 1.05rem;
+            color: var(--steel-light);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .article-cta p:last-child {
+            margin-bottom: 0;
+        }
+        .article-cta a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--forest);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid var(--forest);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+        .article-cta a:hover {
+            color: var(--black);
+            border-bottom-color: var(--black);
+        }
+        /* Reading progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--forest);
+            z-index: 1001;
+            transition: width 0.1s linear;
+        }
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 3rem var(--spacing);
+            text-align: center;
+        }
+        footer p {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .article-header {
+                padding: calc(80px + 2rem) 1.25rem 2rem;
+            }
+            .article-content {
+                padding: 0 1.25rem 3rem;
+            }
+            .article-footer {
+                padding: 0 1.25rem 3rem;
+            }
+            .article-content h2 {
+                font-size: 1.15rem;
+                margin-top: 2.5rem;
+            }
+            .article-cta {
+                padding: 1.5rem;
+            }
+            .block-transition {
+                padding: 1.5rem 1.25rem;
+            }
+        }
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        .fade-in-delay-1 { animation-delay: 0.1s; }
+        .fade-in-delay-2 { animation-delay: 0.2s; }
+        .fade-in-delay-3 { animation-delay: 0.3s; }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Reading Progress -->
+    <div class="progress-bar" id="progressBar"></div>
+    <!-- Navigation -->
+    <nav aria-label="Hoofdnavigatie">
+        <div class="container">
+            <a href="/" class="logo" aria-label="Andreas Willemse - Home">AW</a>
+            <ul>
+                <li><a href="/#about">Over</a></li>
+                <li><a href="/#experience">Ervaring</a></li>
+                <li><a href="/#skills">Vaardigheden</a></li>
+                <li><a href="/#blog">Blog</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <!-- Article Header -->
+        <header class="article-header">
+            <a href="/#blog" class="back-link fade-in">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Terug naar overzicht
+            </a>
+            <div class="article-meta fade-in fade-in-delay-1">
+                <span>Product Management</span>
+                <span class="divider"></span>
+                <span>Maart 2026</span>
+                <span class="divider"></span>
+                <span>6 min leestijd</span>
+            </div>
+            <h1 class="fade-in fade-in-delay-2">AI-prototypes bouwen als PM: een superkracht met een schaduwkant</h1>
+            <p class="article-intro fade-in fade-in-delay-3">
+                Als product manager hoef je tegenwoordig geen developer meer te zijn om werkende software te bouwen. Dat is een echte verschuiving. Maar hoe lager de drempel om iets te maken, hoe groter de kans dat er dingen misgaan die je niet ziet aankomen.
+            </p>
+        </header>
+        <!-- Article Content -->
+        <article class="article-content">
+            <p>
+                Met de juiste AI-tools maak je in een middag een prototype dat vroeger weken ontwikkeltijd zou hebben gekost. Voor een PM is dat een serieus voordeel: je valideert sneller, bouwt betere input voor je team en levert meer waarde zonder elke keer te wachten op een developer of een sprint. Maar snelheid ontslaat je niet van je verantwoordelijkheden. Niet richting je stakeholders, niet richting auditors, en zeker niet richting de mensen voor wie je bouwt. Dat is de kern van dit stuk.
+            </p>
+            <p>
+                Hieronder werk ik dat uit in twee blokken: eerst wat je ermee kunt, dan wat je ervoor moet waken.
+            </p>
+            <h2>1. Prototypes die écht iets zeggen</h2>
+            <p>
+                Een klikbaar mockup is fijn, maar een werkend prototype leidt tot een totaal ander gesprek. Gebruikers reageren anders op iets wat echt aanvoelt. Je valideert sneller, scherper en dichter op de werkelijkheid. Wat vroeger weken kostte, doe je nu op een ochtend. En de inzichten die je terugkrijgt zijn navenant concreter.
+            </p>
+            <h2>2. Sneller gevalideerde input voor je team verzamelen</h2>
+            <p>
+                Een slide met een idee is één ding. Een werkende demo leidt tot een totaal ander gesprek. Je kunt gebruikers en stakeholders eerder en concreter betrekken, waardoor je sneller gevalideerde instructies verzamelt voor je team. Minder aannames, betere user stories, minder verspilling in de sprint.
+            </p>
+            <h2>3. CI/CD en agents als verlengstuk van je team</h2>
+            <p>
+                AI-agents kunnen taken overnemen: testen, deployen, monitoren, notificeren. Een PM die begrijpt hoe je dit inricht, heeft effectief een groter team dan op papier staat. Dat is een serieus competitief voordeel, zeker als je in een kleine organisatie werkt of als interim weinig mensen om je heen hebt.
+            </p>
+            <div class="block-transition">
+                <p>Tot zover het goede nieuws. Maar hoe lager de drempel om software te bouwen, hoe groter de kans dat er dingen misgaan die je niet ziet aankomen. Zeker in complexe of gereguleerde omgevingen.</p>
+            </div>
+            <h2>4. Compliance is geen checkbox</h2>
+            <p>
+                In gereguleerde markten zoals zorg, overheid en financiën is een werkend product niet genoeg. Het moet aantoonbaar veilig zijn, auditeerbaar, en voldoen aan wet- en regelgeving die niet onderhandelbaar is. Een prototype dat je in een middag bouwt, doorstaat die toets zelden. Sterker nog: het kan je positie schaden als je het toch in productie neemt. Snelheid is geen argument dat een toezichthouder accepteert.
+            </p>
+            <p>
+                Ik ken die wereld van binnenuit. Via Medux en Zorg bij jou heb ik langere tijd in de zorg gewerkt, een sector waar regelgeving niet onderhandelbaar is en waar een fout in een systeem directe gevolgen kan hebben voor mensen. Maar ook in retail en automotive geldt: hoe groter de organisatie en hoe gevoeliger de data, hoe meer er op het spel staat als je de controle verliest over wat je bouwt.
+            </p>
+            <h2>5. Je data gaat ergens heen</h2>
+            <p>
+                Als je vertrouwelijke informatie invoert in een AI-tool, verlies je controle over waar die data terechtkomt. Klantdata, medische gegevens, interne strategie: het is geen hypothetisch risico. Het is een reëel gevaar met reële consequenties voor je organisatie, je gebruikers en jezelf. <a href="/blog/ai-product-management">Gezond wantrouwen</a> is hier geen pessimisme, het is professionaliteit.
+            </p>
+            <h2>6. Snelheid is geen excuus voor technical debt</h2>
+            <p>
+                AI-gegenereerde code is niet per definitie slechte code, maar het is zelden code die een volwassen organisatie klakkeloos in productie neemt. Onderhoud, documentatie, schaalbaarheid: de AI houdt daar geen rekening mee. Jij moet dat compenseren, of zorgen dat iemand anders dat doet. En als niemand het doet, stapelt de schuld zich op totdat het pijn doet.
+            </p>
+            <h2>7. Wat je niet kunt uitleggen, kun je niet verdedigen</h2>
+            <p>
+                Bij een audit wil je precies kunnen vertellen hoe een systeem werkt, wie er toegang toe heeft, en hoe beslissingen worden genomen. Als je dat antwoord schuldig moet blijven, heb je een probleem, ongeacht hoe goed het product werkt. Voor organisaties die willen werken voor overheden, in de zorg of in andere zwaar gereguleerde sectoren geldt dat nog eens extra. Een prototype bouwen is één ding. Aantonen dat je er verantwoordelijk mee bent omgegaan is een ander.
+            </p>
+            <h2>Conclusie</h2>
+            <p>
+                AI-prototypes zijn een echte superkracht voor PMs. Gebruik ze om te leren, sneller te valideren en je team van betere input te voorzien. Maar vergeet niet: snelheid is geen vrijbrief. Je verantwoordelijkheid richting stakeholders, gebruikers, auditors en toezichthouders verdwijnt niet omdat je iets snel hebt gebouwd. In gereguleerde markten is een werkend prototype nog geen verantwoord product. Het verschil kennen is precies wat een goede PM van een naïeve PM onderscheidt.
+            </p>
+            <hr class="article-divider">
+        </article>
+        <!-- Article Footer CTA -->
+        <div class="article-footer">
+            <div class="article-cta">
+                <p>
+                    Benieuwd hoe je AI-tools verantwoord inzet binnen jouw organisatie of product? Of wil je sparren over wat wel en niet werkt in jouw markt?
+                </p>
+                <p>
+                    <a href="https://linkedin.com/in/andreaswillemse" target="_blank" rel="noopener noreferrer">Stuur me een bericht op LinkedIn &rarr;</a>
+                </p>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Andreas Willemse — Product Owner &amp; Manager, Amsterdam</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        });
+    </script>
+</body>
+</html>
