@@ -462,49 +462,33 @@
         }
 
         /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
         .about-text {
             font-size: 1.05rem;
             line-height: 1.7;
-        }
-
-        .about-text p {
-            margin-bottom: 1.2rem;
+            max-width: 780px;
             color: var(--steel-light);
-        }
-
-        .about-stats {
-            background: var(--off-white);
-            padding: 2rem;
-            border-left: 4px solid var(--forest);
-        }
-
-        .stat {
             margin-bottom: 1.5rem;
         }
 
-        .stat:last-child {
-            margin-bottom: 0;
+        .about-stats {
+            display: flex;
+            gap: 3rem;
+            padding: 1.25rem 0;
+            border-top: 1px solid var(--off-white);
         }
 
         .stat-number {
             font-family: 'Space Mono', monospace;
-            font-size: 2.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--black);
             display: block;
             line-height: 1;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.25rem;
         }
 
         .stat-label {
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             color: var(--steel);
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -786,8 +770,7 @@
                 justify-content: center;
             }
 
-            .about-grid {
-                grid-template-columns: 1fr;
+            .about-stats {
                 gap: 2rem;
             }
 
@@ -869,36 +852,24 @@
     <section id="about" class="fade-in-section" aria-label="Over Andreas Willemse">
         <div class="container">
             <h2>Over Mij</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        Ik ben een veelzijdig persoon die graag problemen oplost met digitale middelen. 
-                        In mijn meer dan 15 jaar IT-ervaring heb ik gave projecten gedaan in verschillende 
-                        branches zoals retail, ecommerce en zorg.
-                    </p>
-                    <p>
-                        Met behulp van lean startup, (scaled) scrum en andere agile tools en methodes 
-                        vertaal ik gebruikersinzichten naar slimme oplossingen. Ik ben dol op 
-                        productontwikkeling, digitale strategie en technologie in het algemeen.
-                    </p>
-                    <p>
-                        Als Product Owner en Manager help ik organisaties om digitale producten te 
-                        ontwikkelen die écht werken. Voor gebruikers, teams en de business.
-                    </p>
+            <p class="about-text">
+                Veelzijdige probleemoplosser met 15+ jaar ervaring in digitale productontwikkeling
+                voor retail, ecommerce en zorg. Met lean startup, (scaled) scrum en andere agile methodes
+                vertaal ik gebruikersinzichten naar slimme oplossingen. Als Product Owner en Manager
+                help ik organisaties om digitale producten te bouwen die écht werken.
+            </p>
+            <div class="about-stats">
+                <div class="stat">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Jaar Ervaring</span>
                 </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-label">Jaar Ervaring</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">45</span>
-                        <span class="stat-label">Jaar Oud</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">AMS</span>
-                        <span class="stat-label">Amsterdam</span>
-                    </div>
+                <div class="stat">
+                    <span class="stat-number">45</span>
+                    <span class="stat-label">Jaar Oud</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">AMS</span>
+                    <span class="stat-label">Amsterdam</span>
                 </div>
             </div>
         </div>

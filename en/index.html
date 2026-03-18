@@ -427,37 +427,33 @@
             letter-spacing: -0.02em;
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
+        .about-text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 780px;
+            color: var(--steel-light);
+            margin-bottom: 1.5rem;
         }
-
-        .about-text { font-size: 1.05rem; line-height: 1.7; }
-        .about-text p { margin-bottom: 1.2rem; color: var(--steel-light); }
 
         .about-stats {
-            background: var(--off-white);
-            padding: 2rem;
-            border-left: 4px solid var(--forest);
+            display: flex;
+            gap: 3rem;
+            padding: 1.25rem 0;
+            border-top: 1px solid var(--off-white);
         }
-
-        .stat { margin-bottom: 1.5rem; }
-        .stat:last-child { margin-bottom: 0; }
 
         .stat-number {
             font-family: 'Space Mono', monospace;
-            font-size: 2.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--black);
             display: block;
             line-height: 1;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.25rem;
         }
 
         .stat-label {
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             color: var(--steel);
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -676,7 +672,7 @@
             .hero-image { justify-self: center; order: -1; max-width: 350px; }
             .hero-content { text-align: center; max-width: 100%; }
             .hero-cta { justify-content: center; }
-            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .about-stats { gap: 2rem; }
             section { padding: 3rem 1rem; }
             h2 { font-size: 1.4rem; }
         }
@@ -739,36 +735,24 @@
     <section id="about" class="fade-in-section" aria-label="About Andreas Willemse">
         <div class="container">
             <h2>About Me</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        I'm a versatile professional who enjoys solving problems with digital means.
-                        Over 15+ years in IT, I've worked on brilliant projects across various sectors
-                        including retail, ecommerce and healthcare.
-                    </p>
-                    <p>
-                        Using lean startup, (scaled) scrum and other agile tools and methods,
-                        I translate user insights into smart solutions. I'm passionate about
-                        product development, digital strategy and technology in general.
-                    </p>
-                    <p>
-                        As a Product Owner and Manager, I help organisations build digital products
-                        that truly work. For users, teams and the business.
-                    </p>
+            <p class="about-text">
+                Versatile problem-solver with 15+ years of experience in digital product development
+                across retail, ecommerce and healthcare. Using lean startup, (scaled) scrum and other
+                agile methods, I translate user insights into smart solutions. As a Product Owner and
+                Manager, I help organisations build digital products that truly work.
+            </p>
+            <div class="about-stats">
+                <div class="stat">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Years Experience</span>
                 </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">45</span>
-                        <span class="stat-label">Years Old</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">AMS</span>
-                        <span class="stat-label">Amsterdam</span>
-                    </div>
+                <div class="stat">
+                    <span class="stat-number">45</span>
+                    <span class="stat-label">Years Old</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">AMS</span>
+                    <span class="stat-label">Amsterdam</span>
                 </div>
             </div>
         </div>
