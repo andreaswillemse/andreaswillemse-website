@@ -427,33 +427,42 @@
             letter-spacing: -0.02em;
         }
 
-        .about-text {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            max-width: 780px;
-            color: var(--steel-light);
-            margin-bottom: 1.5rem;
+        .about-banner {
+            background: var(--off-white);
+            border-left: 4px solid var(--forest);
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
-        .about-stats {
+        .about-banner-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--steel-light);
+            max-width: 620px;
+        }
+
+        .about-banner-stats {
             display: flex;
-            gap: 3rem;
-            padding: 1.25rem 0;
-            border-top: 1px solid var(--off-white);
+            gap: 2rem;
+            flex-shrink: 0;
         }
 
         .stat-number {
             font-family: 'Space Mono', monospace;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--black);
             display: block;
             line-height: 1;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.2rem;
         }
 
         .stat-label {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--steel);
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -672,7 +681,7 @@
             .hero-image { justify-self: center; order: -1; max-width: 350px; }
             .hero-content { text-align: center; max-width: 100%; }
             .hero-cta { justify-content: center; }
-            .about-stats { gap: 2rem; }
+            .about-banner { flex-direction: column; align-items: flex-start; }
             section { padding: 3rem 1rem; }
             h2 { font-size: 1.4rem; }
         }
@@ -735,24 +744,21 @@
     <section id="about" class="fade-in-section" aria-label="About Andreas Willemse">
         <div class="container">
             <h2>About Me</h2>
-            <p class="about-text">
-                Versatile problem-solver with 15+ years of experience in digital product development
-                across retail, ecommerce and healthcare. Using lean startup, (scaled) scrum and other
-                agile methods, I translate user insights into smart solutions. As a Product Owner and
-                Manager, I help organisations build digital products that truly work.
-            </p>
-            <div class="about-stats">
-                <div class="stat">
-                    <span class="stat-number">15+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">45</span>
-                    <span class="stat-label">Years Old</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">AMS</span>
-                    <span class="stat-label">Amsterdam</span>
+            <div class="about-banner">
+                <p class="about-banner-text">
+                    15+ years of experience in product management, consultancy and digital product
+                    development for retail, ecommerce, healthcare and (semi-)public organisations.
+                    I translate strategy into execution and help teams build digital products that truly work.
+                </p>
+                <div class="about-banner-stats">
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">AMS</span>
+                        <span class="stat-label">Amsterdam</span>
+                    </div>
                 </div>
             </div>
         </div>

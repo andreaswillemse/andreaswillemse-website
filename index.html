@@ -462,33 +462,42 @@
         }
 
         /* About Section */
-        .about-text {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            max-width: 780px;
-            color: var(--steel-light);
-            margin-bottom: 1.5rem;
+        .about-banner {
+            background: var(--off-white);
+            border-left: 4px solid var(--forest);
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
-        .about-stats {
+        .about-banner-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--steel-light);
+            max-width: 620px;
+        }
+
+        .about-banner-stats {
             display: flex;
-            gap: 3rem;
-            padding: 1.25rem 0;
-            border-top: 1px solid var(--off-white);
+            gap: 2rem;
+            flex-shrink: 0;
         }
 
         .stat-number {
             font-family: 'Space Mono', monospace;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--black);
             display: block;
             line-height: 1;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.2rem;
         }
 
         .stat-label {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--steel);
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -770,8 +779,9 @@
                 justify-content: center;
             }
 
-            .about-stats {
-                gap: 2rem;
+            .about-banner {
+                flex-direction: column;
+                align-items: flex-start;
             }
 
             .blog-placeholder {
@@ -852,24 +862,21 @@
     <section id="about" class="fade-in-section" aria-label="Over Andreas Willemse">
         <div class="container">
             <h2>Over Mij</h2>
-            <p class="about-text">
-                Veelzijdige probleemoplosser met 15+ jaar ervaring in digitale productontwikkeling
-                voor retail, ecommerce en zorg. Met lean startup, (scaled) scrum en andere agile methodes
-                vertaal ik gebruikersinzichten naar slimme oplossingen. Als Product Owner en Manager
-                help ik organisaties om digitale producten te bouwen die écht werken.
-            </p>
-            <div class="about-stats">
-                <div class="stat">
-                    <span class="stat-number">15+</span>
-                    <span class="stat-label">Jaar Ervaring</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">45</span>
-                    <span class="stat-label">Jaar Oud</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">AMS</span>
-                    <span class="stat-label">Amsterdam</span>
+            <div class="about-banner">
+                <p class="about-banner-text">
+                    15+ jaar ervaring in product management, advies en digitale productontwikkeling
+                    voor retail, ecommerce, zorg en (semi-)publieke organisaties. Ik vertaal strategie
+                    naar uitvoering en help teams om digitale producten te bouwen die écht werken.
+                </p>
+                <div class="about-banner-stats">
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Jaar Ervaring</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">AMS</span>
+                        <span class="stat-label">Amsterdam</span>
+                    </div>
                 </div>
             </div>
         </div>
