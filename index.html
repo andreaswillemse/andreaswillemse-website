@@ -220,13 +220,49 @@
             border-color: var(--forest);
         }
 
+        /* Availability Banner */
+        .availability-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--forest);
+            color: var(--white);
+            text-align: center;
+            padding: 0.55rem var(--spacing);
+            z-index: 1100;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .availability-banner a {
+            color: var(--white);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: opacity 0.3s ease;
+        }
+
+        .availability-banner a:hover {
+            opacity: 0.8;
+        }
+
+        nav {
+            top: 34px;
+        }
+
+        .progress-bar {
+            top: 34px;
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             padding: var(--spacing);
-            padding-top: calc(80px + var(--spacing));
+            padding-top: calc(114px + var(--spacing));
             position: relative;
             overflow: visible;
         }
@@ -766,6 +802,11 @@
     </style>
 </head>
 <body>
+    <!-- Availability Banner -->
+    <div class="availability-banner">
+        Beschikbaar voor een nieuwe opdracht <a href="#contact">Neem contact op</a>
+    </div>
+
     <!-- Navigation -->
     <nav aria-label="Hoofdnavigatie">
         <div class="container">
