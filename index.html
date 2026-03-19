@@ -696,41 +696,35 @@
         }
 
         /* Contact Section */
-        .contact {
-            text-align: center;
-            padding: 6rem var(--spacing);
+        .contact-banner {
+            background: var(--forest);
+            padding: 2rem var(--spacing);
         }
 
-        .contact h2 {
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-description {
-            font-size: 1.1rem;
-            color: var(--steel-light);
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        .contact-links {
+        .contact-banner .container {
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 2rem;
+            gap: 0.4rem;
             flex-wrap: wrap;
         }
 
-        .contact-link {
+        .contact-banner p {
             font-family: 'Space Mono', monospace;
-            font-size: 1.1rem;
-            color: var(--black);
-            text-decoration: none;
-            padding: 0.5rem 0;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s ease;
+            font-size: 0.9rem;
+            color: var(--white);
+            letter-spacing: 0.02em;
         }
 
-        .contact-link:hover {
-            border-bottom-color: var(--forest);
+        .contact-banner a {
+            color: var(--white);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-banner a:hover {
+            opacity: 0.8;
         }
 
         /* Keyword highlights */
@@ -1009,16 +1003,9 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact fade-in-section" aria-label="Contact opnemen">
+    <section id="contact" class="contact-banner fade-in-section" aria-label="Contact opnemen">
         <div class="container">
-            <h2>Kennismaken?</h2>
-            <p class="contact-description">
-                Of het nu gaat om een samenwerking, een uitdaging waar je tegenaan loopt,
-                of gewoon een leuk gesprek bij hele goede koffie. Stuur me een bericht via LinkedIn.
-            </p>
-            <div class="contact-links">
-                <a href="https://linkedin.com/in/andreaswillemse" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Bekijk mijn LinkedIn profiel">LinkedIn</a>
-            </div>
+            <p>Kennismaken? <a href="https://linkedin.com/in/andreaswillemse" target="_blank" rel="noopener noreferrer">Stuur me een bericht op LinkedIn</a> en we plannen een koffie.</p>
         </div>
     </section>
     </main>

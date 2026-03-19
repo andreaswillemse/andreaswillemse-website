@@ -638,29 +638,36 @@
 
         .blog-card:hover .blog-card-link { color: var(--black); }
 
-        .contact { text-align: center; padding: 6rem var(--spacing); }
-        .contact h2 { margin-bottom: 1.5rem; }
-
-        .contact-description {
-            font-size: 1.1rem;
-            color: var(--steel-light);
-            max-width: 600px;
-            margin: 0 auto 2rem;
+        .contact-banner {
+            background: var(--forest);
+            padding: 2rem var(--spacing);
         }
 
-        .contact-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        .contact-banner .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
 
-        .contact-link {
+        .contact-banner p {
             font-family: 'Space Mono', monospace;
-            font-size: 1.1rem;
-            color: var(--black);
-            text-decoration: none;
-            padding: 0.5rem 0;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s ease;
+            font-size: 0.9rem;
+            color: var(--white);
+            letter-spacing: 0.02em;
         }
 
-        .contact-link:hover { border-bottom-color: var(--forest); }
+        .contact-banner a {
+            color: var(--white);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-banner a:hover {
+            opacity: 0.8;
+        }
 
         /* Keyword highlights */
         mark.hl {
@@ -888,16 +895,9 @@
         </div>
     </section>
 
-    <section id="contact" class="contact fade-in-section" aria-label="Get in touch">
+    <section id="contact" class="contact-banner fade-in-section" aria-label="Get in touch">
         <div class="container">
-            <h2>Let's meet</h2>
-            <p class="contact-description">
-                Whether it's about a collaboration, a challenge you're facing,
-                or simply a good chat over really good coffee. Drop me a message on LinkedIn.
-            </p>
-            <div class="contact-links">
-                <a href="https://linkedin.com/in/andreaswillemse" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="View my LinkedIn profile">LinkedIn</a>
-            </div>
+            <p>Let's meet? <a href="https://linkedin.com/in/andreaswillemse" target="_blank" rel="noopener noreferrer">Send me a message on LinkedIn</a> and we'll grab a coffee.</p>
         </div>
     </section>
     </main>
