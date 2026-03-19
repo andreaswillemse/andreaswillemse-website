@@ -695,6 +695,25 @@
             color: var(--black);
         }
 
+        .all-articles-link {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--forest);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding-bottom: 2px;
+            border-bottom: 2px solid var(--forest);
+            transition: all 0.3s ease;
+        }
+
+        .all-articles-link:hover {
+            color: var(--black);
+            border-bottom-color: var(--black);
+        }
+
         /* Contact Section */
         .contact-banner {
             background: var(--forest);
@@ -825,7 +844,7 @@
                     <li><a href="#about">Kort gezegd</a></li>
                     <li><a href="#experience">Track record</a></li>
                     <li><a href="#skills">Expertise</a></li>
-                    <li><a href="#blog">Gedachten</a></li>
+                    <li><a href="/blog/">Gedachten</a></li>
                 </ul>
                 <a href="/en/" class="lang-switch" aria-label="Switch to English">EN</a>
             </div>
@@ -971,6 +990,7 @@
         <div class="container">
             <h2>Hoe ik denk</h2>
             <div class="blog-grid">
+
                 <a href="/blog/ai-prototypes-pm" class="blog-card">
                     <div class="blog-card-label">Product Management</div>
                     <h3 class="blog-card-title"><mark class="hl">AI</mark>-prototypes bouwen als PM: een superkracht met een schaduwkant</h3>
@@ -998,6 +1018,7 @@
                     <span class="blog-card-link">Lees artikel &rarr;</span>
                 </a>
             </div>
+            <a href="/blog/" class="all-articles-link">Alle artikelen &rarr;</a>
         </div>
     </section>
 

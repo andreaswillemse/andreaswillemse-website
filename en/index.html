@@ -638,6 +638,25 @@
 
         .blog-card:hover .blog-card-link { color: var(--black); }
 
+        .all-articles-link {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--forest);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding-bottom: 2px;
+            border-bottom: 2px solid var(--forest);
+            transition: all 0.3s ease;
+        }
+
+        .all-articles-link:hover {
+            color: var(--black);
+            border-bottom-color: var(--black);
+        }
+
         .contact-banner {
             background: var(--forest);
             padding: 2rem var(--spacing);
@@ -723,7 +742,7 @@
                     <li><a href="#about">In short</a></li>
                     <li><a href="#experience">Track record</a></li>
                     <li><a href="#skills">Expertise</a></li>
-                    <li><a href="#blog">Thoughts</a></li>
+                    <li><a href="/en/blog/">Thoughts</a></li>
                 </ul>
                 <a href="/" class="lang-switch" aria-label="Schakel naar Nederlands">NL</a>
             </div>
@@ -891,6 +910,7 @@
                     <span class="blog-card-link">Read article &rarr;</span>
                 </a>
             </div>
+            <a href="/en/blog/" class="all-articles-link">All articles &rarr;</a>
         </div>
     </section>
 
