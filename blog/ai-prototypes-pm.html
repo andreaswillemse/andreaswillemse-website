@@ -422,6 +422,12 @@
                 transform: translateY(0);
             }
         }
+        /* Keyword highlights */
+        mark.hl {
+            background: linear-gradient(180deg, transparent 45%, rgba(255, 230, 0, 0.35) 45%, rgba(255, 230, 0, 0.35) 90%, transparent 90%);
+            color: inherit;
+            padding: 0 0.1em;
+        }
     </style>
 </head>
 <body>
@@ -472,7 +478,7 @@
         <!-- Article Content -->
         <article class="article-content">
             <p>
-                Met de juiste AI-tools maak je in een middag een prototype dat vroeger weken ontwikkeltijd zou hebben gekost. Voor een PM is dat een serieus voordeel: je valideert sneller, bouwt betere input voor je team en levert meer waarde zonder elke keer te wachten op een developer of een sprint. Maar snelheid ontslaat je niet van je verantwoordelijkheden. Niet richting je stakeholders, niet richting auditors, en zeker niet richting de mensen voor wie je bouwt. Dat is de kern van dit stuk.
+                Met de juiste <mark class="hl">AI</mark>-tools maak je in een middag een prototype dat vroeger weken ontwikkeltijd zou hebben gekost. Voor een PM is dat een serieus voordeel: je valideert sneller, bouwt betere input voor je team en levert meer waarde zonder elke keer te wachten op een developer of een sprint. Maar snelheid ontslaat je niet van je verantwoordelijkheden. Niet richting je <mark class="hl">stakeholders</mark>, niet richting auditors, en zeker niet richting de mensen voor wie je bouwt. Dat is de kern van dit stuk.
             </p>
             <p>
                 Hieronder werk ik dat uit in twee blokken: eerst wat je ermee kunt, dan wat je ervoor moet waken.
@@ -483,37 +489,37 @@
             </p>
             <h2>2. Sneller gevalideerde input voor je team verzamelen</h2>
             <p>
-                Een slide met een idee is één ding. Een werkende demo leidt tot een totaal ander gesprek. Je kunt gebruikers en stakeholders eerder en concreter betrekken, waardoor je sneller gevalideerde instructies verzamelt voor je team. Minder aannames, betere user stories, minder verspilling in de sprint.
+                Een slide met een idee is één ding. Een werkende demo leidt tot een totaal ander gesprek. Je kunt gebruikers en <mark class="hl">stakeholders</mark> eerder en concreter betrekken, waardoor je sneller gevalideerde instructies verzamelt voor je team. Minder aannames, betere user stories, minder verspilling in de sprint.
             </p>
             <h2>3. CI/CD en agents als verlengstuk van je team</h2>
             <p>
-                AI-agents kunnen taken overnemen: testen, deployen, monitoren, notificeren. Een PM die begrijpt hoe je dit inricht, heeft effectief een groter team dan op papier staat. Dat is een serieus competitief voordeel, zeker als je in een kleine organisatie werkt of als interim weinig mensen om je heen hebt.
+                AI-agents kunnen taken overnemen: testen, deployen, monitoren, notificeren. Een <mark class="hl">PM</mark> die begrijpt hoe je dit inricht, heeft effectief een groter team dan op papier staat. Dat is een serieus competitief voordeel, zeker als je in een kleine organisatie werkt of als interim weinig mensen om je heen hebt.
             </p>
             <div class="block-transition">
                 <p>Tot zover het goede nieuws. Maar hoe lager de drempel om software te bouwen, hoe groter de kans dat er dingen misgaan die je niet ziet aankomen. Zeker in complexe of gereguleerde omgevingen.</p>
             </div>
             <h2>4. Compliance is geen checkbox</h2>
             <p>
-                In gereguleerde markten zoals zorg, overheid en financiën is een werkend product niet genoeg. Het moet aantoonbaar veilig zijn, auditeerbaar, en voldoen aan wet- en regelgeving die niet onderhandelbaar is. Een prototype dat je in een middag bouwt, doorstaat die toets zelden. Sterker nog: het kan je positie schaden als je het toch in productie neemt. Snelheid is geen argument dat een toezichthouder accepteert.
+                In gereguleerde markten zoals zorg, overheid en financiën is een werkend product niet genoeg. Het moet aantoonbaar veilig zijn, auditeerbaar, en voldoen aan wet- en regelgeving die niet onderhandelbaar is. Een prototype dat je in een middag bouwt, doorstaat die <mark class="hl">compliance</mark>-toets zelden. Sterker nog: het kan je positie schaden als je het toch in productie neemt. Snelheid is geen argument dat een toezichthouder accepteert.
             </p>
             <p>
-                Ik ken die wereld van binnenuit. Via Medux en Zorg bij jou heb ik langere tijd in de zorg gewerkt, een sector waar regelgeving niet onderhandelbaar is en waar een fout in een systeem directe gevolgen kan hebben voor mensen. Maar ook in retail en automotive geldt: hoe groter de organisatie en hoe gevoeliger de data, hoe meer er op het spel staat als je de controle verliest over wat je bouwt.
+                Ik ken die wereld van binnenuit. Via Medux en Zorg bij jou heb ik langere tijd in de zorg gewerkt, een sector waar regelgeving niet onderhandelbaar is en waar een fout in een systeem directe gevolgen kan hebben voor mensen. Maar ook in retail en automotive geldt: hoe groter de organisatie en hoe gevoeliger de data, hoe meer er op het spel staat als je de <mark class="hl">governance</mark> verliest over wat je bouwt.
             </p>
             <h2>5. Je data gaat ergens heen</h2>
             <p>
-                Als je vertrouwelijke informatie invoert in een AI-tool, verlies je controle over waar die data terechtkomt. Klantdata, medische gegevens, interne strategie: het is geen hypothetisch risico. Het is een reëel gevaar met reële consequenties voor je organisatie, je gebruikers en jezelf. <a href="/blog/ai-product-management">Gezond wantrouwen</a> is hier geen pessimisme, het is professionaliteit.
+                Als je vertrouwelijke informatie invoert in een AI-tool, verlies je controle over waar die data terechtkomt. Klantdata, medische gegevens, interne <mark class="hl">strategie</mark>: het is geen hypothetisch risico. Het is een reëel gevaar met reële consequenties voor je organisatie, je gebruikers en jezelf. <a href="/blog/ai-product-management">Gezond wantrouwen</a> is hier geen pessimisme, het is professionaliteit.
             </p>
             <h2>6. Snelheid is geen excuus voor technical debt</h2>
             <p>
-                AI-gegenereerde code is niet per definitie slechte code, maar het is zelden code die een volwassen organisatie klakkeloos in productie neemt. Onderhoud, documentatie, schaalbaarheid: de AI houdt daar geen rekening mee. Jij moet dat compenseren, of zorgen dat iemand anders dat doet. En als niemand het doet, stapelt de schuld zich op totdat het pijn doet.
+                <mark class="hl">AI</mark>-gegenereerde code is niet per definitie slechte code, maar het is zelden code die een volwassen organisatie klakkeloos in productie neemt. Onderhoud, documentatie, schaalbaarheid: de AI houdt daar geen rekening mee. Jij moet dat compenseren, of zorgen dat iemand anders dat doet. En als niemand het doet, stapelt de schuld zich op totdat het pijn doet.
             </p>
             <h2>7. Wat je niet kunt uitleggen, kun je niet verdedigen</h2>
             <p>
-                Bij een audit wil je precies kunnen vertellen hoe een systeem werkt, wie er toegang toe heeft, en hoe beslissingen worden genomen. Als je dat antwoord schuldig moet blijven, heb je een probleem, ongeacht hoe goed het product werkt. Voor organisaties die willen werken voor overheden, in de zorg of in andere zwaar gereguleerde sectoren geldt dat nog eens extra. Een prototype bouwen is één ding. Aantonen dat je er verantwoordelijk mee bent omgegaan is een ander.
+                Bij een audit wil je precies kunnen vertellen hoe een systeem werkt, wie er toegang toe heeft, en hoe beslissingen worden genomen. Als je dat antwoord schuldig moet blijven, heb je een probleem, ongeacht hoe goed het product werkt. Voor organisaties die willen werken voor overheden, in de zorg of in andere zwaar <mark class="hl">compliance</mark>-gevoelige sectoren geldt dat nog eens extra. Een prototype bouwen is één ding. Aantonen dat je er verantwoordelijk mee bent omgegaan is een ander.
             </p>
             <h2>Conclusie</h2>
             <p>
-                AI-prototypes zijn een echte superkracht voor PMs. Gebruik ze om te leren, sneller te valideren en je team van betere input te voorzien. Maar vergeet niet: snelheid is geen vrijbrief. Je verantwoordelijkheid richting stakeholders, gebruikers, auditors en toezichthouders verdwijnt niet omdat je iets snel hebt gebouwd. In gereguleerde markten is een werkend prototype nog geen verantwoord product. Het verschil kennen is precies wat een goede PM van een naïeve PM onderscheidt.
+                AI-prototypes zijn een echte superkracht voor PMs. Gebruik ze om te leren, sneller te valideren en je team van betere input te voorzien. Maar vergeet niet: snelheid is geen vrijbrief. Je verantwoordelijkheid richting <mark class="hl">stakeholders</mark>, gebruikers, auditors en toezichthouders verdwijnt niet omdat je iets snel hebt gebouwd. In gereguleerde markten is een werkend prototype nog geen verantwoord product. Het verschil kennen is precies wat een goede <mark class="hl">product manager</mark> van een naïeve PM onderscheidt.
             </p>
             <hr class="article-divider">
         </article>
