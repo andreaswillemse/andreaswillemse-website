@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blueprint - Prompt Generator for Claude Code | Andreas Willemse</title>
+    <meta name="description" content="Answer a few questions about what you want to build. Blueprint turns your answers into a structured, ready-to-paste Claude Code prompt.">
+    <meta name="author" content="Andreas Willemse">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://andreaswillemse.nl/en/tools/blueprint/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://andreaswillemse.nl/en/tools/blueprint/">
+    <meta property="og:title" content="Blueprint - Prompt Generator for Claude Code">
+    <meta property="og:description" content="Answer a few questions about what you want to build. Blueprint turns your answers into a structured, ready-to-paste Claude Code prompt.">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Andreas Willemse">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231a3a2e'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='%23fafafa' font-family='monospace' font-weight='bold'>AW</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fafafa;
+            --black: #0a0a0a;
+            --forest: #1a3a2e;
+            --forest-light: #2d5a45;
+            --gray-dark: #2d2d2d;
+            --gray-mid: #404040;
+            --gray-light: #888;
+            --border: #e8e8e8;
+            --border-dark: #d0d0d0;
+            --white: #ffffff;
+            --spacing: 2rem;
+            --radius: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Crimson Pro', Georgia, serif;
+            background: var(--bg);
+            color: var(--black);
+            min-height: 100vh;
+            font-size: 18px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Subtle radial texture like the website */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 20% 50%, rgba(26, 58, 46, 0.03) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, rgba(26, 58, 46, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem var(--spacing);
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.25rem;
+            }
+        }
+
+        /* Header */
+        .header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--forest);
+            margin-bottom: 0.75rem;
+        }
+
+        .header h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            color: var(--black);
+            margin-bottom: 1rem;
+        }
+
+        .header h1 .blue {
+            color: #2563eb;
+            transition: color 0.4s ease;
+        }
+
+        .header h1:hover .blue {
+            color: #0ea5e9;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: var(--gray-mid);
+            max-width: 520px;
+            font-weight: 300;
+        }
+
+        .header-actions {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        /* Buttons */
+        .btn {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.85rem 1.75rem;
+            border: 2px solid var(--black);
+            background: transparent;
+            color: var(--black);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--black);
+            transition: left 0.3s ease;
+            z-index: 0;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn:hover {
+            color: var(--white);
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-forest {
+            border-color: var(--forest);
+            color: var(--forest);
+        }
+
+        .btn-forest::before {
+            background: var(--forest);
+        }
+
+        .btn-filled {
+            background: var(--forest);
+            color: var(--white);
+            border-color: var(--forest);
+        }
+
+        .btn-filled::before {
+            background: var(--forest-light);
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.7rem;
+        }
+
+        /* Progress */
+        .progress-wrapper {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .progress-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .progress-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-light);
+        }
+
+        .progress-percentage {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--forest);
+        }
+
+        .progress-bar-track {
+            width: 100%;
+            height: 3px;
+            background: var(--border);
+            margin-bottom: 1.25rem;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: var(--forest);
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0%;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            padding: 4px;
+        }
+
+        .progress-step-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border-dark);
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .progress-step-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.55rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gray-light);
+            transition: color 0.2s ease;
+        }
+
+        .progress-step:hover .progress-step-label {
+            color: var(--black);
+        }
+
+        .progress-step.completed .progress-step-dot {
+            background: var(--forest);
+            border-color: var(--forest);
+        }
+
+        .progress-step.completed .progress-step-label {
+            color: var(--forest);
+        }
+
+        .progress-step.active .progress-step-dot {
+            background: var(--black);
+            border-color: var(--black);
+            transform: scale(1.4);
+        }
+
+        .progress-step.active .progress-step-label {
+            color: var(--black);
+        }
+
+        @media (max-width: 768px) {
+            .progress-steps {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 8px;
+            }
+        }
+
+        /* Card */
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Section Navigation */
+        .section-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-nav-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-light);
+        }
+
+        .section-nav-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .nav-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--border-dark);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-dot:hover {
+            background: var(--gray-mid);
+        }
+
+        .nav-dot.completed {
+            background: var(--forest);
+        }
+
+        .nav-dot.active {
+            background: var(--black);
+            transform: scale(1.5);
+        }
+
+        /* Question sections */
+        .question-section {
+            display: none;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        .question-section.active {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--forest);
+            margin-bottom: 1.25rem;
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            border: 1px solid var(--forest);
+        }
+
+        .question {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+            line-height: 1.4;
+        }
+
+        .hint {
+            font-size: 0.95rem;
+            color: var(--gray-light);
+            margin-bottom: 1.25rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--forest);
+            font-weight: 300;
+        }
+
+        .example {
+            font-size: 0.85rem;
+            color: var(--gray-mid);
+            margin-top: 0.75rem;
+            padding: 0.85rem 1rem;
+            background: rgba(26, 58, 46, 0.03);
+            border-left: 3px solid var(--forest);
+            font-weight: 300;
+        }
+
+        /* Form elements */
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--border-dark);
+            font-size: 1rem;
+            font-family: 'Crimson Pro', Georgia, serif;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--forest);
+            box-shadow: 0 0 0 1px var(--forest);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        select {
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23404040' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+
+        /* Multi-input */
+        .multi-input {
+            margin-bottom: 0.75rem;
+        }
+
+        .multi-input-item {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            align-items: flex-start;
+        }
+
+        .multi-input-item input,
+        .multi-input-item textarea {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        .btn-add {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px dashed var(--border-dark);
+            color: var(--gray-mid);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 1rem;
+        }
+
+        .btn-add:hover {
+            border-color: var(--forest);
+            color: var(--forest);
+            background: rgba(26, 58, 46, 0.03);
+        }
+
+        .btn-remove {
+            font-family: 'Space Mono', monospace;
+            padding: 0.85rem 0.75rem;
+            background: transparent;
+            border: 1px solid var(--border-dark);
+            color: var(--gray-light);
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .btn-remove:hover {
+            border-color: #c0392b;
+            color: #c0392b;
+        }
+
+        /* Checkbox group */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--forest);
+            cursor: pointer;
+        }
+
+        .checkbox-item label {
+            font-size: 0.95rem;
+            cursor: pointer;
+            color: var(--gray-dark);
+        }
+
+        /* Navigation buttons */
+        .button-group {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .btn-nav {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.85rem 1.75rem;
+            border: 2px solid var(--black);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-next {
+            background: var(--forest);
+            color: var(--white);
+            border-color: var(--forest);
+            flex: 1;
+        }
+
+        .btn-next:hover {
+            background: var(--forest-light);
+        }
+
+        .btn-prev {
+            background: transparent;
+            color: var(--black);
+        }
+
+        .btn-prev:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .btn-prev:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .btn-prev:disabled:hover {
+            background: transparent;
+            color: var(--black);
+        }
+
+        .skip-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .skip-link a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--gray-light);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .skip-link a:hover {
+            color: var(--forest);
+            border-bottom-color: var(--forest);
+        }
+
+        /* Output section */
+        .output-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .output-header h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .output-header p {
+            color: var(--gray-mid);
+            font-weight: 300;
+        }
+
+        .output-instructions {
+            background: rgba(26, 58, 46, 0.04);
+            border-left: 3px solid var(--forest);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .output-instructions h3 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--forest);
+            margin-bottom: 0.75rem;
+        }
+
+        .output-instructions p {
+            font-size: 0.95rem;
+            color: var(--gray-dark);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .output-instructions p + p {
+            margin-top: 0.75rem;
+        }
+
+        .prd-output {
+            background: var(--black);
+            color: #e0e0e0;
+            padding: 2rem;
+            white-space: pre-wrap;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            line-height: 1.8;
+            max-height: 500px;
+            overflow-y: auto;
+            margin-bottom: 1.25rem;
+            border: 1px solid var(--border);
+        }
+
+        .btn-copy {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            width: 100%;
+            padding: 1rem;
+            background: var(--forest);
+            color: var(--white);
+            border: 2px solid var(--forest);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-copy:hover {
+            background: var(--forest-light);
+        }
+
+        .export-options {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .export-options h3 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-light);
+            margin-bottom: 1rem;
+        }
+
+        .export-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-export-format {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            padding: 0.6rem 1rem;
+            background: transparent;
+            border: 1px solid var(--border-dark);
+            color: var(--gray-dark);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-export-format:hover {
+            border-color: var(--forest);
+            color: var(--forest);
+        }
+
+        .completion-next {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--gray-mid);
+            font-weight: 300;
+        }
+
+        .completion-next strong {
+            color: var(--black);
+        }
+
+        .save-success {
+            background: var(--forest);
+            color: var(--white);
+            padding: 1rem;
+            text-align: center;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 1rem;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(4px);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: var(--white);
+            border: 1px solid var(--border);
+            width: 90%;
+            max-width: 640px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        .modal-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .btn-close {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: var(--gray-light);
+            cursor: pointer;
+            padding: 0.25rem;
+            transition: color 0.2s ease;
+        }
+
+        .btn-close:hover {
+            color: var(--black);
+        }
+
+        .modal-body {
+            padding: 1.5rem 2rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .prd-card {
+            padding: 1.25rem;
+            margin-bottom: 0.75rem;
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--forest);
+            transition: all 0.2s ease;
+        }
+
+        .prd-card:hover {
+            transform: translateX(4px);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .prd-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .prd-card-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 0.25rem;
+        }
+
+        .prd-card-date {
+            font-size: 0.8rem;
+            color: var(--gray-light);
+        }
+
+        .prd-card-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--gray-light);
+        }
+
+        .empty-state h3 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gray-mid);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Autosave indicator */
+        .autosave-indicator {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--forest);
+            color: var(--white);
+            padding: 0.6rem 1rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .autosave-indicator.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Shortcuts */
+        .shortcuts-toggle {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border: 1px solid var(--border-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--gray-mid);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 100;
+        }
+
+        .shortcuts-toggle:hover {
+            border-color: var(--forest);
+            color: var(--forest);
+        }
+
+        .shortcuts-panel {
+            position: fixed;
+            bottom: 5rem;
+            left: 2rem;
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 1.25rem;
+            width: 260px;
+            transform: translateY(10px);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 99;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .shortcuts-panel.show {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .shortcuts-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .shortcuts-header h3 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gray-mid);
+        }
+
+        .shortcuts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .shortcut-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        .shortcut-item kbd {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            background: var(--black);
+            color: var(--white);
+            padding: 3px 6px;
+            font-weight: 700;
+        }
+
+        .shortcut-item span {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--gray-light);
+        }
+
+        @media (max-width: 768px) {
+            .shortcuts-toggle {
+                bottom: 1.25rem;
+                left: 1.25rem;
+                width: 36px;
+                height: 36px;
+            }
+
+            .autosave-indicator {
+                bottom: 1.25rem;
+                right: 1.25rem;
+            }
+
+            .shortcuts-panel {
+                left: 1.25rem;
+                right: 1.25rem;
+                width: auto;
+                bottom: 4rem;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer p {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--gray-light);
+            letter-spacing: 0.05em;
+        }
+
+        .footer a {
+            color: var(--forest);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .footer a:hover {
+            border-bottom-color: var(--forest);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav style="position:fixed;top:0;left:0;width:100%;background:rgba(250,250,250,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);z-index:1000;padding:1.2rem var(--spacing);">
+        <div style="max-width:720px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;">
+            <a href="/en/" style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.2rem;letter-spacing:-0.02em;color:var(--black);text-decoration:none;">AW</a>
+            <a href="/en/#tools" style="font-family:'Space Mono',monospace;font-size:0.75rem;color:var(--forest);text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;">&larr; Back to site</a>
+        </div>
+    </nav>
+
+    <div class="container" style="padding-top:5rem;">
+        <header class="header">
+            <div class="header-label">Prompt generator for Claude Code</div>
+            <h1><span class="blue">Blue</span>print</h1>
+            <p>Answer a few questions about what you want to build. Blueprint turns your answers into a tailor-made Claude Code prompt, structured and ready to paste.</p>
+            <div class="header-actions">
+                <button class="btn btn-forest" onclick="toggleLibrary()"><span>Library</span></button>
+            </div>
+        </header>
+
+        <!-- Library Modal -->
+        <div class="modal" id="libraryModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Saved Blueprints</h2>
+                    <button class="btn-close" onclick="closeLibrary()">&times;</button>
+                </div>
+                <div class="modal-body" id="libraryContent">
+                    <div class="empty-state">
+                        <h3>No blueprints yet</h3>
+                        <p>Complete your first blueprint to start your library.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-wrapper">
+            <div class="progress-top">
+                <div class="progress-label">Progress</div>
+                <div class="progress-percentage" id="progressPercentage">0%</div>
+            </div>
+            <div class="progress-bar-track">
+                <div class="progress-bar-fill" id="progressBar"></div>
+            </div>
+            <div class="progress-steps" id="progressSteps">
+                <div class="progress-step" data-section="1">
+                    <div class="progress-step-dot"></div>
+                    <span class="progress-step-label">Name</span>
+                </div>
+                <div class="progress-step" data-section="2">
+                    <div class="progress-step-dot"></div>
+                    <span class="progress-step-label">Problem</span>
+                </div>
+                <div class="progress-step" data-section="3">
+                    <div class="progress-step-dot"></div>
+                    <span class="progress-step-label">Solution</span>
+                </div>
+                <div class="progress-step" data-section="4">
+                    <div class="progress-step-dot"></div>
+                    <span class="progress-step-label">Users</span>
+                </div>
+                <div class="progress-step" data-section="5">
+                    <div class="progress-step-dot"></div>
+                    <span class="progress-step-label">Flow</span>
+                </div>
+                <div class="progress-step" data-section="6">
+                    <div class="progress-step-dot"></div>
+                    <span class="progress-step-label">Features</span>
+                </div>
+                <div class="progress-step" data-section="7">
+                    <div class="progress-step-dot"></div>
+                    <span class="progress-step-label">Tech</span>
+                </div>
+                <div class="progress-step" data-section="8">
+                    <div class="progress-step-dot"></div>
+                    <span class="progress-step-label">Design</span>
+                </div>
+                <div class="progress-step" data-section="9">
+                    <div class="progress-step-dot"></div>
+                    <span class="progress-step-label">Scope</span>
+                </div>
+                <div class="progress-step" data-section="10">
+                    <div class="progress-step-dot"></div>
+                    <span class="progress-step-label">Done</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Autosave -->
+        <div class="autosave-indicator" id="autosaveIndicator">Saved</div>
+
+        <!-- Shortcuts -->
+        <div class="shortcuts-toggle" id="shortcutsToggle" onclick="toggleShortcuts()">?</div>
+        <div class="shortcuts-panel" id="shortcutsPanel">
+            <div class="shortcuts-header">
+                <h3>Keyboard Shortcuts</h3>
+                <button class="btn-close" onclick="toggleShortcuts()">&times;</button>
+            </div>
+            <div class="shortcuts-list">
+                <div class="shortcut-item">
+                    <kbd>Ctrl/Cmd + &rarr;</kbd>
+                    <span>Next</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>Ctrl/Cmd + &larr;</kbd>
+                    <span>Previous</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>Ctrl/Cmd + S</kbd>
+                    <span>Save</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>Ctrl/Cmd + L</kbd>
+                    <span>Library</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>Esc</kbd>
+                    <span>Close</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Card -->
+        <div class="card" id="mainCard">
+            <div class="section-nav">
+                <div class="section-nav-title">Step <span id="currentStepDisplay">1</span> of 10</div>
+                <div class="section-nav-dots" id="sectionNavDots"></div>
+            </div>
+
+            <!-- Section 1: Product Name -->
+            <div class="question-section active" data-section="1">
+                <div class="section-label">Overview</div>
+                <div class="question">What's the name of your product or feature?</div>
+                <div class="hint">A clear, descriptive name helps Claude understand what it's building</div>
+                <input type="text" id="productName" placeholder="e.g., Task Priority Dashboard">
+                <div class="example">Examples: "Smart Recipe Finder", "Team Standup Bot", "Expense Tracker"</div>
+            </div>
+
+            <!-- Section 2: Problem -->
+            <div class="question-section" data-section="2">
+                <div class="section-label">Overview</div>
+                <div class="question">What problem does this solve?</div>
+                <div class="hint">Be specific about who has this problem and why current solutions fall short</div>
+                <textarea id="problemStatement" placeholder="e.g., Project managers waste 30+ minutes each morning manually checking task statuses across multiple tools to identify blockers..."></textarea>
+                <div class="example">Good: "Freelancers lose track of billable hours because switching between timer apps and invoicing tools is cumbersome." Avoid vague statements like "it's hard to manage things."</div>
+            </div>
+
+            <!-- Section 3: Solution + Goal -->
+            <div class="question-section" data-section="3">
+                <div class="section-label">Overview</div>
+                <div class="question">How does your product solve this?</div>
+                <div class="hint">Describe the core approach in 2-3 sentences</div>
+                <textarea id="proposedSolution" placeholder="e.g., A visual dashboard that pulls task data from project tools and automatically highlights blockers, dependencies, and overdue items in a single view..."></textarea>
+
+                <div class="question" style="margin-top: 1.5rem;">What's the goal of this prototype?</div>
+                <div class="hint">This shapes how detailed the output needs to be</div>
+                <select id="prototypeGoal">
+                    <option value="">Select a goal...</option>
+                    <option value="Validate the core concept with real users">Validate the core concept with real users</option>
+                    <option value="Test usability and interaction patterns">Test usability and interaction patterns</option>
+                    <option value="Demonstrate the idea to stakeholders or investors">Demonstrate the idea to stakeholders or investors</option>
+                    <option value="Explore technical feasibility before committing">Explore technical feasibility before committing</option>
+                    <option value="Create a functional MVP to ship quickly">Create a functional MVP to ship quickly</option>
+                    <option value="Build an internal tool for my team">Build an internal tool for my team</option>
+                </select>
+            </div>
+
+            <!-- Section 4: Users -->
+            <div class="question-section" data-section="4">
+                <div class="section-label">Users</div>
+                <div class="question">Who will use this and in what context?</div>
+                <div class="hint">Describe the primary users, their skill level, and when they'd reach for this product</div>
+                <textarea id="targetUsers" placeholder="e.g., Marketing managers at mid-size companies (50-200 people) who need to create weekly performance reports but don't have a data analyst on their team. Comfortable with spreadsheets but not SQL or BI tools."></textarea>
+                <div class="example">Think about: role, technical comfort level, context of use (on-the-go, at desk, in meetings), and what they're trying to accomplish.</div>
+            </div>
+
+            <!-- Section 5: User Flow + Key Screens -->
+            <div class="question-section" data-section="5">
+                <div class="section-label">Experience</div>
+                <div class="question">Walk through the main user flow, step by step</div>
+                <div class="hint">Describe what happens from the moment the user opens the app to completing their goal</div>
+                <textarea id="primaryFlow" placeholder="1. User opens the app and sees their dashboard&#10;2. User clicks 'New Report' and selects a date range&#10;3. App pulls data and generates a draft report&#10;4. User reviews, edits highlights, and adds commentary&#10;5. User exports as PDF or shares via link"></textarea>
+
+                <div class="question" style="margin-top: 1.5rem;">What are the key screens or views?</div>
+                <div class="hint">List every distinct screen the user will encounter</div>
+                <div class="multi-input" id="keyScreensContainer">
+                    <div class="multi-input-item">
+                        <input type="text" class="key-screen" placeholder="e.g., Dashboard / Home">
+                        <button class="btn-remove" onclick="removeInput(this)" style="display: none;">&times;</button>
+                    </div>
+                </div>
+                <button class="btn-add" onclick="addKeyScreen()">+ Add screen</button>
+            </div>
+
+            <!-- Section 6: Features + Interactions -->
+            <div class="question-section" data-section="6">
+                <div class="section-label">Features</div>
+                <div class="question">What are the must-have features?</div>
+                <div class="hint">List each feature with enough detail that a developer could build it. Include what happens on click, what data is shown, and how errors are handled.</div>
+                <div class="multi-input" id="coreFeaturesContainer">
+                    <div class="multi-input-item">
+                        <textarea class="core-feature" placeholder="e.g., Search with filters: user types a query, results appear in real-time. Filters for date, category, and status. Show 'No results found' with suggestions when empty." style="min-height: 80px;"></textarea>
+                    </div>
+                </div>
+                <button class="btn-add" onclick="addCoreFeature()">+ Add feature</button>
+
+                <div class="question" style="margin-top: 1.5rem;">Any AI-powered features?</div>
+                <div class="hint">Describe any features that should use AI (summarization, generation, classification, recommendations, etc.)</div>
+                <textarea id="aiFeatures" placeholder="e.g., Auto-generate report summaries from raw data, suggest tags for new entries based on content, natural language search across all documents"></textarea>
+            </div>
+
+            <!-- Section 7: Technical -->
+            <div class="question-section" data-section="7">
+                <div class="section-label">Technical</div>
+                <div class="question">What data does the app need to work with?</div>
+                <div class="hint">Describe the key data objects, even informally. What gets created, stored, or displayed?</div>
+                <textarea id="dataModel" placeholder="e.g., Users have a name, email, and role. Projects have a title, status, and list of tasks. Each task has a title, assignee, due date, priority, and status."></textarea>
+
+                <div class="question" style="margin-top: 1.5rem;">Any APIs, integrations, or external data sources?</div>
+                <div class="hint">External services, authentication, data sources. Note what can be mocked for the prototype.</div>
+                <textarea id="integrations" placeholder="e.g., Pull data from Slack API (can be mocked with sample data), OAuth login with Google (simplify to email/password for prototype)"></textarea>
+
+                <div class="question" style="margin-top: 1.5rem;">Technology preferences?</div>
+                <div class="hint">Choose based on complexity. Simple apps work great with plain HTML/CSS/JS.</div>
+                <select id="techStack">
+                    <option value="">No preference, let Claude decide</option>
+                    <option value="HTML/CSS/JavaScript, single file, no build step">HTML/CSS/JS (simple, no build step)</option>
+                    <option value="React with Tailwind CSS">React + Tailwind CSS</option>
+                    <option value="Next.js with TypeScript">Next.js + TypeScript</option>
+                    <option value="Vue.js">Vue.js</option>
+                    <option value="Svelte">Svelte</option>
+                    <option value="Python with Flask or FastAPI">Python (Flask / FastAPI)</option>
+                </select>
+            </div>
+
+            <!-- Section 8: Design -->
+            <div class="question-section" data-section="8">
+                <div class="section-label">Design</div>
+                <div class="question">What visual style are you going for?</div>
+                <div class="hint">Describe the mood and aesthetic. References to known products work well.</div>
+                <input type="text" id="visualStyle" placeholder="e.g., Clean and modern like Linear, with plenty of whitespace">
+
+                <div class="question" style="margin-top: 1.5rem;">Color preferences?</div>
+                <div class="hint">Specific hex codes, general direction, or a brand to reference</div>
+                <input type="text" id="colorPalette" placeholder="e.g., Dark mode with electric blue accents, or 'warm earth tones'">
+
+                <div class="question" style="margin-top: 1.5rem;">Layout priorities</div>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="responsive" checked>
+                        <label for="responsive">Responsive (works on all screen sizes)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="mobileFocused">
+                        <label for="mobileFocused">Mobile-first (optimize for phones)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="desktopFocused">
+                        <label for="desktopFocused">Desktop-focused (complex layouts, data-dense)</label>
+                    </div>
+                </div>
+
+                <div class="question" style="margin-top: 1rem;">Design references or inspiration?</div>
+                <input type="text" id="designReferences" placeholder="e.g., Notion's clean sidebar navigation, Stripe's documentation layout">
+
+                <div class="question" style="margin-top: 1.5rem;">Sample content and data</div>
+                <div class="hint">Provide realistic example data, button labels, and key copy the prototype should use</div>
+                <textarea id="sampleContent" placeholder="e.g., Main CTA: 'Generate Report'&#10;Dashboard greeting: 'Good morning, [Name]'&#10;Sample project: 'Q1 Marketing Campaign' with 12 tasks, 3 overdue&#10;Empty state: 'No projects yet. Create your first one to get started.'"></textarea>
+            </div>
+
+            <!-- Section 9: Scope -->
+            <div class="question-section" data-section="9">
+                <div class="section-label">Scope</div>
+                <div class="question">What's explicitly NOT included in this prototype?</div>
+                <div class="hint">Setting boundaries prevents scope creep and helps Claude focus on what matters</div>
+                <div class="multi-input" id="outOfScopeContainer">
+                    <div class="multi-input-item">
+                        <input type="text" class="out-of-scope" placeholder="e.g., Real authentication (mock it)">
+                        <button class="btn-remove" onclick="removeInput(this)" style="display: none;">&times;</button>
+                    </div>
+                </div>
+                <button class="btn-add" onclick="addOutOfScope()">+ Add item</button>
+
+                <div class="question" style="margin-top: 1.5rem;">Any constraints or requirements?</div>
+                <div class="hint">Accessibility needs, performance targets, specific browser support, offline capability, etc.</div>
+                <textarea id="constraints" placeholder="e.g., Must work in Chrome and Safari, should load in under 2 seconds, needs to be accessible (WCAG AA)"></textarea>
+            </div>
+
+            <!-- Section 10: Success -->
+            <div class="question-section" data-section="10">
+                <div class="section-label">Success</div>
+                <div class="question">What does success look like for this prototype?</div>
+                <div class="hint">How will you know the prototype achieved its goal? Be concrete.</div>
+                <textarea id="successCriteria" placeholder="e.g., A user can complete the core flow (create report, customize, export) in under 2 minutes without guidance. Stakeholders understand the value proposition within 30 seconds of seeing it."></textarea>
+
+                <div class="question" style="margin-top: 1.5rem;">Anything else Claude should know?</div>
+                <div class="hint">Edge cases, assumptions, inspiration, prior attempts, or context that doesn't fit elsewhere</div>
+                <textarea id="additionalNotes" placeholder="e.g., We tried building this with Retool but it was too rigid. The key insight is that users want to customize the report layout, not just the data. Previous user interviews showed that PDF export is the most requested feature."></textarea>
+            </div>
+
+            <!-- Navigation -->
+            <div class="button-group">
+                <button class="btn-nav btn-prev" id="prevBtn" onclick="previousSection()" disabled>Previous</button>
+                <button class="btn-nav btn-next" id="nextBtn" onclick="nextSection()">Next</button>
+            </div>
+
+            <div class="skip-link">
+                <a href="#" onclick="skipToEnd(); return false;">Skip to end and generate blueprint</a>
+            </div>
+        </div>
+
+        <!-- Output -->
+        <div class="card" id="outputSection" style="display: none;">
+            <div class="output-header">
+                <h2>Your Claude Code prompt is ready</h2>
+                <p>Blueprint generated a tailor-made prompt optimized for Claude Code</p>
+            </div>
+
+            <div class="output-instructions">
+                <h3>Paste it into Claude Code</h3>
+                <p>This is a complete, ready-to-use prompt, not a document. It uses XML tags that Claude Code parses reliably, puts the build instruction first, and structures specs in the order Claude processes most effectively.</p>
+                <p><strong>Copy it, open Claude Code, and paste.</strong> No extra message needed. Just send it and Claude will start building.</p>
+            </div>
+
+            <div class="prd-output" id="prdOutput"></div>
+
+            <button class="btn-copy" onclick="copyPRD()">Copy prompt to clipboard</button>
+
+            <div class="export-options">
+                <h3>Export</h3>
+                <div class="export-buttons">
+                    <button class="btn-export-format" onclick="exportAsMarkdown()">Markdown</button>
+                    <button class="btn-export-format" onclick="exportAsText()">Text</button>
+                    <button class="btn-export-format" onclick="exportAsJSON()">JSON</button>
+                    <button class="btn-export-format" onclick="savePRDToLibrary()">Save to Library</button>
+                </div>
+            </div>
+
+            <div id="saveSuccess" style="display: none;" class="save-success">Blueprint saved to library</div>
+
+            <div class="completion-next">
+                <strong>Next:</strong> Open Claude Code, paste, send. That's it.
+            </div>
+
+            <div class="button-group" style="margin-top: 1.5rem;">
+                <button class="btn-nav btn-prev" onclick="startOver()">Start Over</button>
+                <button class="btn-nav btn-next" onclick="editPRD()">Edit Answers</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Blueprint by <a href="https://andreaswillemse.nl" target="_blank">Andreas Willemse</a></p>
+        </footer>
+    </div>
+
+    <script>
+        let currentSection = 1;
+        const totalSections = 10;
+        const prdData = {};
+        let autosaveTimeout;
+
+        function updateProgress() {
+            const progress = (currentSection / totalSections) * 100;
+            const bar = document.getElementById('progressBar');
+            const pct = document.getElementById('progressPercentage');
+            const stepDisplay = document.getElementById('currentStepDisplay');
+
+            if (bar) bar.style.width = progress + '%';
+            if (pct) pct.textContent = Math.round(progress) + '%';
+            if (stepDisplay) stepDisplay.textContent = currentSection;
+
+            document.querySelectorAll('.progress-step').forEach((step, i) => {
+                const num = i + 1;
+                step.classList.remove('active', 'completed');
+                if (num < currentSection) step.classList.add('completed');
+                else if (num === currentSection) step.classList.add('active');
+            });
+
+            updateNavDots();
+        }
+
+        function updateNavDots() {
+            const container = document.getElementById('sectionNavDots');
+            if (!container) return;
+            container.innerHTML = '';
+            for (let i = 1; i <= totalSections; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'nav-dot';
+                if (i < currentSection) dot.classList.add('completed');
+                else if (i === currentSection) dot.classList.add('active');
+                dot.onclick = () => jumpToSection(i);
+                dot.title = `Step ${i}`;
+                container.appendChild(dot);
+            }
+        }
+
+        function jumpToSection(num) {
+            if (num >= 1 && num <= totalSections) {
+                saveCurrentSection();
+                currentSection = num;
+                showSection(currentSection);
+                updateProgress();
+            }
+        }
+
+        function triggerAutosave() {
+            clearTimeout(autosaveTimeout);
+            autosaveTimeout = setTimeout(() => {
+                saveCurrentSection();
+                showAutosaveIndicator();
+                localStorage.setItem('blueprintDraft', JSON.stringify({
+                    data: prdData,
+                    section: currentSection,
+                    timestamp: new Date().toISOString()
+                }));
+            }, 2000);
+        }
+
+        function showAutosaveIndicator() {
+            const el = document.getElementById('autosaveIndicator');
+            el.classList.add('show');
+            setTimeout(() => el.classList.remove('show'), 2000);
+        }
+
+        function setupAutosave() {
+            document.querySelectorAll('input, textarea, select').forEach(el => {
+                el.addEventListener('input', triggerAutosave);
+                el.addEventListener('change', triggerAutosave);
+            });
+        }
+
+        function loadDraft() {
+            const draft = localStorage.getItem('blueprintDraft');
+            if (draft) {
+                const parsed = JSON.parse(draft);
+                const mins = (new Date() - new Date(parsed.timestamp)) / 1000 / 60;
+                if (mins < 1440 && confirm('Found a draft from ' + new Date(parsed.timestamp).toLocaleString() + '. Continue where you left off?')) {
+                    Object.assign(prdData, parsed.data);
+                    currentSection = parsed.section;
+                    Object.keys(prdData).forEach(key => {
+                        const el = document.getElementById(key);
+                        if (el) {
+                            if (el.type === 'checkbox') el.checked = prdData[key];
+                            else el.value = prdData[key];
+                        }
+                    });
+                    showSection(currentSection);
+                    updateProgress();
+                }
+            }
+        }
+
+        function showSection(num) {
+            document.querySelectorAll('.question-section').forEach(s => s.classList.remove('active'));
+            const active = document.querySelector(`.question-section[data-section="${num}"]`);
+            if (active) active.classList.add('active');
+
+            const prev = document.getElementById('prevBtn');
+            const next = document.getElementById('nextBtn');
+            if (prev) prev.disabled = num === 1;
+            if (next) next.textContent = num === totalSections ? 'Generate Blueprint' : 'Next';
+
+            // Scroll the section label into view so the question is visible
+            // but not pinned to the very top, gives spatial context
+            setTimeout(() => {
+                if (active) {
+                    const label = active.querySelector('.section-label') || active;
+                    label.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Focus input after scroll settles
+                    setTimeout(() => {
+                        const input = active.querySelector('input, textarea, select');
+                        if (input) input.focus({ preventScroll: true });
+                    }, 350);
+                }
+            }, 50);
+        }
+
+        function nextSection() {
+            saveCurrentSection();
+            if (currentSection < totalSections) {
+                currentSection++;
+                showSection(currentSection);
+                updateProgress();
+            } else {
+                generatePRD();
+            }
+        }
+
+        function previousSection() {
+            if (currentSection > 1) {
+                currentSection--;
+                showSection(currentSection);
+                updateProgress();
+            }
+        }
+
+        function skipToEnd() {
+            saveCurrentSection();
+            currentSection = totalSections;
+            generatePRD();
+        }
+
+        function saveCurrentSection() {
+            document.querySelectorAll('input, textarea, select').forEach(input => {
+                if (input.type === 'checkbox') {
+                    prdData[input.id] = input.checked;
+                } else if (input.className && input.className.includes('-')) {
+                    // multi-inputs handled below
+                } else if (input.id) {
+                    prdData[input.id] = input.value;
+                }
+            });
+            prdData.keyScreens = Array.from(document.querySelectorAll('.key-screen')).map(el => el.value).filter(v => v);
+            prdData.coreFeatures = Array.from(document.querySelectorAll('.core-feature')).map(el => el.value).filter(v => v);
+            prdData.outOfScope = Array.from(document.querySelectorAll('.out-of-scope')).map(el => el.value).filter(v => v);
+        }
+
+        function generatePRD() {
+            saveCurrentSection();
+
+            let layoutPrefs = [];
+            if (prdData.responsive) layoutPrefs.push('Responsive');
+            if (prdData.mobileFocused) layoutPrefs.push('Mobile-first');
+            if (prdData.desktopFocused) layoutPrefs.push('Desktop-focused');
+            const layoutText = layoutPrefs.length > 0 ? layoutPrefs.join(', ') : 'Flexible';
+
+            const techLine = prdData.techStack ? prdData.techStack : 'Choose the best technology for this project. For simple apps, use a single HTML file with inline CSS and JS. For complex apps, use React or Next.js.';
+
+            const prd = `Build a fully working, interactive prototype of "${prdData.productName || '[Product Name]'}". Read the full specification below before writing any code. Implement every screen and feature described. Use realistic sample data throughout. Never use lorem ipsum or placeholder text.
+
+<product>
+<name>${prdData.productName || '[Product Name]'}</name>
+<goal>${prdData.prototypeGoal || 'Build a working prototype'}</goal>
+<problem>
+${prdData.problemStatement || '[Problem description]'}
+</problem>
+<solution>
+${prdData.proposedSolution || '[Solution description]'}
+</solution>
+<users>
+${prdData.targetUsers || '[Target user description]'}
+</users>
+</product>
+
+<technical>
+<stack>${techLine}</stack>
+<data-model>
+${prdData.dataModel || 'Infer a sensible data model from the features described below.'}
+</data-model>
+<integrations>
+${prdData.integrations || 'No external integrations. Mock any data sources with realistic static data.'}
+</integrations>
+</technical>
+
+<features>
+${prdData.coreFeatures && prdData.coreFeatures.length > 0 ? prdData.coreFeatures.map((f, i) => `<feature priority="${i + 1}">\n${f}\n</feature>`).join('\n\n') : '<feature priority="1">[Define core features]</feature>'}
+${prdData.aiFeatures ? `\n<ai-features>\n${prdData.aiFeatures}\n</ai-features>` : ''}
+</features>
+
+<user-flow>
+Implement this exact flow. Each step must work end-to-end:
+
+${prdData.primaryFlow || '[User flow steps]'}
+</user-flow>
+
+<screens>
+Build each of these screens as fully functional views:
+
+${prdData.keyScreens && prdData.keyScreens.length > 0 ? prdData.keyScreens.map((s, i) => `${i + 1}. ${s}`).join('\n') : '[Key screens]'}
+</screens>
+
+<design>
+<style>${prdData.visualStyle || 'Clean, modern, professional'}</style>
+<colors>${prdData.colorPalette || 'Use a professional, accessible color palette'}</colors>
+<layout>${layoutText}</layout>
+${prdData.designReferences ? `<references>${prdData.designReferences}</references>` : ''}
+
+Apply these design principles:
+- Clear visual hierarchy with consistent spacing
+- Accessible contrast ratios (WCAG AA minimum)
+- Smooth transitions for state changes (300ms ease)
+- Hover and focus states on all interactive elements
+- Empty states, loading states, and error states for every view
+</design>
+
+<sample-data>
+Use this content and data in the prototype. Do not use generic placeholders:
+
+${prdData.sampleContent || 'Generate realistic sample data that matches the product domain.'}
+</sample-data>
+
+<scope>
+<out-of-scope>
+Do NOT build these. Skip or mock them:
+${prdData.outOfScope && prdData.outOfScope.length > 0 ? prdData.outOfScope.map(item => `- ${item}`).join('\n') : '- [Nothing explicitly excluded]'}
+</out-of-scope>
+${prdData.constraints ? `<constraints>\n${prdData.constraints}\n</constraints>` : ''}
+</scope>
+
+<acceptance-criteria>
+The prototype is complete when:
+${prdData.successCriteria || '- A user can complete the primary flow end-to-end without errors'}
+</acceptance-criteria>
+${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>` : ''}`;
+
+            document.getElementById('prdOutput').textContent = prd;
+            document.getElementById('mainCard').style.display = 'none';
+            const outputEl = document.getElementById('outputSection');
+            outputEl.style.display = 'block';
+            setTimeout(() => outputEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+        }
+
+        function copyPRD() {
+            const text = document.getElementById('prdOutput').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.target;
+                const orig = btn.textContent;
+                btn.textContent = 'Copied!';
+                btn.style.background = 'var(--forest-light)';
+                setTimeout(() => {
+                    btn.textContent = orig;
+                    btn.style.background = '';
+                }, 2000);
+            });
+        }
+
+        function editPRD() {
+            const mainCard = document.getElementById('mainCard');
+            mainCard.style.display = 'block';
+            document.getElementById('outputSection').style.display = 'none';
+            setTimeout(() => {
+                const active = mainCard.querySelector('.question-section.active');
+                const target = active ? (active.querySelector('.section-label') || active) : mainCard;
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 50);
+        }
+
+        function startOver() {
+            if (confirm('Start fresh? This clears all your answers and any saved draft.')) {
+                localStorage.removeItem('blueprintDraft');
+                location.reload();
+            }
+        }
+
+        function addKeyScreen() {
+            const container = document.getElementById('keyScreensContainer');
+            const div = document.createElement('div');
+            div.className = 'multi-input-item';
+            div.innerHTML = `<input type="text" class="key-screen" placeholder="e.g., Settings page"><button class="btn-remove" onclick="removeInput(this)">&times;</button>`;
+            container.appendChild(div);
+            updateRemoveButtons('keyScreensContainer');
+        }
+
+        function addCoreFeature() {
+            const container = document.getElementById('coreFeaturesContainer');
+            const div = document.createElement('div');
+            div.className = 'multi-input-item';
+            div.innerHTML = `<textarea class="core-feature" placeholder="e.g., Feature name: detailed description of behavior" style="min-height: 80px;"></textarea>`;
+            container.appendChild(div);
+        }
+
+        function addOutOfScope() {
+            const container = document.getElementById('outOfScopeContainer');
+            const div = document.createElement('div');
+            div.className = 'multi-input-item';
+            div.innerHTML = `<input type="text" class="out-of-scope" placeholder="e.g., Payment processing"><button class="btn-remove" onclick="removeInput(this)">&times;</button>`;
+            container.appendChild(div);
+            updateRemoveButtons('outOfScopeContainer');
+        }
+
+        function removeInput(button) {
+            button.parentElement.remove();
+        }
+
+        function updateRemoveButtons(containerId) {
+            const container = document.getElementById(containerId);
+            const items = container.querySelectorAll('.multi-input-item');
+            items.forEach(item => {
+                const btn = item.querySelector('.btn-remove');
+                if (btn) btn.style.display = items.length > 1 ? 'block' : 'none';
+            });
+        }
+
+        // Library
+        function loadLibrary() {
+            const library = JSON.parse(localStorage.getItem('blueprintLibrary') || '[]');
+            const content = document.getElementById('libraryContent');
+            if (!content) return;
+
+            if (library.length === 0) {
+                content.innerHTML = `<div class="empty-state"><h3>No blueprints yet</h3><p>Complete your first blueprint to start your library.</p></div>`;
+                return;
+            }
+
+            content.innerHTML = library.map((prd, i) => `
+                <div class="prd-card">
+                    <div class="prd-card-header">
+                        <div>
+                            <div class="prd-card-title">${prd.productName || 'Untitled'}</div>
+                            <div class="prd-card-date">${new Date(prd.date).toLocaleDateString()}</div>
+                        </div>
+                        <div class="prd-card-actions">
+                            <button class="btn btn-small btn-forest" onclick="viewPRD(${i})"><span>View</span></button>
+                            <button class="btn btn-small" onclick="exportPRDFromLibrary(${i})"><span>Export</span></button>
+                            <button class="btn btn-small" onclick="deletePRD(${i})" style="border-color: #c0392b; color: #c0392b;"><span>Delete</span></button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleLibrary() {
+            loadLibrary();
+            document.getElementById('libraryModal').classList.add('active');
+        }
+
+        function closeLibrary() {
+            document.getElementById('libraryModal').classList.remove('active');
+        }
+
+        function savePRDToLibrary() {
+            const library = JSON.parse(localStorage.getItem('blueprintLibrary') || '[]');
+            library.unshift({
+                ...prdData,
+                date: new Date().toISOString(),
+                prdText: document.getElementById('prdOutput').textContent
+            });
+            localStorage.setItem('blueprintLibrary', JSON.stringify(library));
+
+            const msg = document.getElementById('saveSuccess');
+            msg.style.display = 'block';
+            setTimeout(() => msg.style.display = 'none', 3000);
+            loadLibrary();
+        }
+
+        function viewPRD(index) {
+            const library = JSON.parse(localStorage.getItem('blueprintLibrary') || '[]');
+            document.getElementById('prdOutput').textContent = library[index].prdText;
+            closeLibrary();
+            document.getElementById('mainCard').style.display = 'none';
+            const outputEl = document.getElementById('outputSection');
+            outputEl.style.display = 'block';
+            setTimeout(() => outputEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+        }
+
+        function deletePRD(index) {
+            if (confirm('Delete this blueprint?')) {
+                const library = JSON.parse(localStorage.getItem('blueprintLibrary') || '[]');
+                library.splice(index, 1);
+                localStorage.setItem('blueprintLibrary', JSON.stringify(library));
+                loadLibrary();
+            }
+        }
+
+        function exportPRDFromLibrary(index) {
+            const library = JSON.parse(localStorage.getItem('blueprintLibrary') || '[]');
+            const prd = library[index];
+            downloadFile(prd.prdText, `${prd.productName || 'blueprint'}.md`, 'text/markdown');
+        }
+
+        function exportAsMarkdown() {
+            downloadFile(document.getElementById('prdOutput').textContent, `${prdData.productName || 'blueprint'}.md`, 'text/markdown');
+        }
+
+        function exportAsText() {
+            downloadFile(document.getElementById('prdOutput').textContent, `${prdData.productName || 'blueprint'}.txt`, 'text/plain');
+        }
+
+        function exportAsJSON() {
+            downloadFile(JSON.stringify(prdData, null, 2), `${prdData.productName || 'blueprint'}.json`, 'application/json');
+        }
+
+        function downloadFile(content, filename, mimeType) {
+            const blob = new Blob([content], { type: mimeType });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function toggleShortcuts() {
+            document.getElementById('shortcutsPanel').classList.toggle('show');
+        }
+
+        function handleKeyboardShortcuts(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'ArrowRight') {
+                e.preventDefault();
+                if (currentSection < totalSections) nextSection();
+            }
+            if ((e.ctrlKey || e.metaKey) && e.key === 'ArrowLeft') {
+                e.preventDefault();
+                if (currentSection > 1) previousSection();
+            }
+            if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+                e.preventDefault();
+                const out = document.getElementById('outputSection');
+                if (out && out.style.display !== 'none') savePRDToLibrary();
+            }
+            if ((e.ctrlKey || e.metaKey) && e.key === 'l') {
+                e.preventDefault();
+                toggleLibrary();
+            }
+            if (e.key === 'Escape') {
+                closeLibrary();
+                const panel = document.getElementById('shortcutsPanel');
+                if (panel && panel.classList.contains('show')) toggleShortcuts();
+            }
+        }
+
+        // Init
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgress();
+            loadLibrary();
+            setupAutosave();
+            loadDraft();
+            updateNavDots();
+            document.addEventListener('keydown', handleKeyboardShortcuts);
+
+            document.querySelectorAll('.progress-step').forEach((step, i) => {
+                step.addEventListener('click', () => jumpToSection(i + 1));
+            });
+
+            document.getElementById('libraryModal').addEventListener('click', function(e) {
+                if (e.target === this) closeLibrary();
+            });
+        });
+    </script>
+</body>
+</html>
