@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blueprint - Prompt Generator for Claude Code | Andreas Willemse</title>
-    <meta name="description" content="Answer a few questions about what you want to build. Blueprint turns your answers into a structured, ready-to-paste Claude Code prompt.">
+    <title>Blueprint - Promptgenerator voor Claude Code | Andreas Willemse</title>
+    <meta name="description" content="Beantwoord een paar vragen over wat je wilt bouwen. Blueprint maakt van je antwoorden een gestructureerde, kant-en-klare Claude Code prompt.">
     <meta name="author" content="Andreas Willemse">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://andreaswillemse.nl/en/tools/blueprint/">
+    <link rel="canonical" href="https://andreaswillemse.nl/tools/blueprint/">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://andreaswillemse.nl/en/tools/blueprint/">
-    <meta property="og:title" content="Blueprint - Prompt Generator for Claude Code">
-    <meta property="og:description" content="Answer a few questions about what you want to build. Blueprint turns your answers into a structured, ready-to-paste Claude Code prompt.">
-    <meta property="og:locale" content="en_GB">
+    <meta property="og:url" content="https://andreaswillemse.nl/tools/blueprint/">
+    <meta property="og:title" content="Blueprint - Promptgenerator voor Claude Code">
+    <meta property="og:description" content="Beantwoord een paar vragen over wat je wilt bouwen. Blueprint maakt van je antwoorden een gestructureerde, kant-en-klare Claude Code prompt.">
+    <meta property="og:locale" content="nl_NL">
     <meta property="og:site_name" content="Andreas Willemse">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231a3a2e'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='%23fafafa' font-family='monospace' font-weight='bold'>AW</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -1069,21 +1069,21 @@
     <!-- Navigation -->
     <nav style="position:fixed;top:0;left:0;width:100%;background:rgba(250,250,250,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);z-index:1000;padding:1.2rem var(--spacing);">
         <div style="max-width:720px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;">
-            <a href="/en/" style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.2rem;letter-spacing:-0.02em;color:var(--black);text-decoration:none;">AW</a>
+            <a href="/" style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.2rem;letter-spacing:-0.02em;color:var(--black);text-decoration:none;">AW</a>
             <div style="display:flex;gap:1.5rem;align-items:center;">
-                <a href="/en/#tools" style="font-family:'Space Mono',monospace;font-size:0.75rem;color:var(--forest);text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;">&larr; Back to site</a>
-                <a href="/tools/blueprint/" style="font-family:'Space Mono',monospace;font-size:0.75rem;color:var(--forest);text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;border-left:1px solid var(--border);padding-left:1.5rem;">NL</a>
+                <a href="/#tools" style="font-family:'Space Mono',monospace;font-size:0.75rem;color:var(--forest);text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;">&larr; Terug naar site</a>
+                <a href="/en/tools/blueprint/" style="font-family:'Space Mono',monospace;font-size:0.75rem;color:var(--forest);text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;border-left:1px solid var(--border);padding-left:1.5rem;">EN</a>
             </div>
         </div>
     </nav>
 
     <div class="container" style="padding-top:5rem;">
         <header class="header">
-            <div class="header-label">Prompt generator for Claude Code</div>
+            <div class="header-label">Promptgenerator voor Claude Code</div>
             <h1><span class="blue">Blue</span>print</h1>
-            <p>Answer a few questions about what you want to build. Blueprint turns your answers into a tailor-made Claude Code prompt, structured and ready to paste.</p>
+            <p>Beantwoord een paar vragen over wat je wilt bouwen. Blueprint maakt van je antwoorden een op maat gemaakte Claude Code prompt, gestructureerd en klaar om te plakken.</p>
             <div class="header-actions">
-                <button class="btn btn-forest" onclick="toggleLibrary()"><span>Library</span></button>
+                <button class="btn btn-forest" onclick="toggleLibrary()"><span>Bibliotheek</span></button>
             </div>
         </header>
 
@@ -1091,13 +1091,13 @@
         <div class="modal" id="libraryModal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>Saved Blueprints</h2>
+                    <h2>Opgeslagen Blueprints</h2>
                     <button class="btn-close" onclick="closeLibrary()">&times;</button>
                 </div>
                 <div class="modal-body" id="libraryContent">
                     <div class="empty-state">
-                        <h3>No blueprints yet</h3>
-                        <p>Complete your first blueprint to start your library.</p>
+                        <h3>Nog geen blueprints</h3>
+                        <p>Maak je eerste blueprint af om je bibliotheek te starten.</p>
                     </div>
                 </div>
             </div>
@@ -1106,7 +1106,7 @@
         <!-- Progress -->
         <div class="progress-wrapper">
             <div class="progress-top">
-                <div class="progress-label">Progress</div>
+                <div class="progress-label">Voortgang</div>
                 <div class="progress-percentage" id="progressPercentage">0%</div>
             </div>
             <div class="progress-bar-track">
@@ -1115,19 +1115,19 @@
             <div class="progress-steps" id="progressSteps">
                 <div class="progress-step" data-section="1">
                     <div class="progress-step-dot"></div>
-                    <span class="progress-step-label">Name</span>
+                    <span class="progress-step-label">Naam</span>
                 </div>
                 <div class="progress-step" data-section="2">
                     <div class="progress-step-dot"></div>
-                    <span class="progress-step-label">Problem</span>
+                    <span class="progress-step-label">Probleem</span>
                 </div>
                 <div class="progress-step" data-section="3">
                     <div class="progress-step-dot"></div>
-                    <span class="progress-step-label">Solution</span>
+                    <span class="progress-step-label">Oplossing</span>
                 </div>
                 <div class="progress-step" data-section="4">
                     <div class="progress-step-dot"></div>
-                    <span class="progress-step-label">Users</span>
+                    <span class="progress-step-label">Gebruikers</span>
                 </div>
                 <div class="progress-step" data-section="5">
                     <div class="progress-step-dot"></div>
@@ -1151,41 +1151,41 @@
                 </div>
                 <div class="progress-step" data-section="10">
                     <div class="progress-step-dot"></div>
-                    <span class="progress-step-label">Done</span>
+                    <span class="progress-step-label">Klaar</span>
                 </div>
             </div>
         </div>
 
         <!-- Autosave -->
-        <div class="autosave-indicator" id="autosaveIndicator">Saved</div>
+        <div class="autosave-indicator" id="autosaveIndicator">Opgeslagen</div>
 
         <!-- Shortcuts -->
         <div class="shortcuts-toggle" id="shortcutsToggle" onclick="toggleShortcuts()">?</div>
         <div class="shortcuts-panel" id="shortcutsPanel">
             <div class="shortcuts-header">
-                <h3>Keyboard Shortcuts</h3>
+                <h3>Sneltoetsen</h3>
                 <button class="btn-close" onclick="toggleShortcuts()">&times;</button>
             </div>
             <div class="shortcuts-list">
                 <div class="shortcut-item">
                     <kbd>Ctrl/Cmd + &rarr;</kbd>
-                    <span>Next</span>
+                    <span>Volgende</span>
                 </div>
                 <div class="shortcut-item">
                     <kbd>Ctrl/Cmd + &larr;</kbd>
-                    <span>Previous</span>
+                    <span>Vorige</span>
                 </div>
                 <div class="shortcut-item">
                     <kbd>Ctrl/Cmd + S</kbd>
-                    <span>Save</span>
+                    <span>Opslaan</span>
                 </div>
                 <div class="shortcut-item">
                     <kbd>Ctrl/Cmd + L</kbd>
-                    <span>Library</span>
+                    <span>Bibliotheek</span>
                 </div>
                 <div class="shortcut-item">
                     <kbd>Esc</kbd>
-                    <span>Close</span>
+                    <span>Sluiten</span>
                 </div>
             </div>
         </div>
@@ -1193,108 +1193,108 @@
         <!-- Main Card -->
         <div class="card" id="mainCard">
             <div class="section-nav">
-                <div class="section-nav-title">Step <span id="currentStepDisplay">1</span> of 10</div>
+                <div class="section-nav-title">Stap <span id="currentStepDisplay">1</span> van 10</div>
                 <div class="section-nav-dots" id="sectionNavDots"></div>
             </div>
 
             <!-- Section 1: Product Name -->
             <div class="question-section active" data-section="1">
-                <div class="section-label">Overview</div>
-                <div class="question">What's the name of your product or feature?</div>
-                <div class="hint">A clear, descriptive name helps Claude understand what it's building</div>
-                <input type="text" id="productName" placeholder="e.g., Task Priority Dashboard">
-                <div class="example">Examples: "Smart Recipe Finder", "Team Standup Bot", "Expense Tracker"</div>
+                <div class="section-label">Overzicht</div>
+                <div class="question">Wat is de naam van je product of feature?</div>
+                <div class="hint">Een duidelijke, beschrijvende naam helpt Claude te begrijpen wat het moet bouwen</div>
+                <input type="text" id="productName" placeholder="bijv. Taakprioriteit Dashboard">
+                <div class="example">Voorbeelden: "Slim Recept Zoeker", "Team Standup Bot", "Uitgaven Tracker"</div>
             </div>
 
             <!-- Section 2: Problem -->
             <div class="question-section" data-section="2">
-                <div class="section-label">Overview</div>
-                <div class="question">What problem does this solve?</div>
-                <div class="hint">Be specific about who has this problem and why current solutions fall short</div>
-                <textarea id="problemStatement" placeholder="e.g., Project managers waste 30+ minutes each morning manually checking task statuses across multiple tools to identify blockers..."></textarea>
-                <div class="example">Good: "Freelancers lose track of billable hours because switching between timer apps and invoicing tools is cumbersome." Avoid vague statements like "it's hard to manage things."</div>
+                <div class="section-label">Overzicht</div>
+                <div class="question">Welk probleem lost dit op?</div>
+                <div class="hint">Wees specifiek over wie dit probleem heeft en waarom huidige oplossingen tekortschieten</div>
+                <textarea id="problemStatement" placeholder="bijv. Projectmanagers verspillen elke ochtend 30+ minuten aan het handmatig checken van taakstatussen in meerdere tools om blokkades te identificeren..."></textarea>
+                <div class="example">Goed: "Freelancers verliezen het overzicht over declarabele uren omdat schakelen tussen timer-apps en facturatietools omslachtig is." Vermijd vage uitspraken zoals "het is lastig om dingen te beheren."</div>
             </div>
 
             <!-- Section 3: Solution + Goal -->
             <div class="question-section" data-section="3">
-                <div class="section-label">Overview</div>
-                <div class="question">How does your product solve this?</div>
-                <div class="hint">Describe the core approach in 2-3 sentences</div>
-                <textarea id="proposedSolution" placeholder="e.g., A visual dashboard that pulls task data from project tools and automatically highlights blockers, dependencies, and overdue items in a single view..."></textarea>
+                <div class="section-label">Overzicht</div>
+                <div class="question">Hoe lost jouw product dit op?</div>
+                <div class="hint">Beschrijf de kernoplossing in 2-3 zinnen</div>
+                <textarea id="proposedSolution" placeholder="bijv. Een visueel dashboard dat taakdata uit projecttools haalt en automatisch blokkades, afhankelijkheden en achterstallige items markeert in een enkel overzicht..."></textarea>
 
-                <div class="question" style="margin-top: 1.5rem;">What's the goal of this prototype?</div>
-                <div class="hint">This shapes how detailed the output needs to be</div>
+                <div class="question" style="margin-top: 1.5rem;">Wat is het doel van dit prototype?</div>
+                <div class="hint">Dit bepaalt hoe gedetailleerd de output moet zijn</div>
                 <select id="prototypeGoal">
-                    <option value="">Select a goal...</option>
-                    <option value="Validate the core concept with real users">Validate the core concept with real users</option>
-                    <option value="Test usability and interaction patterns">Test usability and interaction patterns</option>
-                    <option value="Demonstrate the idea to stakeholders or investors">Demonstrate the idea to stakeholders or investors</option>
-                    <option value="Explore technical feasibility before committing">Explore technical feasibility before committing</option>
-                    <option value="Create a functional MVP to ship quickly">Create a functional MVP to ship quickly</option>
-                    <option value="Build an internal tool for my team">Build an internal tool for my team</option>
+                    <option value="">Kies een doel...</option>
+                    <option value="Validate the core concept with real users">Het kernconcept valideren met echte gebruikers</option>
+                    <option value="Test usability and interaction patterns">Bruikbaarheid en interactiepatronen testen</option>
+                    <option value="Demonstrate the idea to stakeholders or investors">Het idee demonstreren aan stakeholders of investeerders</option>
+                    <option value="Explore technical feasibility before committing">Technische haalbaarheid verkennen voor je je committeert</option>
+                    <option value="Create a functional MVP to ship quickly">Een functioneel MVP maken om snel te lanceren</option>
+                    <option value="Build an internal tool for my team">Een interne tool bouwen voor mijn team</option>
                 </select>
             </div>
 
             <!-- Section 4: Users -->
             <div class="question-section" data-section="4">
-                <div class="section-label">Users</div>
-                <div class="question">Who will use this and in what context?</div>
-                <div class="hint">Describe the primary users, their skill level, and when they'd reach for this product</div>
-                <textarea id="targetUsers" placeholder="e.g., Marketing managers at mid-size companies (50-200 people) who need to create weekly performance reports but don't have a data analyst on their team. Comfortable with spreadsheets but not SQL or BI tools."></textarea>
-                <div class="example">Think about: role, technical comfort level, context of use (on-the-go, at desk, in meetings), and what they're trying to accomplish.</div>
+                <div class="section-label">Gebruikers</div>
+                <div class="question">Wie gaat dit gebruiken en in welke context?</div>
+                <div class="hint">Beschrijf de primaire gebruikers, hun vaardigheidsniveau en wanneer ze naar dit product zouden grijpen</div>
+                <textarea id="targetUsers" placeholder="bijv. Marketingmanagers bij middelgrote bedrijven (50-200 medewerkers) die wekelijkse prestatierapporten moeten maken maar geen data-analist in hun team hebben. Vertrouwd met spreadsheets maar niet met SQL of BI-tools."></textarea>
+                <div class="example">Denk aan: rol, technisch comfortniveau, gebruikscontext (onderweg, aan het bureau, in vergaderingen), en wat ze proberen te bereiken.</div>
             </div>
 
             <!-- Section 5: User Flow + Key Screens -->
             <div class="question-section" data-section="5">
-                <div class="section-label">Experience</div>
-                <div class="question">Walk through the main user flow, step by step</div>
-                <div class="hint">Describe what happens from the moment the user opens the app to completing their goal</div>
-                <textarea id="primaryFlow" placeholder="1. User opens the app and sees their dashboard&#10;2. User clicks 'New Report' and selects a date range&#10;3. App pulls data and generates a draft report&#10;4. User reviews, edits highlights, and adds commentary&#10;5. User exports as PDF or shares via link"></textarea>
+                <div class="section-label">Ervaring</div>
+                <div class="question">Loop stap voor stap door de belangrijkste gebruikersflow</div>
+                <div class="hint">Beschrijf wat er gebeurt vanaf het moment dat de gebruiker de app opent tot het voltooien van het doel</div>
+                <textarea id="primaryFlow" placeholder="1. Gebruiker opent de app en ziet het dashboard&#10;2. Gebruiker klikt op 'Nieuw rapport' en selecteert een datumbereik&#10;3. App haalt data op en genereert een conceptrapport&#10;4. Gebruiker bekijkt, bewerkt highlights en voegt commentaar toe&#10;5. Gebruiker exporteert als PDF of deelt via link"></textarea>
 
-                <div class="question" style="margin-top: 1.5rem;">What are the key screens or views?</div>
-                <div class="hint">List every distinct screen the user will encounter</div>
+                <div class="question" style="margin-top: 1.5rem;">Wat zijn de belangrijkste schermen of weergaven?</div>
+                <div class="hint">Noem elk apart scherm dat de gebruiker tegenkomt</div>
                 <div class="multi-input" id="keyScreensContainer">
                     <div class="multi-input-item">
-                        <input type="text" class="key-screen" placeholder="e.g., Dashboard / Home">
+                        <input type="text" class="key-screen" placeholder="bijv. Dashboard / Home">
                         <button class="btn-remove" onclick="removeInput(this)" style="display: none;">&times;</button>
                     </div>
                 </div>
-                <button class="btn-add" onclick="addKeyScreen()">+ Add screen</button>
+                <button class="btn-add" onclick="addKeyScreen()">+ Scherm toevoegen</button>
             </div>
 
             <!-- Section 6: Features + Interactions -->
             <div class="question-section" data-section="6">
                 <div class="section-label">Features</div>
-                <div class="question">What are the must-have features?</div>
-                <div class="hint">List each feature with enough detail that a developer could build it. Include what happens on click, what data is shown, and how errors are handled.</div>
+                <div class="question">Wat zijn de onmisbare features?</div>
+                <div class="hint">Noem elke feature met genoeg detail zodat een ontwikkelaar het kan bouwen. Beschrijf wat er bij klik gebeurt, welke data wordt getoond en hoe fouten worden afgehandeld.</div>
                 <div class="multi-input" id="coreFeaturesContainer">
                     <div class="multi-input-item">
-                        <textarea class="core-feature" placeholder="e.g., Search with filters: user types a query, results appear in real-time. Filters for date, category, and status. Show 'No results found' with suggestions when empty." style="min-height: 80px;"></textarea>
+                        <textarea class="core-feature" placeholder="bijv. Zoeken met filters: gebruiker typt een zoekopdracht, resultaten verschijnen in real-time. Filters voor datum, categorie en status. Toon 'Geen resultaten gevonden' met suggesties wanneer leeg." style="min-height: 80px;"></textarea>
                     </div>
                 </div>
-                <button class="btn-add" onclick="addCoreFeature()">+ Add feature</button>
+                <button class="btn-add" onclick="addCoreFeature()">+ Feature toevoegen</button>
 
-                <div class="question" style="margin-top: 1.5rem;">Any AI-powered features?</div>
-                <div class="hint">Describe any features that should use AI (summarization, generation, classification, recommendations, etc.)</div>
-                <textarea id="aiFeatures" placeholder="e.g., Auto-generate report summaries from raw data, suggest tags for new entries based on content, natural language search across all documents"></textarea>
+                <div class="question" style="margin-top: 1.5rem;">AI-aangedreven features?</div>
+                <div class="hint">Beschrijf features die AI moeten gebruiken (samenvatting, generatie, classificatie, aanbevelingen, etc.)</div>
+                <textarea id="aiFeatures" placeholder="bijv. Automatisch rapportsamenvattingen genereren uit ruwe data, tags suggereren voor nieuwe items op basis van inhoud, zoeken in natuurlijke taal door alle documenten"></textarea>
             </div>
 
             <!-- Section 7: Technical -->
             <div class="question-section" data-section="7">
-                <div class="section-label">Technical</div>
-                <div class="question">What data does the app need to work with?</div>
-                <div class="hint">Describe the key data objects, even informally. What gets created, stored, or displayed?</div>
-                <textarea id="dataModel" placeholder="e.g., Users have a name, email, and role. Projects have a title, status, and list of tasks. Each task has a title, assignee, due date, priority, and status."></textarea>
+                <div class="section-label">Technisch</div>
+                <div class="question">Met welke data moet de app werken?</div>
+                <div class="hint">Beschrijf de belangrijkste data-objecten, ook informeel. Wat wordt aangemaakt, opgeslagen of getoond?</div>
+                <textarea id="dataModel" placeholder="bijv. Gebruikers hebben een naam, e-mail en rol. Projecten hebben een titel, status en lijst met taken. Elke taak heeft een titel, toegewezen persoon, deadline, prioriteit en status."></textarea>
 
-                <div class="question" style="margin-top: 1.5rem;">Any APIs, integrations, or external data sources?</div>
-                <div class="hint">External services, authentication, data sources. Note what can be mocked for the prototype.</div>
-                <textarea id="integrations" placeholder="e.g., Pull data from Slack API (can be mocked with sample data), OAuth login with Google (simplify to email/password for prototype)"></textarea>
+                <div class="question" style="margin-top: 1.5rem;">API's, integraties of externe databronnen?</div>
+                <div class="hint">Externe diensten, authenticatie, databronnen. Geef aan wat gemockt kan worden voor het prototype.</div>
+                <textarea id="integrations" placeholder="bijv. Data ophalen uit Slack API (kan gemockt worden met voorbeelddata), OAuth login met Google (vereenvoudig naar e-mail/wachtwoord voor prototype)"></textarea>
 
-                <div class="question" style="margin-top: 1.5rem;">Technology preferences?</div>
-                <div class="hint">Choose based on complexity. Simple apps work great with plain HTML/CSS/JS.</div>
+                <div class="question" style="margin-top: 1.5rem;">Technologievoorkeuren?</div>
+                <div class="hint">Kies op basis van complexiteit. Eenvoudige apps werken prima met gewone HTML/CSS/JS.</div>
                 <select id="techStack">
-                    <option value="">No preference, let Claude decide</option>
-                    <option value="HTML/CSS/JavaScript, single file, no build step">HTML/CSS/JS (simple, no build step)</option>
+                    <option value="">Geen voorkeur, laat Claude beslissen</option>
+                    <option value="HTML/CSS/JavaScript, single file, no build step">HTML/CSS/JS (eenvoudig, geen build stap)</option>
                     <option value="React with Tailwind CSS">React + Tailwind CSS</option>
                     <option value="Next.js with TypeScript">Next.js + TypeScript</option>
                     <option value="Vue.js">Vue.js</option>
@@ -1306,120 +1306,120 @@
             <!-- Section 8: Design -->
             <div class="question-section" data-section="8">
                 <div class="section-label">Design</div>
-                <div class="question">What visual style are you going for?</div>
-                <div class="hint">Describe the mood and aesthetic. References to known products work well.</div>
-                <input type="text" id="visualStyle" placeholder="e.g., Clean and modern like Linear, with plenty of whitespace">
+                <div class="question">Welke visuele stijl zoek je?</div>
+                <div class="hint">Beschrijf de sfeer en esthetiek. Verwijzingen naar bekende producten werken goed.</div>
+                <input type="text" id="visualStyle" placeholder="bijv. Strak en modern zoals Linear, met veel witruimte">
 
-                <div class="question" style="margin-top: 1.5rem;">Color preferences?</div>
-                <div class="hint">Specific hex codes, general direction, or a brand to reference</div>
-                <input type="text" id="colorPalette" placeholder="e.g., Dark mode with electric blue accents, or 'warm earth tones'">
+                <div class="question" style="margin-top: 1.5rem;">Kleurvoorkeuren?</div>
+                <div class="hint">Specifieke hex-codes, een algemene richting, of een merk als referentie</div>
+                <input type="text" id="colorPalette" placeholder="bijv. Donkere modus met elektrisch blauwe accenten, of 'warme aardetinten'">
 
-                <div class="question" style="margin-top: 1.5rem;">Layout priorities</div>
+                <div class="question" style="margin-top: 1.5rem;">Layoutprioriteiten</div>
                 <div class="checkbox-group">
                     <div class="checkbox-item">
                         <input type="checkbox" id="responsive" checked>
-                        <label for="responsive">Responsive (works on all screen sizes)</label>
+                        <label for="responsive">Responsief (werkt op alle schermformaten)</label>
                     </div>
                     <div class="checkbox-item">
                         <input type="checkbox" id="mobileFocused">
-                        <label for="mobileFocused">Mobile-first (optimize for phones)</label>
+                        <label for="mobileFocused">Mobile-first (geoptimaliseerd voor telefoons)</label>
                     </div>
                     <div class="checkbox-item">
                         <input type="checkbox" id="desktopFocused">
-                        <label for="desktopFocused">Desktop-focused (complex layouts, data-dense)</label>
+                        <label for="desktopFocused">Desktop-gericht (complexe layouts, datarijk)</label>
                     </div>
                 </div>
 
-                <div class="question" style="margin-top: 1rem;">Design references or inspiration?</div>
-                <input type="text" id="designReferences" placeholder="e.g., Notion's clean sidebar navigation, Stripe's documentation layout">
+                <div class="question" style="margin-top: 1rem;">Designreferenties of inspiratie?</div>
+                <input type="text" id="designReferences" placeholder="bijv. De strakke zijbalknavigatie van Notion, de documentatie-layout van Stripe">
 
-                <div class="question" style="margin-top: 1.5rem;">Sample content and data</div>
-                <div class="hint">Provide realistic example data, button labels, and key copy the prototype should use</div>
-                <textarea id="sampleContent" placeholder="e.g., Main CTA: 'Generate Report'&#10;Dashboard greeting: 'Good morning, [Name]'&#10;Sample project: 'Q1 Marketing Campaign' with 12 tasks, 3 overdue&#10;Empty state: 'No projects yet. Create your first one to get started.'"></textarea>
+                <div class="question" style="margin-top: 1.5rem;">Voorbeeldinhoud en data</div>
+                <div class="hint">Geef realistische voorbeelddata, knoplabels en belangrijke teksten die het prototype moet gebruiken</div>
+                <textarea id="sampleContent" placeholder="bijv. Hoofd-CTA: 'Genereer Rapport'&#10;Dashboard begroeting: 'Goedemorgen, [Naam]'&#10;Voorbeeldproject: 'Q1 Marketingcampagne' met 12 taken, 3 achterstallig&#10;Lege staat: 'Nog geen projecten. Maak je eerste aan om te beginnen.'"></textarea>
             </div>
 
             <!-- Section 9: Scope -->
             <div class="question-section" data-section="9">
                 <div class="section-label">Scope</div>
-                <div class="question">What's explicitly NOT included in this prototype?</div>
-                <div class="hint">Setting boundaries prevents scope creep and helps Claude focus on what matters</div>
+                <div class="question">Wat valt expliciet NIET binnen dit prototype?</div>
+                <div class="hint">Grenzen stellen voorkomt scope creep en helpt Claude focussen op wat ertoe doet</div>
                 <div class="multi-input" id="outOfScopeContainer">
                     <div class="multi-input-item">
-                        <input type="text" class="out-of-scope" placeholder="e.g., Real authentication (mock it)">
+                        <input type="text" class="out-of-scope" placeholder="bijv. Echte authenticatie (mock het)">
                         <button class="btn-remove" onclick="removeInput(this)" style="display: none;">&times;</button>
                     </div>
                 </div>
-                <button class="btn-add" onclick="addOutOfScope()">+ Add item</button>
+                <button class="btn-add" onclick="addOutOfScope()">+ Item toevoegen</button>
 
-                <div class="question" style="margin-top: 1.5rem;">Any constraints or requirements?</div>
-                <div class="hint">Accessibility needs, performance targets, specific browser support, offline capability, etc.</div>
-                <textarea id="constraints" placeholder="e.g., Must work in Chrome and Safari, should load in under 2 seconds, needs to be accessible (WCAG AA)"></textarea>
+                <div class="question" style="margin-top: 1.5rem;">Beperkingen of vereisten?</div>
+                <div class="hint">Toegankelijkheidsbehoeften, prestatiedoelen, specifieke browserondersteuning, offline-mogelijkheden, etc.</div>
+                <textarea id="constraints" placeholder="bijv. Moet werken in Chrome en Safari, moet laden binnen 2 seconden, moet toegankelijk zijn (WCAG AA)"></textarea>
             </div>
 
             <!-- Section 10: Success -->
             <div class="question-section" data-section="10">
-                <div class="section-label">Success</div>
-                <div class="question">What does success look like for this prototype?</div>
-                <div class="hint">How will you know the prototype achieved its goal? Be concrete.</div>
-                <textarea id="successCriteria" placeholder="e.g., A user can complete the core flow (create report, customize, export) in under 2 minutes without guidance. Stakeholders understand the value proposition within 30 seconds of seeing it."></textarea>
+                <div class="section-label">Succes</div>
+                <div class="question">Hoe ziet succes eruit voor dit prototype?</div>
+                <div class="hint">Hoe weet je of het prototype zijn doel heeft bereikt? Wees concreet.</div>
+                <textarea id="successCriteria" placeholder="bijv. Een gebruiker kan de kernflow doorlopen (rapport maken, aanpassen, exporteren) in minder dan 2 minuten zonder uitleg. Stakeholders begrijpen de waardepropositie binnen 30 seconden na het zien."></textarea>
 
-                <div class="question" style="margin-top: 1.5rem;">Anything else Claude should know?</div>
-                <div class="hint">Edge cases, assumptions, inspiration, prior attempts, or context that doesn't fit elsewhere</div>
-                <textarea id="additionalNotes" placeholder="e.g., We tried building this with Retool but it was too rigid. The key insight is that users want to customize the report layout, not just the data. Previous user interviews showed that PDF export is the most requested feature."></textarea>
+                <div class="question" style="margin-top: 1.5rem;">Nog iets dat Claude moet weten?</div>
+                <div class="hint">Randgevallen, aannames, inspiratie, eerdere pogingen of context die nergens anders past</div>
+                <textarea id="additionalNotes" placeholder="bijv. We hebben geprobeerd dit met Retool te bouwen maar dat was te rigide. Het kernpunt is dat gebruikers de rapportlayout willen aanpassen, niet alleen de data. Eerdere gebruikersinterviews lieten zien dat PDF-export de meest gevraagde feature is."></textarea>
             </div>
 
             <!-- Navigation -->
             <div class="button-group">
-                <button class="btn-nav btn-prev" id="prevBtn" onclick="previousSection()" disabled>Previous</button>
-                <button class="btn-nav btn-next" id="nextBtn" onclick="nextSection()">Next</button>
+                <button class="btn-nav btn-prev" id="prevBtn" onclick="previousSection()" disabled>Vorige</button>
+                <button class="btn-nav btn-next" id="nextBtn" onclick="nextSection()">Volgende</button>
             </div>
 
             <div class="skip-link">
-                <a href="#" onclick="skipToEnd(); return false;">Skip to end and generate blueprint</a>
+                <a href="#" onclick="skipToEnd(); return false;">Sla over en genereer blueprint</a>
             </div>
         </div>
 
         <!-- Output -->
         <div class="card" id="outputSection" style="display: none;">
             <div class="output-header">
-                <h2>Your Claude Code prompt is ready</h2>
-                <p>Blueprint generated a tailor-made prompt optimized for Claude Code</p>
+                <h2>Je Claude Code prompt is klaar</h2>
+                <p>Blueprint heeft een op maat gemaakte prompt gegenereerd, geoptimaliseerd voor Claude Code</p>
             </div>
 
             <div class="output-instructions">
-                <h3>Paste it into Claude Code</h3>
-                <p>This is a complete, ready-to-use prompt, not a document. It uses XML tags that Claude Code parses reliably, puts the build instruction first, and structures specs in the order Claude processes most effectively.</p>
-                <p><strong>Copy it, open Claude Code, and paste.</strong> No extra message needed. Just send it and Claude will start building.</p>
+                <h3>Plak het in Claude Code</h3>
+                <p>Dit is een complete, kant-en-klare prompt, geen document. Het gebruikt XML-tags die Claude Code betrouwbaar verwerkt, plaatst de bouwinstructie vooraan en structureert specificaties in de volgorde die Claude het meest effectief verwerkt.</p>
+                <p><strong>Kopieer het, open Claude Code en plak.</strong> Geen extra bericht nodig. Verstuur het en Claude begint met bouwen.</p>
             </div>
 
             <div class="prd-output" id="prdOutput"></div>
 
-            <button class="btn-copy" onclick="copyPRD()">Copy prompt to clipboard</button>
+            <button class="btn-copy" onclick="copyPRD()">Kopieer prompt naar klembord</button>
 
             <div class="export-options">
-                <h3>Export</h3>
+                <h3>Exporteren</h3>
                 <div class="export-buttons">
                     <button class="btn-export-format" onclick="exportAsMarkdown()">Markdown</button>
-                    <button class="btn-export-format" onclick="exportAsText()">Text</button>
+                    <button class="btn-export-format" onclick="exportAsText()">Tekst</button>
                     <button class="btn-export-format" onclick="exportAsJSON()">JSON</button>
-                    <button class="btn-export-format" onclick="savePRDToLibrary()">Save to Library</button>
+                    <button class="btn-export-format" onclick="savePRDToLibrary()">Opslaan in bibliotheek</button>
                 </div>
             </div>
 
-            <div id="saveSuccess" style="display: none;" class="save-success">Blueprint saved to library</div>
+            <div id="saveSuccess" style="display: none;" class="save-success">Blueprint opgeslagen in bibliotheek</div>
 
             <div class="completion-next">
-                <strong>Next:</strong> Open Claude Code, paste, send. That's it.
+                <strong>Volgende stap:</strong> Open Claude Code, plak, verstuur. Dat is alles.
             </div>
 
             <div class="button-group" style="margin-top: 1.5rem;">
-                <button class="btn-nav btn-prev" onclick="startOver()">Start Over</button>
-                <button class="btn-nav btn-next" onclick="editPRD()">Edit Answers</button>
+                <button class="btn-nav btn-prev" onclick="startOver()">Opnieuw beginnen</button>
+                <button class="btn-nav btn-next" onclick="editPRD()">Antwoorden bewerken</button>
             </div>
         </div>
 
         <footer class="footer">
-            <p>Blueprint by <a href="https://andreaswillemse.nl" target="_blank">Andreas Willemse</a></p>
+            <p>Blueprint door <a href="https://andreaswillemse.nl" target="_blank">Andreas Willemse</a></p>
         </footer>
     </div>
 
@@ -1459,7 +1459,7 @@
                 if (i < currentSection) dot.classList.add('completed');
                 else if (i === currentSection) dot.classList.add('active');
                 dot.onclick = () => jumpToSection(i);
-                dot.title = `Step ${i}`;
+                dot.title = `Stap ${i}`;
                 container.appendChild(dot);
             }
         }
@@ -1504,7 +1504,7 @@
             if (draft) {
                 const parsed = JSON.parse(draft);
                 const mins = (new Date() - new Date(parsed.timestamp)) / 1000 / 60;
-                if (mins < 1440 && confirm('Found a draft from ' + new Date(parsed.timestamp).toLocaleString() + '. Continue where you left off?')) {
+                if (mins < 1440 && confirm('Concept gevonden van ' + new Date(parsed.timestamp).toLocaleString() + '. Verder gaan waar je gebleven was?')) {
                     Object.assign(prdData, parsed.data);
                     currentSection = parsed.section;
                     Object.keys(prdData).forEach(key => {
@@ -1528,7 +1528,7 @@
             const prev = document.getElementById('prevBtn');
             const next = document.getElementById('nextBtn');
             if (prev) prev.disabled = num === 1;
-            if (next) next.textContent = num === totalSections ? 'Generate Blueprint' : 'Next';
+            if (next) next.textContent = num === totalSections ? 'Genereer Blueprint' : 'Volgende';
 
             // Scroll the section label into view so the question is visible
             // but not pinned to the very top, gives spatial context
@@ -1685,7 +1685,7 @@ ${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>
             navigator.clipboard.writeText(text).then(() => {
                 const btn = event.target;
                 const orig = btn.textContent;
-                btn.textContent = 'Copied!';
+                btn.textContent = 'Gekopieerd!';
                 btn.style.background = 'var(--forest-light)';
                 setTimeout(() => {
                     btn.textContent = orig;
@@ -1706,7 +1706,7 @@ ${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>
         }
 
         function startOver() {
-            if (confirm('Start fresh? This clears all your answers and any saved draft.')) {
+            if (confirm('Opnieuw beginnen? Dit wist al je antwoorden en opgeslagen concepten.')) {
                 localStorage.removeItem('blueprintDraft');
                 location.reload();
             }
@@ -1716,7 +1716,7 @@ ${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>
             const container = document.getElementById('keyScreensContainer');
             const div = document.createElement('div');
             div.className = 'multi-input-item';
-            div.innerHTML = `<input type="text" class="key-screen" placeholder="e.g., Settings page"><button class="btn-remove" onclick="removeInput(this)">&times;</button>`;
+            div.innerHTML = `<input type="text" class="key-screen" placeholder="bijv. Instellingenpagina"><button class="btn-remove" onclick="removeInput(this)">&times;</button>`;
             container.appendChild(div);
             updateRemoveButtons('keyScreensContainer');
         }
@@ -1725,7 +1725,7 @@ ${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>
             const container = document.getElementById('coreFeaturesContainer');
             const div = document.createElement('div');
             div.className = 'multi-input-item';
-            div.innerHTML = `<textarea class="core-feature" placeholder="e.g., Feature name: detailed description of behavior" style="min-height: 80px;"></textarea>`;
+            div.innerHTML = `<textarea class="core-feature" placeholder="bijv. Feature naam: gedetailleerde beschrijving van het gedrag" style="min-height: 80px;"></textarea>`;
             container.appendChild(div);
         }
 
@@ -1733,7 +1733,7 @@ ${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>
             const container = document.getElementById('outOfScopeContainer');
             const div = document.createElement('div');
             div.className = 'multi-input-item';
-            div.innerHTML = `<input type="text" class="out-of-scope" placeholder="e.g., Payment processing"><button class="btn-remove" onclick="removeInput(this)">&times;</button>`;
+            div.innerHTML = `<input type="text" class="out-of-scope" placeholder="bijv. Betalingsverwerking"><button class="btn-remove" onclick="removeInput(this)">&times;</button>`;
             container.appendChild(div);
             updateRemoveButtons('outOfScopeContainer');
         }
@@ -1758,7 +1758,7 @@ ${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>
             if (!content) return;
 
             if (library.length === 0) {
-                content.innerHTML = `<div class="empty-state"><h3>No blueprints yet</h3><p>Complete your first blueprint to start your library.</p></div>`;
+                content.innerHTML = `<div class="empty-state"><h3>Nog geen blueprints</h3><p>Maak je eerste blueprint af om je bibliotheek te starten.</p></div>`;
                 return;
             }
 
@@ -1766,13 +1766,13 @@ ${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>
                 <div class="prd-card">
                     <div class="prd-card-header">
                         <div>
-                            <div class="prd-card-title">${prd.productName || 'Untitled'}</div>
+                            <div class="prd-card-title">${prd.productName || 'Naamloos'}</div>
                             <div class="prd-card-date">${new Date(prd.date).toLocaleDateString()}</div>
                         </div>
                         <div class="prd-card-actions">
-                            <button class="btn btn-small btn-forest" onclick="viewPRD(${i})"><span>View</span></button>
-                            <button class="btn btn-small" onclick="exportPRDFromLibrary(${i})"><span>Export</span></button>
-                            <button class="btn btn-small" onclick="deletePRD(${i})" style="border-color: #c0392b; color: #c0392b;"><span>Delete</span></button>
+                            <button class="btn btn-small btn-forest" onclick="viewPRD(${i})"><span>Bekijken</span></button>
+                            <button class="btn btn-small" onclick="exportPRDFromLibrary(${i})"><span>Exporteren</span></button>
+                            <button class="btn btn-small" onclick="deletePRD(${i})" style="border-color: #c0392b; color: #c0392b;"><span>Verwijderen</span></button>
                         </div>
                     </div>
                 </div>
@@ -1814,7 +1814,7 @@ ${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>
         }
 
         function deletePRD(index) {
-            if (confirm('Delete this blueprint?')) {
+            if (confirm('Deze blueprint verwijderen?')) {
                 const library = JSON.parse(localStorage.getItem('blueprintLibrary') || '[]');
                 library.splice(index, 1);
                 localStorage.setItem('blueprintLibrary', JSON.stringify(library));
