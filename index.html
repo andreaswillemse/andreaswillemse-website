@@ -220,6 +220,61 @@
             border-color: var(--forest);
         }
 
+        /* Hamburger menu toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 24px;
+            height: 18px;
+            position: relative;
+            padding: 0;
+        }
+
+        .menu-toggle span,
+        .menu-toggle span::before,
+        .menu-toggle span::after {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--black);
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle span {
+            top: 8px;
+        }
+
+        .menu-toggle span::before,
+        .menu-toggle span::after {
+            content: '';
+        }
+
+        .menu-toggle span::before {
+            top: -7px;
+        }
+
+        .menu-toggle span::after {
+            top: 7px;
+        }
+
+        /* Open state: X */
+        nav.menu-open .menu-toggle span {
+            background: transparent;
+        }
+
+        nav.menu-open .menu-toggle span::before {
+            top: 0;
+            transform: rotate(45deg);
+        }
+
+        nav.menu-open .menu-toggle span::after {
+            top: 0;
+            transform: rotate(-45deg);
+        }
+
         /* Availability Banner */
         .availability-banner {
             position: fixed;
@@ -786,8 +841,32 @@
                 padding: 0.45rem var(--spacing);
             }
 
+            .menu-toggle {
+                display: block;
+            }
+
             nav ul {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(250, 250, 250, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--off-white);
+            }
+
+            nav.menu-open ul {
+                display: flex;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 0.75rem var(--spacing);
+                font-size: 0.8rem;
             }
 
             .hero .container {
@@ -865,6 +944,7 @@
                     <li><a href="#tools">Tools</a></li>
                 </ul>
                 <a href="/en/" class="lang-switch" aria-label="Switch to English">EN</a>
+                <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
             </div>
         </div>
     </nav>
@@ -1110,6 +1190,20 @@
                         block: 'start'
                     });
                 }
+            });
+        });
+    </script>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        menuToggle.addEventListener('click', () => {
+            const open = nav.classList.toggle('menu-open');
+            menuToggle.setAttribute('aria-expanded', open);
+        });
+        document.querySelectorAll('nav ul a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('menu-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
             });
         });
     </script>
