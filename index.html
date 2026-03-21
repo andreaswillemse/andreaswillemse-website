@@ -235,6 +235,12 @@
             font-size: 0.75rem;
             letter-spacing: 0.05em;
             text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .banner-sep {
+            margin: 0 0.3rem;
+            opacity: 0.6;
         }
 
         .availability-banner a {
@@ -312,17 +318,17 @@
 
         .hero h1 {
             font-family: 'Space Mono', monospace;
-            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-size: clamp(1.8rem, 4vw, 3rem);
             font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 1.2rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
             letter-spacing: -0.03em;
             opacity: 0;
             animation: fadeInUp 0.8s ease 0.2s forwards;
         }
 
         .hero-subtitle {
-            font-size: 1.4rem;
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
             color: var(--steel);
             margin-bottom: 1.5rem;
             font-weight: 300;
@@ -399,12 +405,12 @@
 
         .btn {
             font-family: 'Space Mono', monospace;
-            padding: 1rem 2rem;
+            padding: 0.75rem 1.5rem;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            border: 2px solid var(--black);
+            border: 1.5px solid var(--black);
             color: var(--black);
             background: transparent;
             transition: all 0.3s ease;
@@ -775,6 +781,11 @@
         }
 
         @media (max-width: 768px) {
+            .availability-banner {
+                font-size: 0.65rem;
+                padding: 0.45rem var(--spacing);
+            }
+
             nav ul {
                 display: none;
             }
@@ -796,6 +807,12 @@
 
             .hero-cta {
                 justify-content: center;
+                gap: 1rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.75rem;
             }
 
             .about-banner {
@@ -832,7 +849,7 @@
 <body>
     <!-- Availability Banner -->
     <div class="availability-banner">
-        Beschikbaar voor een nieuwe opdracht <a href="#contact">Neem contact op</a>
+        Beschikbaar <span class="banner-sep">·</span> <a href="#contact">Neem contact op</a>
     </div>
 
     <!-- Navigation -->
