@@ -1,0 +1,7 @@
+# robots.txt for andreaswillemse.nl
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://andreaswillemse.nl/sitemap.xml
