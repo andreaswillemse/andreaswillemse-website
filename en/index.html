@@ -430,13 +430,28 @@
             letter-spacing: 0.05em;
         }
 
+        .hero-profile {
+            justify-self: end;
+        }
+
+        .hero-profile-text {
+            display: none;
+        }
+
+        .hero-profile-name {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+        }
+
         .hero-image {
             position: relative;
             width: 100%;
             max-width: 360px;
             justify-self: end;
-            background: #c8d5cc;
-            padding: 1.5rem;
         }
 
         .hero-image img {
@@ -812,9 +827,12 @@
                 padding: 0.75rem var(--spacing);
                 font-size: 0.8rem;
             }
-            .hero .container { grid-template-columns: 1fr; gap: 2rem; }
-            .hero-image { justify-self: center; max-width: 180px; order: -1; padding: 1rem; }
+            .hero .container { grid-template-columns: 1fr; gap: 1.5rem; }
+            .hero-profile { display: flex; align-items: center; gap: 1.25rem; order: -1; }
+            .hero-image { max-width: 120px; flex-shrink: 0; }
+            .hero-profile-text { display: block; }
             .hero-content { text-align: center; max-width: 100%; }
+            .hero-content .hero-label, .hero-content h1, .hero-content .hero-subtitle { display: none; }
             .hero-cta { justify-content: center; gap: 1rem; }
             .btn { padding: 0.6rem 1.2rem; font-size: 0.75rem; }
             .hero-stats { justify-content: center; gap: 1.5rem; }
@@ -886,8 +904,15 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="/andreas-photo.jpg" alt="Andreas Willemse - Product Owner and Manager from Amsterdam" width="500" height="750" loading="eager">
+            <div class="hero-profile">
+                <div class="hero-image">
+                    <img src="/andreas-photo.jpg" alt="Andreas Willemse - Product Owner and Manager from Amsterdam" width="500" height="750" loading="eager">
+                </div>
+                <div class="hero-profile-text">
+                    <div class="hero-label">Product Owner & Manager</div>
+                    <h2 class="hero-profile-name">Andreas Willemse</h2>
+                    <div class="hero-subtitle">From idea to working product</div>
+                </div>
             </div>
         </div>
     </section>
