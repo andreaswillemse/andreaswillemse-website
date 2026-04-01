@@ -69,6 +69,24 @@
             }
         }
 
+        /* Back link */
+        .back-link {
+            display: inline-block;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gray-light);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--forest);
+        }
+
         /* Header */
         .header {
             margin-bottom: 3rem;
@@ -1057,6 +1075,8 @@
 </head>
 <body>
     <div class="container">
+        <a href="https://andreaswillemse.nl" class="back-link">&larr; andreaswillemse.nl</a>
+
         <header class="header">
             <div class="header-label">Prompt generator for Claude Code</div>
             <h1><span class="blue">Blue</span>print</h1>
