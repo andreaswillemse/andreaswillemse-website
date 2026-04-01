@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blueprint - Prompt Generator for Claude Code</title>
+
+    <!-- Open Graph / Share -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blueprint - Prompt Generator for Claude Code">
+    <meta property="og:description" content="Answer a few questions about what you want to build. Blueprint turns your answers into a tailor-made Claude Code prompt, structured and ready to paste.">
+    <meta property="og:image" content="https://andreaswillemse.nl/blueprint/blueprint-hero.jpg">
+    <meta property="og:url" content="https://andreaswillemse.nl/blueprint/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blueprint - Prompt Generator for Claude Code">
+    <meta name="twitter:description" content="Answer a few questions about what you want to build. Blueprint turns your answers into a tailor-made Claude Code prompt, structured and ready to paste.">
+    <meta name="twitter:image" content="https://andreaswillemse.nl/blueprint/blueprint-hero.jpg">
+
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -85,6 +99,25 @@
 
         .back-link:hover {
             color: var(--forest);
+        }
+
+        /* Hero Image */
+        .hero-image {
+            width: calc(100% + 4rem);
+            margin-left: -2rem;
+            margin-bottom: 2rem;
+            height: 200px;
+            object-fit: cover;
+            object-position: center 40%;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .hero-image {
+                width: calc(100% + 2.5rem);
+                margin-left: -1.25rem;
+                height: 150px;
+            }
         }
 
         /* Header */
@@ -1076,6 +1109,8 @@
 <body>
     <div class="container">
         <a href="https://andreaswillemse.nl" class="back-link">&larr; andreaswillemse.nl</a>
+
+        <img src="blueprint-hero.jpg" alt="Blueprint architectural drawing" class="hero-image">
 
         <header class="header">
             <div class="header-label">Prompt generator for Claude Code</div>
