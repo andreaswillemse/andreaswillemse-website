@@ -418,6 +418,34 @@
             animation: fadeInUp 0.8s ease 0.8s forwards;
         }
 
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--off-white);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 1s forwards;
+        }
+
+        .hero-stat-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--forest);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-stat-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--steel);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
         .hero-image {
             position: relative;
             width: 100%;
@@ -460,12 +488,13 @@
 
         .btn {
             font-family: 'Space Mono', monospace;
-            padding: 0.75rem 1.5rem;
+            padding: 0.9rem 2rem;
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
+            font-weight: 700;
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            border: 1.5px solid var(--black);
+            border: 2px solid var(--black);
             color: var(--black);
             background: transparent;
             transition: all 0.3s ease;
@@ -894,9 +923,9 @@
                 font-size: 0.75rem;
             }
 
-            .about-banner {
-                flex-direction: column;
-                align-items: flex-start;
+            .hero-stats {
+                justify-content: center;
+                gap: 1.5rem;
             }
 
             .blog-placeholder {
@@ -937,7 +966,7 @@
             <a href="#" class="logo" aria-label="Andreas Willemse - Home">AW</a>
             <div class="nav-right">
                 <ul>
-                    <li><a href="#about">Kort gezegd</a></li>
+                    <li><a href="#experience">Kort gezegd</a></li>
                     <li><a href="#experience">Track record</a></li>
                     <li><a href="#skills">Expertise</a></li>
                     <li><a href="/blog/">Gedachten</a></li>
@@ -967,33 +996,23 @@
                     <a href="#contact" class="btn">Neem Contact Op</a>
                     <a href="#experience" class="btn btn-secondary">Bekijk Mijn Werk</a>
                 </div>
+                <div class="hero-stats">
+                    <div>
+                        <span class="hero-stat-number">15+</span>
+                        <span class="hero-stat-label">Jaar Ervaring</span>
+                    </div>
+                    <div>
+                        <span class="hero-stat-number">AMS</span>
+                        <span class="hero-stat-label">Amsterdam</span>
+                    </div>
+                    <div>
+                        <span class="hero-stat-number">PSPO II</span>
+                        <span class="hero-stat-label">Gecertificeerd</span>
+                    </div>
+                </div>
             </div>
             <div class="hero-image">
                 <img src="andreas-photo.jpg" alt="Andreas Willemse - Product Owner en Manager uit Amsterdam" width="500" height="750" loading="eager">
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="fade-in-section" aria-label="Over Andreas Willemse">
-        <div class="container">
-            <h2>Kort gezegd</h2>
-            <div class="about-banner">
-                <p class="about-banner-text">
-                    15+ jaar ervaring in <mark class="hl">product management</mark>, advies en <mark class="hl">digitale productontwikkeling</mark>
-                    voor retail, ecommerce, zorg en (semi-)publieke organisaties. Ik vertaal <mark class="hl">strategie</mark>
-                    naar uitvoering en help teams om digitale producten te bouwen die écht werken.
-                </p>
-                <div class="about-banner-stats">
-                    <div class="stat">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-label">Jaar Ervaring</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">AMS</span>
-                        <span class="stat-label">Amsterdam</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
