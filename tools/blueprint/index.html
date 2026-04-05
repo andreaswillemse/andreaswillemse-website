@@ -245,8 +245,9 @@
         .progress-wrapper {
             margin-bottom: 2.5rem;
             padding: 1.5rem 1.75rem;
-            background: rgba(26, 58, 110, 0.05);
-            border-left: 3px solid var(--forest);
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--forest);
         }
 
         .progress-top {
@@ -358,61 +359,22 @@
         .card {
             background: var(--white);
             border: 1px solid var(--border);
+            border-left: 4px solid var(--forest);
             padding: 2.5rem;
             margin-bottom: 2rem;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         @media (max-width: 768px) {
             .card {
                 padding: 1.5rem;
             }
-        }
-
-        /* Section Navigation */
-        .section-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .section-nav-title {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.65rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--gray-light);
-        }
-
-        .section-nav-dots {
-            display: flex;
-            gap: 6px;
-        }
-
-        .nav-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--border-dark);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .nav-dot:hover {
-            background: var(--gray-mid);
-        }
-
-        .nav-dot.completed {
-            background: var(--forest);
-        }
-
-        .nav-dot.active {
-            background: var(--black);
-            transform: scale(1.5);
         }
 
         /* Question sections */
@@ -1231,11 +1193,6 @@
 
         <!-- Main Card -->
         <div class="card" id="mainCard">
-            <div class="section-nav">
-                <div class="section-nav-title">Step <span id="currentStepDisplay">1</span> of 10</div>
-                <div class="section-nav-dots" id="sectionNavDots"></div>
-            </div>
-
             <!-- Section 1: Product Name -->
             <div class="question-section active" data-section="1">
                 <div class="section-label">Overview</div>
@@ -1472,11 +1429,9 @@
             const progress = (currentSection / totalSections) * 100;
             const bar = document.getElementById('progressBar');
             const pct = document.getElementById('progressPercentage');
-            const stepDisplay = document.getElementById('currentStepDisplay');
 
             if (bar) bar.style.width = progress + '%';
             if (pct) pct.textContent = Math.round(progress) + '%';
-            if (stepDisplay) stepDisplay.textContent = currentSection;
 
             document.querySelectorAll('.progress-step').forEach((step, i) => {
                 const num = i + 1;
@@ -1484,23 +1439,6 @@
                 if (num < currentSection) step.classList.add('completed');
                 else if (num === currentSection) step.classList.add('active');
             });
-
-            updateNavDots();
-        }
-
-        function updateNavDots() {
-            const container = document.getElementById('sectionNavDots');
-            if (!container) return;
-            container.innerHTML = '';
-            for (let i = 1; i <= totalSections; i++) {
-                const dot = document.createElement('div');
-                dot.className = 'nav-dot';
-                if (i < currentSection) dot.classList.add('completed');
-                else if (i === currentSection) dot.classList.add('active');
-                dot.onclick = () => jumpToSection(i);
-                dot.title = `Step ${i}`;
-                container.appendChild(dot);
-            }
         }
 
         function jumpToSection(num) {
