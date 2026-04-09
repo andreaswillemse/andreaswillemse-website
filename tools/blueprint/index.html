@@ -32,12 +32,35 @@
             --forest-light: #2d5a8f;
             --gray-dark: #2d2d2d;
             --gray-mid: #404040;
-            --gray-light: #888;
+            --gray-light: #666;
             --border: #e8e8e8;
             --border-dark: #d0d0d0;
             --white: #ffffff;
             --spacing: 2rem;
             --radius: 0;
+            --focus-ring: 0 0 0 3px rgba(26, 58, 110, 0.35);
+            --success: #1a7a3a;
+            --error: #c0392b;
+            --warning: #b8860b;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #111318;
+                --black: #e8e8ec;
+                --forest: #5b8fd9;
+                --forest-light: #7ba8e8;
+                --gray-dark: #c8c8cc;
+                --gray-mid: #a0a0a8;
+                --gray-light: #808088;
+                --border: #2a2a30;
+                --border-dark: #3a3a42;
+                --white: #1a1b20;
+                --focus-ring: 0 0 0 3px rgba(91, 143, 217, 0.4);
+                --success: #3aaa5a;
+                --error: #e05a4a;
+                --warning: #d4a830;
+            }
         }
 
         * {
@@ -72,6 +95,51 @@
                         radial-gradient(ellipse at 80% 20%, rgba(26, 58, 110, 0.02) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
+        }
+
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Skip to content link for keyboard users */
+        .skip-to-content {
+            position: absolute;
+            top: -100%;
+            left: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--forest);
+            color: var(--white);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            z-index: 1000;
+            transition: top 0.2s ease;
+        }
+
+        .skip-to-content:focus {
+            top: 1rem;
+        }
+
+        /* Global focus styles */
+        :focus-visible {
+            outline: none;
+            box-shadow: var(--focus-ring);
+        }
+
+        button:focus-visible,
+        a:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible {
+            outline: none;
+            box-shadow: var(--focus-ring);
         }
 
         .container {
@@ -1071,13 +1139,168 @@
         .footer a:hover {
             border-bottom-color: var(--forest);
         }
+
+        /* Dark mode specific overrides */
+        @media (prefers-color-scheme: dark) {
+            body::before {
+                background: radial-gradient(ellipse at 20% 50%, rgba(91, 143, 217, 0.04) 0%, transparent 60%),
+                            radial-gradient(ellipse at 80% 20%, rgba(91, 143, 217, 0.03) 0%, transparent 50%);
+            }
+
+            .hero-image {
+                opacity: 0.85;
+            }
+
+            .prd-output {
+                background: #0a0b0e;
+                color: #c8c8cc;
+                border-color: var(--border-dark);
+            }
+
+            .header h1 .blue {
+                color: var(--forest);
+            }
+
+            .header h1:hover .blue {
+                color: var(--forest-light);
+            }
+
+            .btn::before {
+                background: var(--forest);
+            }
+
+            .btn:hover {
+                color: #fff;
+            }
+
+            .btn-prev {
+                border-color: var(--border-dark);
+                color: var(--black);
+            }
+
+            .btn-prev:hover {
+                background: var(--border-dark);
+            }
+
+            .example {
+                background: rgba(91, 143, 217, 0.06);
+            }
+
+            .output-instructions {
+                background: rgba(91, 143, 217, 0.06);
+            }
+
+            .shortcut-item kbd {
+                background: var(--forest);
+                color: #fff;
+            }
+
+            .modal {
+                background: rgba(0, 0, 0, 0.7);
+            }
+
+            select {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a0a0a8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            }
+        }
+
+        /* Form validation styles */
+        .field-error {
+            border-color: var(--error) !important;
+            box-shadow: 0 0 0 1px var(--error) !important;
+        }
+
+        .error-message {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--error);
+            margin-top: -0.75rem;
+            margin-bottom: 0.75rem;
+            display: none;
+        }
+
+        .error-message.visible {
+            display: block;
+            animation: fadeInUp 0.2s ease;
+        }
+
+        /* Improved touch targets for mobile */
+        @media (max-width: 768px) {
+            .progress-step {
+                padding: 8px;
+                min-width: 44px;
+                min-height: 44px;
+                justify-content: center;
+            }
+
+            .progress-step-dot {
+                width: 12px;
+                height: 12px;
+            }
+
+            .progress-step-label {
+                font-size: 0.6rem;
+            }
+
+            .btn-nav {
+                min-height: 48px;
+                font-size: 0.8rem;
+            }
+
+            .btn-add {
+                min-height: 44px;
+                font-size: 0.75rem;
+            }
+
+            .btn-remove {
+                min-width: 44px;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .checkbox-item {
+                min-height: 44px;
+            }
+
+            .checkbox-item input[type="checkbox"] {
+                width: 22px;
+                height: 22px;
+            }
+
+            .btn-export-format {
+                min-height: 44px;
+                padding: 0.7rem 1rem;
+            }
+        }
+
+        /* Active/pressed state for buttons */
+        .btn-next:active {
+            transform: scale(0.97);
+        }
+
+        .btn-prev:active {
+            transform: scale(0.97);
+        }
+
+        .btn-copy:active {
+            transform: scale(0.98);
+        }
+
+        /* Success state for copy button */
+        .btn-copy.copied {
+            background: var(--success);
+            border-color: var(--success);
+        }
     </style>
 </head>
 <body>
+    <a href="#mainCard" class="skip-to-content">Skip to content</a>
     <div class="container">
-        <a href="https://andreaswillemse.nl" class="back-link">&larr; andreaswillemse.nl</a>
+        <a href="https://andreaswillemse.nl" class="back-link" aria-label="Back to andreaswillemse.nl">&larr; andreaswillemse.nl</a>
 
-        <img src="blueprint-hero.jpg" alt="Blueprint architectural drawing" class="hero-image">
+        <img src="blueprint-hero.jpg" alt="Blueprint architectural drawing" class="hero-image" loading="lazy">
 
         <header class="header">
             <div class="header-label">Prompt generator for Claude Code</div>
@@ -1093,7 +1316,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h2>Saved Blueprints</h2>
-                    <button class="btn-close" onclick="closeLibrary()">&times;</button>
+                    <button class="btn-close" onclick="closeLibrary()" aria-label="Close library">&times;</button>
                 </div>
                 <div class="modal-body" id="libraryContent">
                     <div class="empty-state">
@@ -1105,12 +1328,12 @@
         </div>
 
         <!-- Progress -->
-        <div class="progress-wrapper">
+        <nav aria-label="Form steps" class="progress-wrapper">
             <div class="progress-top">
                 <div class="progress-label">Progress</div>
                 <div class="progress-percentage" id="progressPercentage">0%</div>
             </div>
-            <div class="progress-bar-track">
+            <div class="progress-bar-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Form completion progress">
                 <div class="progress-bar-fill" id="progressBar"></div>
             </div>
             <div class="progress-steps" id="progressSteps">
@@ -1155,17 +1378,17 @@
                     <span class="progress-step-label">Done</span>
                 </div>
             </div>
-        </div>
+        </nav>
 
         <!-- Autosave -->
-        <div class="autosave-indicator" id="autosaveIndicator">Saved</div>
+        <div class="autosave-indicator" id="autosaveIndicator" role="status" aria-live="polite">Saved</div>
 
         <!-- Shortcuts -->
-        <div class="shortcuts-toggle" id="shortcutsToggle" onclick="toggleShortcuts()">?</div>
+        <button class="shortcuts-toggle" id="shortcutsToggle" onclick="toggleShortcuts()" aria-label="Toggle keyboard shortcuts" aria-expanded="false">?</button>
         <div class="shortcuts-panel" id="shortcutsPanel">
             <div class="shortcuts-header">
                 <h3>Keyboard Shortcuts</h3>
-                <button class="btn-close" onclick="toggleShortcuts()">&times;</button>
+                <button class="btn-close" onclick="toggleShortcuts()" aria-label="Close shortcuts panel">&times;</button>
             </div>
             <div class="shortcuts-list">
                 <div class="shortcut-item">
@@ -1191,6 +1414,7 @@
             </div>
         </div>
 
+        <main>
         <!-- Main Card -->
         <div class="card" id="mainCard">
             <!-- Section 1: Product Name -->
@@ -1252,7 +1476,7 @@
                 <div class="multi-input" id="keyScreensContainer">
                     <div class="multi-input-item">
                         <input type="text" class="key-screen" placeholder="e.g., Dashboard / Home">
-                        <button class="btn-remove" onclick="removeInput(this)" style="display: none;">&times;</button>
+                        <button class="btn-remove" onclick="removeInput(this)" style="display: none;" aria-label="Remove screen">&times;</button>
                     </div>
                 </div>
                 <button class="btn-add" onclick="addKeyScreen()">+ Add screen</button>
@@ -1342,7 +1566,7 @@
                 <div class="multi-input" id="outOfScopeContainer">
                     <div class="multi-input-item">
                         <input type="text" class="out-of-scope" placeholder="e.g., Real authentication (mock it)">
-                        <button class="btn-remove" onclick="removeInput(this)" style="display: none;">&times;</button>
+                        <button class="btn-remove" onclick="removeInput(this)" style="display: none;" aria-label="Remove item">&times;</button>
                     </div>
                 </div>
                 <button class="btn-add" onclick="addOutOfScope()">+ Add item</button>
@@ -1414,6 +1638,8 @@
             </div>
         </div>
 
+        </main>
+
         <footer class="footer">
             <p>Blueprint by <a href="https://andreaswillemse.nl" target="_blank">Andreas Willemse</a></p>
         </footer>
@@ -1429,9 +1655,11 @@
             const progress = (currentSection / totalSections) * 100;
             const bar = document.getElementById('progressBar');
             const pct = document.getElementById('progressPercentage');
+            const track = document.querySelector('.progress-bar-track');
 
             if (bar) bar.style.width = progress + '%';
             if (pct) pct.textContent = Math.round(progress) + '%';
+            if (track) track.setAttribute('aria-valuenow', Math.round(progress));
 
             document.querySelectorAll('.progress-step').forEach((step, i) => {
                 const num = i + 1;
@@ -1659,15 +1887,24 @@ ${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>
 
         function copyPRD() {
             const text = document.getElementById('prdOutput').textContent;
+            const btn = document.querySelector('.btn-copy');
             navigator.clipboard.writeText(text).then(() => {
-                const btn = event.target;
                 const orig = btn.textContent;
-                btn.textContent = 'Copied!';
-                btn.style.background = 'var(--forest-light)';
+                btn.textContent = 'Copied to clipboard';
+                btn.classList.add('copied');
                 setTimeout(() => {
                     btn.textContent = orig;
+                    btn.classList.remove('copied');
+                }, 2500);
+            }).catch(() => {
+                btn.textContent = 'Copy failed — try manually selecting the text';
+                btn.style.borderColor = 'var(--error)';
+                btn.style.background = 'var(--error)';
+                setTimeout(() => {
+                    btn.textContent = 'Copy prompt to clipboard';
+                    btn.style.borderColor = '';
                     btn.style.background = '';
-                }, 2000);
+                }, 3000);
             });
         }
 
@@ -1693,7 +1930,7 @@ ${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>
             const container = document.getElementById('keyScreensContainer');
             const div = document.createElement('div');
             div.className = 'multi-input-item';
-            div.innerHTML = `<input type="text" class="key-screen" placeholder="e.g., Settings page"><button class="btn-remove" onclick="removeInput(this)">&times;</button>`;
+            div.innerHTML = `<input type="text" class="key-screen" placeholder="e.g., Settings page"><button class="btn-remove" onclick="removeInput(this)" aria-label="Remove screen">&times;</button>`;
             container.appendChild(div);
             updateRemoveButtons('keyScreensContainer');
         }
@@ -1710,7 +1947,7 @@ ${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>
             const container = document.getElementById('outOfScopeContainer');
             const div = document.createElement('div');
             div.className = 'multi-input-item';
-            div.innerHTML = `<input type="text" class="out-of-scope" placeholder="e.g., Payment processing"><button class="btn-remove" onclick="removeInput(this)">&times;</button>`;
+            div.innerHTML = `<input type="text" class="out-of-scope" placeholder="e.g., Payment processing"><button class="btn-remove" onclick="removeInput(this)" aria-label="Remove item">&times;</button>`;
             container.appendChild(div);
             updateRemoveButtons('outOfScopeContainer');
         }
@@ -1830,7 +2067,10 @@ ${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>
         }
 
         function toggleShortcuts() {
-            document.getElementById('shortcutsPanel').classList.toggle('show');
+            const panel = document.getElementById('shortcutsPanel');
+            const toggle = document.getElementById('shortcutsToggle');
+            panel.classList.toggle('show');
+            toggle.setAttribute('aria-expanded', panel.classList.contains('show'));
         }
 
         function handleKeyboardShortcuts(e) {
@@ -1858,6 +2098,11 @@ ${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>
             }
         }
 
+        function updateNavDots() {
+            // Sync progress dots with current state
+            updateProgress();
+        }
+
         // Init
         document.addEventListener('DOMContentLoaded', function() {
             updateProgress();
@@ -1873,6 +2118,29 @@ ${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>
 
             document.getElementById('libraryModal').addEventListener('click', function(e) {
                 if (e.target === this) closeLibrary();
+            });
+
+            // Enter key on single-line inputs advances to next section
+            document.querySelectorAll('input[type="text"]').forEach(input => {
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        nextSection();
+                    }
+                });
+            });
+
+            // Set ARIA roles for progress steps
+            document.querySelectorAll('.progress-step').forEach((step, i) => {
+                step.setAttribute('role', 'button');
+                step.setAttribute('tabindex', '0');
+                step.setAttribute('aria-label', `Go to step ${i + 1}: ${step.querySelector('.progress-step-label').textContent}`);
+                step.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        jumpToSection(i + 1);
+                    }
+                });
             });
         });
     </script>
