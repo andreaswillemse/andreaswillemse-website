@@ -95,6 +95,7 @@
             --forest-light: #2d5a45;
             --spacing: 2rem;
             --max-width: 1200px;
+            --surface-tinted: #c8d5cc;
         }
 
         body {
@@ -450,6 +451,73 @@
             opacity: 0.7;
         }
 
+        /* Focus & Active States */
+        a:focus-visible,
+        button:focus-visible,
+        .btn:focus-visible,
+        .lang-switch:focus-visible,
+        .menu-toggle:focus-visible,
+        .back-link:focus-visible,
+        .blog-card:focus-visible {
+            outline: 2px solid var(--forest);
+            outline-offset: 2px;
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        /* Dark Mode */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --black: #e8e8ec;
+                --steel: #c8c8cc;
+                --steel-light: #a0a0a8;
+                --white: #111318;
+                --off-white: #2a2a30;
+                --forest: #5b9a7a;
+                --forest-light: #7ab89a;
+                --surface-tinted: #1a2420;
+            }
+
+            nav {
+                background: rgba(17, 19, 24, 0.95);
+            }
+
+            nav ul {
+                background: rgba(17, 19, 24, 0.98);
+            }
+
+            .experience-card,
+            .skill-card,
+            .blog-card {
+                background: #1a1b20;
+                border-color: var(--off-white);
+            }
+
+            .experience-item {
+                background: #1a1b20;
+            }
+
+            .hero-photo img {
+                border-color: var(--off-white);
+            }
+
+            footer {
+                background: #0a0a0f;
+            }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav ul {
@@ -533,7 +601,7 @@
         <!-- Article Header -->
         <header class="article-header">
             <a href="/en/#blog" class="back-link fade-in">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="19" y1="12" x2="5" y2="12"></line>
                     <polyline points="12 19 5 12 12 5"></polyline>
                 </svg>
@@ -554,7 +622,7 @@
 
         <!-- Article Image -->
         <div class="article-hero-image">
-            <img src="/en/blog/angine-de-poitrine.jpg" alt="Angine de Poitrine performing live on stage in polka dot suits" loading="eager">
+            <img src="/en/blog/angine-de-poitrine.jpg" alt="Angine de Poitrine performing live on stage in polka dot suits" loading="lazy">
         </div>
         <!-- Article Content -->
         <article class="article-content">

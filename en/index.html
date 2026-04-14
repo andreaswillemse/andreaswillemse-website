@@ -106,6 +106,7 @@
             --forest-light: #2d5a45;
             --spacing: 2rem;
             --max-width: 1200px;
+            --surface-tinted: #c8d5cc;
         }
 
         body {
@@ -563,7 +564,7 @@
         }
 
         .experience {
-            background: #c8d5cc;
+            background: var(--surface-tinted);
         }
 
         .experience-grid {
@@ -667,7 +668,7 @@
 
         .skill-description { font-size: 0.95rem; color: var(--steel-light); line-height: 1.6; }
 
-        .blog { background: #c8d5cc; }
+        .blog { background: var(--surface-tinted); }
 
         .blog-grid {
             display: grid;
@@ -797,6 +798,72 @@
         }
 
         footer p { font-family: 'Space Mono', monospace; font-size: 0.85rem; opacity: 0.7; }
+
+        /* Focus & Active States */
+        a:focus-visible,
+        button:focus-visible,
+        .btn:focus-visible,
+        .lang-switch:focus-visible,
+        .menu-toggle:focus-visible,
+        .blog-card:focus-visible {
+            outline: 2px solid var(--forest);
+            outline-offset: 2px;
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        /* Dark Mode */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --black: #e8e8ec;
+                --steel: #c8c8cc;
+                --steel-light: #a0a0a8;
+                --white: #111318;
+                --off-white: #2a2a30;
+                --forest: #5b9a7a;
+                --forest-light: #7ab89a;
+                --surface-tinted: #1a2420;
+            }
+
+            nav {
+                background: rgba(17, 19, 24, 0.95);
+            }
+
+            nav ul {
+                background: rgba(17, 19, 24, 0.98);
+            }
+
+            .experience-card,
+            .skill-card,
+            .blog-card {
+                background: #1a1b20;
+                border-color: var(--off-white);
+            }
+
+            .experience-item {
+                background: #1a1b20;
+            }
+
+            .hero-photo img {
+                border-color: var(--off-white);
+            }
+
+            footer {
+                background: #0a0a0f;
+            }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
 
         @media (max-width: 1024px) {
             .experience-grid { grid-template-columns: 1fr; }
