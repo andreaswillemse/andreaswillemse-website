@@ -24,6 +24,15 @@
     <meta name="twitter:image" content="https://andreaswillemse.nl/tools/blueprint/blueprint-hero.jpg">
 
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            try {
+                var saved = localStorage.getItem('theme');
+                var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.setAttribute('data-theme', saved || (prefers ? 'dark' : 'light'));
+            } catch (e) {}
+        })();
+    </script>
     <style>
         :root {
             --bg: #fafafa;
@@ -44,23 +53,21 @@
             --warning: #b8860b;
         }
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #111318;
-                --black: #e8e8ec;
-                --forest: #5b8fd9;
-                --forest-light: #7ba8e8;
-                --gray-dark: #c8c8cc;
-                --gray-mid: #a0a0a8;
-                --gray-light: #808088;
-                --border: #2a2a30;
-                --border-dark: #3a3a42;
-                --white: #1a1b20;
-                --focus-ring: 0 0 0 3px rgba(91, 143, 217, 0.4);
-                --success: #3aaa5a;
-                --error: #e05a4a;
-                --warning: #d4a830;
-            }
+        [data-theme="dark"] {
+            --bg: #111318;
+            --black: #e8e8ec;
+            --forest: #5b8fd9;
+            --forest-light: #7ba8e8;
+            --gray-dark: #c8c8cc;
+            --gray-mid: #a0a0a8;
+            --gray-light: #808088;
+            --border: #2a2a30;
+            --border-dark: #3a3a42;
+            --white: #1a1b20;
+            --focus-ring: 0 0 0 3px rgba(91, 143, 217, 0.4);
+            --success: #3aaa5a;
+            --error: #e05a4a;
+            --warning: #d4a830;
         }
 
         * {
@@ -173,6 +180,48 @@
         .back-link:hover {
             color: var(--forest);
         }
+
+        /* Top bar (back link + theme toggle) */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            gap: 1rem;
+        }
+
+        .top-bar .back-link {
+            margin-bottom: 0;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--gray-light);
+            cursor: pointer;
+            padding: 0;
+            width: 36px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            color: var(--forest);
+            border-color: var(--forest);
+        }
+
+        .theme-toggle svg {
+            width: 16px;
+            height: 16px;
+            display: block;
+        }
+
+        .theme-icon-moon { display: none; }
+        [data-theme="dark"] .theme-icon-sun { display: none; }
+        [data-theme="dark"] .theme-icon-moon { display: block; }
 
         /* Hero Image */
         .hero-image {
@@ -1141,67 +1190,65 @@
         }
 
         /* Dark mode specific overrides */
-        @media (prefers-color-scheme: dark) {
-            body::before {
-                background: radial-gradient(ellipse at 20% 50%, rgba(91, 143, 217, 0.04) 0%, transparent 60%),
-                            radial-gradient(ellipse at 80% 20%, rgba(91, 143, 217, 0.03) 0%, transparent 50%);
-            }
+        [data-theme="dark"] body::before {
+            background: radial-gradient(ellipse at 20% 50%, rgba(91, 143, 217, 0.04) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, rgba(91, 143, 217, 0.03) 0%, transparent 50%);
+        }
 
-            .hero-image {
-                opacity: 0.85;
-            }
+        [data-theme="dark"] .hero-image {
+            opacity: 0.85;
+        }
 
-            .prd-output {
-                background: #0a0b0e;
-                color: #c8c8cc;
-                border-color: var(--border-dark);
-            }
+        [data-theme="dark"] .prd-output {
+            background: #0a0b0e;
+            color: #c8c8cc;
+            border-color: var(--border-dark);
+        }
 
-            .header h1 .blue {
-                color: var(--forest);
-            }
+        [data-theme="dark"] .header h1 .blue {
+            color: var(--forest);
+        }
 
-            .header h1:hover .blue {
-                color: var(--forest-light);
-            }
+        [data-theme="dark"] .header h1:hover .blue {
+            color: var(--forest-light);
+        }
 
-            .btn::before {
-                background: var(--forest);
-            }
+        [data-theme="dark"] .btn::before {
+            background: var(--forest);
+        }
 
-            .btn:hover {
-                color: #fff;
-            }
+        [data-theme="dark"] .btn:hover {
+            color: #fff;
+        }
 
-            .btn-prev {
-                border-color: var(--border-dark);
-                color: var(--black);
-            }
+        [data-theme="dark"] .btn-prev {
+            border-color: var(--border-dark);
+            color: var(--black);
+        }
 
-            .btn-prev:hover {
-                background: var(--border-dark);
-            }
+        [data-theme="dark"] .btn-prev:hover {
+            background: var(--border-dark);
+        }
 
-            .example {
-                background: rgba(91, 143, 217, 0.06);
-            }
+        [data-theme="dark"] .example {
+            background: rgba(91, 143, 217, 0.06);
+        }
 
-            .output-instructions {
-                background: rgba(91, 143, 217, 0.06);
-            }
+        [data-theme="dark"] .output-instructions {
+            background: rgba(91, 143, 217, 0.06);
+        }
 
-            .shortcut-item kbd {
-                background: var(--forest);
-                color: #fff;
-            }
+        [data-theme="dark"] .shortcut-item kbd {
+            background: var(--forest);
+            color: #fff;
+        }
 
-            .modal {
-                background: rgba(0, 0, 0, 0.7);
-            }
+        [data-theme="dark"] .modal {
+            background: rgba(0, 0, 0, 0.7);
+        }
 
-            select {
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a0a0a8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-            }
+        [data-theme="dark"] select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a0a0a8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
         }
 
         /* Form validation styles */
@@ -1298,7 +1345,21 @@
 <body>
     <a href="#mainCard" class="skip-to-content">Skip to content</a>
     <div class="container">
-        <a href="https://andreaswillemse.nl" class="back-link" aria-label="Back to andreaswillemse.nl">&larr; andreaswillemse.nl</a>
+        <div class="top-bar">
+            <a href="https://andreaswillemse.nl" class="back-link" aria-label="Back to andreaswillemse.nl">&larr; andreaswillemse.nl</a>
+            <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle theme">
+                <svg class="theme-icon theme-icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2"/><path d="M12 20v2"/>
+                    <path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/>
+                    <path d="M2 12h2"/><path d="M20 12h2"/>
+                    <path d="M4.93 19.07l1.41-1.41"/><path d="M17.66 6.34l1.41-1.41"/>
+                </svg>
+                <svg class="theme-icon theme-icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
 
         <img src="blueprint-hero.jpg" alt="Blueprint architectural drawing" class="hero-image" loading="lazy">
 
@@ -2111,6 +2172,21 @@ ${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>
             loadDraft();
             updateNavDots();
             document.addEventListener('keydown', handleKeyboardShortcuts);
+
+            const themeToggle = document.querySelector('.theme-toggle');
+            if (themeToggle) {
+                const updateLabel = (t) => {
+                    themeToggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+                };
+                updateLabel(document.documentElement.getAttribute('data-theme'));
+                themeToggle.addEventListener('click', () => {
+                    const current = document.documentElement.getAttribute('data-theme');
+                    const next = current === 'dark' ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', next);
+                    try { localStorage.setItem('theme', next); } catch (e) {}
+                    updateLabel(next);
+                });
+            }
 
             document.querySelectorAll('.progress-step').forEach((step, i) => {
                 step.addEventListener('click', () => jumpToSection(i + 1));
