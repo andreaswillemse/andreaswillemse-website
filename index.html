@@ -118,6 +118,10 @@
             --max-width: 1200px;
         }
 
+        html {
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Crimson Pro', serif;
             background: var(--white);
@@ -973,6 +977,17 @@
                 font-size: 0.65rem;
                 padding: 0.45rem var(--spacing);
             }
+        }
+
+        @media (max-width: 480px) {
+            .availability-banner {
+                font-size: 0.6rem;
+                letter-spacing: 0.02em;
+                padding: 0.45rem 0.75rem;
+            }
+        }
+
+        @media (max-width: 768px) {
 
             .menu-toggle {
                 display: block;
@@ -1082,7 +1097,7 @@
 <body>
     <!-- Availability Banner -->
     <div class="availability-banner">
-        Beschikbaar <span class="banner-sep">·</span> <a href="https://linkedin.com/in/andreaswillemse" target="_blank" rel="noopener">Neem contact op</a>
+        Nu druk met een klus <span class="banner-sep">·</span> <a href="https://linkedin.com/in/andreaswillemse" target="_blank" rel="noopener">Neem alvast contact op</a>
     </div>
 
     <!-- Navigation -->
