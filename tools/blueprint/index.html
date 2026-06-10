@@ -285,6 +285,13 @@
             font-weight: 300;
         }
 
+        /* Keyword highlights */
+        mark.hl {
+            background: linear-gradient(180deg, transparent 45%, rgba(255, 230, 0, 0.35) 45%, rgba(255, 230, 0, 0.35) 90%, transparent 90%);
+            color: inherit;
+            padding: 0 0.1em;
+        }
+
         .header-actions {
             margin-top: 1.5rem;
             display: flex;
@@ -467,8 +474,8 @@
         @media (max-width: 768px) {
             .progress-steps {
                 display: grid;
-                grid-template-columns: repeat(5, 1fr);
-                gap: 8px;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 6px;
             }
         }
 
@@ -1251,6 +1258,226 @@
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a0a0a8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
         }
 
+        /* Chips (multi-select tags) */
+        .chip-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .chip {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0.55rem 0.9rem;
+            border: 1px solid var(--border-dark);
+            background: transparent;
+            color: var(--gray-dark);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .chip:hover {
+            border-color: var(--forest);
+            color: var(--forest);
+        }
+
+        .chip.selected {
+            background: var(--forest);
+            color: var(--white);
+            border-color: var(--forest);
+        }
+
+        [data-theme="dark"] .chip.selected {
+            color: var(--bg);
+        }
+
+        /* Radio cards (mutually exclusive options) */
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--border-dark);
+            background: var(--white);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .radio-item:hover {
+            border-color: var(--forest);
+            background: rgba(26, 58, 110, 0.03);
+        }
+
+        .radio-item.selected {
+            border-color: var(--forest);
+            background: rgba(26, 58, 110, 0.05);
+            box-shadow: inset 3px 0 0 var(--forest);
+        }
+
+        [data-theme="dark"] .radio-item:hover,
+        [data-theme="dark"] .radio-item.selected {
+            background: rgba(91, 143, 217, 0.08);
+        }
+
+        .radio-item input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--forest);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .radio-item .radio-label {
+            font-size: 0.95rem;
+            color: var(--gray-dark);
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .radio-item .radio-sublabel {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--gray-light);
+            font-weight: 300;
+            margin-top: 0.15rem;
+        }
+
+        /* Grid for radio cards (used for project type) */
+        .radio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .radio-grid .radio-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.25rem;
+        }
+
+        .radio-grid .radio-item .radio-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        /* Color swatches */
+        .swatch-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .swatch {
+            padding: 0.7rem 0.9rem;
+            border: 1.5px solid var(--border-dark);
+            background: var(--white);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--gray-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .swatch-preview {
+            display: flex;
+            gap: 2px;
+            flex-shrink: 0;
+        }
+
+        .swatch-preview span {
+            width: 14px;
+            height: 14px;
+            display: block;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .swatch:hover {
+            border-color: var(--forest);
+        }
+
+        .swatch.selected {
+            border-color: var(--forest);
+            background: rgba(26, 58, 110, 0.04);
+            box-shadow: inset 3px 0 0 var(--forest);
+        }
+
+        [data-theme="dark"] .swatch.selected {
+            background: rgba(91, 143, 217, 0.08);
+        }
+
+        /* Optional / collapsible reveal */
+        .optional-toggle {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gray-light);
+            background: none;
+            border: none;
+            padding: 0.4rem 0;
+            cursor: pointer;
+            border-bottom: 1px solid transparent;
+            margin-bottom: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .optional-toggle:hover {
+            color: var(--forest);
+            border-bottom-color: var(--forest);
+        }
+
+        .optional-toggle::before {
+            content: '+';
+            font-size: 0.85rem;
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .optional-toggle.open::before {
+            transform: rotate(45deg);
+        }
+
+        .optional-content {
+            display: none;
+        }
+
+        .optional-content.show {
+            display: block;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        /* Section sub-question spacing */
+        .sub-question {
+            margin-top: 1.75rem;
+        }
+
         /* Form validation styles */
         .field-error {
             border-color: var(--error) !important;
@@ -1366,7 +1593,7 @@
         <header class="header">
             <div class="header-label">Prompt generator for Claude Code</div>
             <h1><span class="blue">Blue</span>print</h1>
-            <p>Answer a few questions about what you want to build. Blueprint turns your answers into a tailor-made Claude Code prompt, structured and ready to paste.</p>
+            <p>Answer <mark class="hl">a few questions</mark> about what you want to build. Blueprint turns your answers into a <mark class="hl">tailor-made Claude Code prompt</mark>, structured and <mark class="hl">ready to paste</mark>.</p>
             <div class="header-actions">
                 <button class="btn btn-forest" onclick="toggleLibrary()"><span>Library</span></button>
             </div>
@@ -1400,41 +1627,45 @@
             <div class="progress-steps" id="progressSteps">
                 <div class="progress-step" data-section="1">
                     <div class="progress-step-dot"></div>
-                    <span class="progress-step-label">Name</span>
+                    <span class="progress-step-label">Type</span>
                 </div>
                 <div class="progress-step" data-section="2">
                     <div class="progress-step-dot"></div>
-                    <span class="progress-step-label">Problem</span>
+                    <span class="progress-step-label">Name</span>
                 </div>
                 <div class="progress-step" data-section="3">
                     <div class="progress-step-dot"></div>
-                    <span class="progress-step-label">Solution</span>
+                    <span class="progress-step-label">Problem</span>
                 </div>
                 <div class="progress-step" data-section="4">
                     <div class="progress-step-dot"></div>
-                    <span class="progress-step-label">Users</span>
+                    <span class="progress-step-label">Solution</span>
                 </div>
                 <div class="progress-step" data-section="5">
                     <div class="progress-step-dot"></div>
-                    <span class="progress-step-label">Flow</span>
+                    <span class="progress-step-label">Users</span>
                 </div>
                 <div class="progress-step" data-section="6">
                     <div class="progress-step-dot"></div>
-                    <span class="progress-step-label">Features</span>
+                    <span class="progress-step-label">Flow</span>
                 </div>
                 <div class="progress-step" data-section="7">
                     <div class="progress-step-dot"></div>
-                    <span class="progress-step-label">Tech</span>
+                    <span class="progress-step-label">Features</span>
                 </div>
                 <div class="progress-step" data-section="8">
                     <div class="progress-step-dot"></div>
-                    <span class="progress-step-label">Design</span>
+                    <span class="progress-step-label">Tech</span>
                 </div>
                 <div class="progress-step" data-section="9">
                     <div class="progress-step-dot"></div>
-                    <span class="progress-step-label">Scope</span>
+                    <span class="progress-step-label">Design</span>
                 </div>
                 <div class="progress-step" data-section="10">
+                    <div class="progress-step-dot"></div>
+                    <span class="progress-step-label">Scope</span>
+                </div>
+                <div class="progress-step" data-section="11">
                     <div class="progress-step-dot"></div>
                     <span class="progress-step-label">Done</span>
                 </div>
@@ -1478,62 +1709,169 @@
         <main>
         <!-- Main Card -->
         <div class="card" id="mainCard">
-            <!-- Section 1: Product Name -->
+            <!-- Section 1: Project Type -->
             <div class="question-section active" data-section="1">
+                <div class="section-label">Type</div>
+                <div class="question">What are you building?</div>
+                <div class="hint">Pick the closest match. This shapes the tech stack and the shape of the output.</div>
+                <div class="radio-grid" data-radio-group="projectType">
+                    <label class="radio-item">
+                        <input type="radio" name="projectType" value="Interactive web app (multi-page, stateful UI)">
+                        <span class="radio-label">Web app<span class="radio-sublabel">Multi-page, stateful UI</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="projectType" value="Landing page (single-page marketing site)">
+                        <span class="radio-label">Landing page<span class="radio-sublabel">Single-page marketing site</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="projectType" value="Dashboard (data-dense interface)">
+                        <span class="radio-label">Dashboard<span class="radio-sublabel">Data-dense interface</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="projectType" value="CLI tool (terminal command)">
+                        <span class="radio-label">CLI tool<span class="radio-sublabel">Terminal command</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="projectType" value="Backend service / API (no UI)">
+                        <span class="radio-label">Backend / API<span class="radio-sublabel">Server logic, no UI</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="projectType" value="Automation script or scheduled job">
+                        <span class="radio-label">Automation<span class="radio-sublabel">Script or scheduled job</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="projectType" value="Browser extension">
+                        <span class="radio-label">Browser extension<span class="radio-sublabel">Chrome / Firefox add-on</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="projectType" value="AI-powered feature within a larger app">
+                        <span class="radio-label">AI feature<span class="radio-sublabel">Feature for an existing app</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="projectType" value="Other">
+                        <span class="radio-label">Something else<span class="radio-sublabel">I'll describe it below</span></span>
+                    </label>
+                </div>
+                <button type="button" class="optional-toggle" data-target="projectTypeOther">Add a note (optional)</button>
+                <div class="optional-content" id="projectTypeOther">
+                    <input type="text" id="projectTypeNote" placeholder="e.g., Figma plugin, Electron desktop app, Discord bot">
+                </div>
+            </div>
+
+            <!-- Section 2: Product Name -->
+            <div class="question-section" data-section="2">
                 <div class="section-label">Overview</div>
                 <div class="question">What's the name of your product or feature?</div>
-                <div class="hint">A clear, descriptive name helps Claude understand what it's building</div>
+                <div class="hint">A clear, descriptive name helps Claude understand what it's building.</div>
                 <input type="text" id="productName" placeholder="e.g., Task Priority Dashboard">
                 <div class="example">Examples: "Smart Recipe Finder", "Team Standup Bot", "Expense Tracker"</div>
             </div>
 
-            <!-- Section 2: Problem -->
-            <div class="question-section" data-section="2">
+            <!-- Section 3: Problem -->
+            <div class="question-section" data-section="3">
                 <div class="section-label">Overview</div>
                 <div class="question">What problem does this solve?</div>
-                <div class="hint">Be specific about who has this problem and why current solutions fall short</div>
-                <textarea id="problemStatement" placeholder="e.g., Project managers waste 30+ minutes each morning manually checking task statuses across multiple tools to identify blockers..."></textarea>
+                <div class="hint">Start with chips to flag the pain, then add one specific sentence about who has this problem.</div>
+                <div class="chip-group" data-chip-group="problemTags">
+                    <button type="button" class="chip" data-value="Time-consuming">Time-consuming</button>
+                    <button type="button" class="chip" data-value="Error-prone">Error-prone</button>
+                    <button type="button" class="chip" data-value="Costly">Costly</button>
+                    <button type="button" class="chip" data-value="Confusing">Confusing</button>
+                    <button type="button" class="chip" data-value="Scattered across tools">Scattered across tools</button>
+                    <button type="button" class="chip" data-value="Manual process">Manual</button>
+                    <button type="button" class="chip" data-value="No tool exists">No tool exists</button>
+                    <button type="button" class="chip" data-value="Slow feedback loop">Slow feedback loop</button>
+                    <button type="button" class="chip" data-value="Hard to share">Hard to share</button>
+                </div>
+                <textarea id="problemStatement" placeholder="e.g., Project managers waste 30+ minutes each morning manually checking task statuses across multiple tools to identify blockers."></textarea>
                 <div class="example">Good: "Freelancers lose track of billable hours because switching between timer apps and invoicing tools is cumbersome." Avoid vague statements like "it's hard to manage things."</div>
             </div>
 
-            <!-- Section 3: Solution + Goal -->
-            <div class="question-section" data-section="3">
+            <!-- Section 4: Solution + Goal -->
+            <div class="question-section" data-section="4">
                 <div class="section-label">Overview</div>
                 <div class="question">How does your product solve this?</div>
-                <div class="hint">Describe the core approach in 2-3 sentences</div>
-                <textarea id="proposedSolution" placeholder="e.g., A visual dashboard that pulls task data from project tools and automatically highlights blockers, dependencies, and overdue items in a single view..."></textarea>
+                <div class="hint">2–3 sentences describing the core approach.</div>
+                <textarea id="proposedSolution" placeholder="e.g., A visual dashboard that pulls task data from project tools and automatically highlights blockers, dependencies, and overdue items in a single view."></textarea>
 
-                <div class="question" style="margin-top: 1.5rem;">What's the goal of this prototype?</div>
-                <div class="hint">This shapes how detailed the output needs to be</div>
-                <select id="prototypeGoal">
-                    <option value="">Select a goal...</option>
-                    <option value="Validate the core concept with real users">Validate the core concept with real users</option>
-                    <option value="Test usability and interaction patterns">Test usability and interaction patterns</option>
-                    <option value="Demonstrate the idea to stakeholders or investors">Demonstrate the idea to stakeholders or investors</option>
-                    <option value="Explore technical feasibility before committing">Explore technical feasibility before committing</option>
-                    <option value="Create a functional MVP to ship quickly">Create a functional MVP to ship quickly</option>
-                    <option value="Build an internal tool for my team">Build an internal tool for my team</option>
-                </select>
+                <div class="question sub-question">What's the goal of this build?</div>
+                <div class="hint">Shapes how polished and feature-complete the output needs to be.</div>
+                <div class="radio-group" data-radio-group="prototypeGoal">
+                    <label class="radio-item">
+                        <input type="radio" name="prototypeGoal" value="Validate the core concept with real users">
+                        <span class="radio-label">Validate the concept<span class="radio-sublabel">Real user testing</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="prototypeGoal" value="Test usability and interaction patterns">
+                        <span class="radio-label">Test usability<span class="radio-sublabel">Focus on interaction patterns</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="prototypeGoal" value="Demonstrate the idea to stakeholders or investors">
+                        <span class="radio-label">Demo to stakeholders<span class="radio-sublabel">Look polished, show value</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="prototypeGoal" value="Explore technical feasibility before committing">
+                        <span class="radio-label">Explore feasibility<span class="radio-sublabel">De-risk the tricky parts</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="prototypeGoal" value="Ship a functional MVP quickly">
+                        <span class="radio-label">Ship an MVP<span class="radio-sublabel">Functional, ready to use</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="prototypeGoal" value="Build an internal tool for my team">
+                        <span class="radio-label">Internal tool<span class="radio-sublabel">For me or my team</span></span>
+                    </label>
+                </div>
             </div>
 
-            <!-- Section 4: Users -->
-            <div class="question-section" data-section="4">
-                <div class="section-label">Users</div>
-                <div class="question">Who will use this and in what context?</div>
-                <div class="hint">Describe the primary users, their skill level, and when they'd reach for this product</div>
-                <textarea id="targetUsers" placeholder="e.g., Marketing managers at mid-size companies (50-200 people) who need to create weekly performance reports but don't have a data analyst on their team. Comfortable with spreadsheets but not SQL or BI tools."></textarea>
-                <div class="example">Think about: role, technical comfort level, context of use (on-the-go, at desk, in meetings), and what they're trying to accomplish.</div>
-            </div>
-
-            <!-- Section 5: User Flow + Key Screens -->
+            <!-- Section 5: Users -->
             <div class="question-section" data-section="5">
+                <div class="section-label">Users</div>
+                <div class="question">Who will use this?</div>
+                <div class="hint">Pick every archetype that fits.</div>
+                <div class="chip-group" data-chip-group="userArchetypes">
+                    <button type="button" class="chip" data-value="Consumer / general public">Consumer</button>
+                    <button type="button" class="chip" data-value="Business user (non-technical)">Business user</button>
+                    <button type="button" class="chip" data-value="Developer / engineer">Developer</button>
+                    <button type="button" class="chip" data-value="Designer">Designer</button>
+                    <button type="button" class="chip" data-value="Marketer">Marketer</button>
+                    <button type="button" class="chip" data-value="Operations / ops team">Ops team</button>
+                    <button type="button" class="chip" data-value="Internal team member">Internal team</button>
+                    <button type="button" class="chip" data-value="Student / educator">Student / educator</button>
+                    <button type="button" class="chip" data-value="Power user">Power user</button>
+                </div>
+
+                <div class="question sub-question">Technical skill level?</div>
+                <div class="radio-group" data-radio-group="skillLevel">
+                    <label class="radio-item">
+                        <input type="radio" name="skillLevel" value="Beginner — little to no technical background">
+                        <span class="radio-label">Beginner<span class="radio-sublabel">Little to no technical background</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="skillLevel" value="Intermediate — comfortable with digital tools">
+                        <span class="radio-label">Intermediate<span class="radio-sublabel">Comfortable with digital tools</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="skillLevel" value="Advanced — power users, developers, or experts">
+                        <span class="radio-label">Advanced<span class="radio-sublabel">Power users, devs, experts</span></span>
+                    </label>
+                </div>
+
+                <button type="button" class="optional-toggle" data-target="usersOptional">Add role, workflow, or context (optional)</button>
+                <div class="optional-content" id="usersOptional">
+                    <textarea id="targetUsersContext" placeholder="e.g., Marketing managers at 50–200-person companies, creating weekly reports, comfortable with spreadsheets but not SQL."></textarea>
+                </div>
+            </div>
+
+            <!-- Section 6: User Flow + Key Screens -->
+            <div class="question-section" data-section="6">
                 <div class="section-label">Experience</div>
                 <div class="question">Walk through the main user flow, step by step</div>
-                <div class="hint">Describe what happens from the moment the user opens the app to completing their goal</div>
+                <div class="hint">From opening the app to completing the goal. Numbered steps work well.</div>
                 <textarea id="primaryFlow" placeholder="1. User opens the app and sees their dashboard&#10;2. User clicks 'New Report' and selects a date range&#10;3. App pulls data and generates a draft report&#10;4. User reviews, edits highlights, and adds commentary&#10;5. User exports as PDF or shares via link"></textarea>
 
-                <div class="question" style="margin-top: 1.5rem;">What are the key screens or views?</div>
-                <div class="hint">List every distinct screen the user will encounter</div>
+                <div class="question sub-question">What are the key screens or views?</div>
+                <div class="hint">One per line. Skip this if you're building a CLI tool, API, or automation.</div>
                 <div class="multi-input" id="keyScreensContainer">
                     <div class="multi-input-item">
                         <input type="text" class="key-screen" placeholder="e.g., Dashboard / Home">
@@ -1543,110 +1881,247 @@
                 <button class="btn-add" onclick="addKeyScreen()">+ Add screen</button>
             </div>
 
-            <!-- Section 6: Features + Interactions -->
-            <div class="question-section" data-section="6">
+            <!-- Section 7: Features + AI -->
+            <div class="question-section" data-section="7">
                 <div class="section-label">Features</div>
                 <div class="question">What are the must-have features?</div>
-                <div class="hint">List each feature with enough detail that a developer could build it. Include what happens on click, what data is shown, and how errors are handled.</div>
+                <div class="hint">Describe each feature concretely: what the user clicks, what shows up, how errors surface.</div>
                 <div class="multi-input" id="coreFeaturesContainer">
                     <div class="multi-input-item">
-                        <textarea class="core-feature" placeholder="e.g., Search with filters: user types a query, results appear in real-time. Filters for date, category, and status. Show 'No results found' with suggestions when empty." style="min-height: 80px;"></textarea>
+                        <textarea class="core-feature" placeholder="e.g., Search with filters: user types a query, results appear in real-time. Filters for date, category, and status. 'No results found' with suggestions when empty." style="min-height: 80px;"></textarea>
                     </div>
                 </div>
                 <button class="btn-add" onclick="addCoreFeature()">+ Add feature</button>
 
-                <div class="question" style="margin-top: 1.5rem;">Any AI-powered features?</div>
-                <div class="hint">Describe any features that should use AI (summarization, generation, classification, recommendations, etc.)</div>
-                <textarea id="aiFeatures" placeholder="e.g., Auto-generate report summaries from raw data, suggest tags for new entries based on content, natural language search across all documents"></textarea>
+                <div class="question sub-question">Quick-add common capabilities</div>
+                <div class="hint">Tap anything this build needs. Claude will wire these in.</div>
+                <div class="chip-group" data-chip-group="commonFeatures">
+                    <button type="button" class="chip" data-value="Search">Search</button>
+                    <button type="button" class="chip" data-value="Filters">Filters</button>
+                    <button type="button" class="chip" data-value="Sorting">Sorting</button>
+                    <button type="button" class="chip" data-value="Bulk actions">Bulk actions</button>
+                    <button type="button" class="chip" data-value="Export (CSV/PDF)">Export</button>
+                    <button type="button" class="chip" data-value="Share via link">Share</button>
+                    <button type="button" class="chip" data-value="Notifications">Notifications</button>
+                    <button type="button" class="chip" data-value="Real-time updates">Real-time</button>
+                    <button type="button" class="chip" data-value="Drag-and-drop">Drag & drop</button>
+                    <button type="button" class="chip" data-value="Keyboard shortcuts">Keyboard shortcuts</button>
+                    <button type="button" class="chip" data-value="Undo / redo">Undo / redo</button>
+                    <button type="button" class="chip" data-value="Dark mode">Dark mode</button>
+                    <button type="button" class="chip" data-value="Offline support">Offline</button>
+                    <button type="button" class="chip" data-value="Accessibility (WCAG AA)">A11y (WCAG AA)</button>
+                </div>
+
+                <div class="question sub-question">AI-powered features?</div>
+                <div class="hint">Select any. Leave all unchecked if there's no AI involved.</div>
+                <div class="chip-group" data-chip-group="aiFeatures">
+                    <button type="button" class="chip" data-value="Summarization">Summarization</button>
+                    <button type="button" class="chip" data-value="Text generation">Text generation</button>
+                    <button type="button" class="chip" data-value="Classification / tagging">Classification</button>
+                    <button type="button" class="chip" data-value="Q&A over content">Q&A over content</button>
+                    <button type="button" class="chip" data-value="Recommendations">Recommendations</button>
+                    <button type="button" class="chip" data-value="Semantic / natural-language search">Semantic search</button>
+                    <button type="button" class="chip" data-value="Translation">Translation</button>
+                    <button type="button" class="chip" data-value="Image generation">Image generation</button>
+                    <button type="button" class="chip" data-value="Speech to text">Speech to text</button>
+                    <button type="button" class="chip" data-value="Structured extraction from text">Structured extraction</button>
+                </div>
+                <button type="button" class="optional-toggle" data-target="aiFeaturesOptional">Add AI detail (optional)</button>
+                <div class="optional-content" id="aiFeaturesOptional">
+                    <textarea id="aiFeaturesDetail" placeholder="e.g., Use Claude to summarize weekly reports from raw task data. Mock the LLM call with a static sample response."></textarea>
+                </div>
             </div>
 
-            <!-- Section 7: Technical -->
-            <div class="question-section" data-section="7">
+            <!-- Section 8: Technical -->
+            <div class="question-section" data-section="8">
                 <div class="section-label">Technical</div>
-                <div class="question">What data does the app need to work with?</div>
-                <div class="hint">Describe the key data objects, even informally. What gets created, stored, or displayed?</div>
-                <textarea id="dataModel" placeholder="e.g., Users have a name, email, and role. Projects have a title, status, and list of tasks. Each task has a title, assignee, due date, priority, and status."></textarea>
+                <div class="question">What data does the app work with?</div>
+                <div class="hint">Describe the key entities. Even informal is fine — Claude will formalize it.</div>
+                <textarea id="dataModel" placeholder="e.g., Users have a name, email, and role. Projects have a title, status, and tasks. Each task has a title, assignee, due date, priority, status."></textarea>
 
-                <div class="question" style="margin-top: 1.5rem;">Any APIs, integrations, or external data sources?</div>
-                <div class="hint">External services, authentication, data sources. Note what can be mocked for the prototype.</div>
-                <textarea id="integrations" placeholder="e.g., Pull data from Slack API (can be mocked with sample data), OAuth login with Google (simplify to email/password for prototype)"></textarea>
+                <div class="question sub-question">External integrations</div>
+                <div class="hint">Tick what's involved. Claude will mock these with realistic sample data for the prototype.</div>
+                <div class="chip-group" data-chip-group="integrations">
+                    <button type="button" class="chip" data-value="OAuth login (Google/GitHub)">OAuth login</button>
+                    <button type="button" class="chip" data-value="Email/password auth">Email auth</button>
+                    <button type="button" class="chip" data-value="Stripe payments">Stripe</button>
+                    <button type="button" class="chip" data-value="Email sending (Resend/SendGrid)">Email sending</button>
+                    <button type="button" class="chip" data-value="File uploads / storage">File uploads</button>
+                    <button type="button" class="chip" data-value="Database (Postgres/SQLite)">Database</button>
+                    <button type="button" class="chip" data-value="Analytics tracking">Analytics</button>
+                    <button type="button" class="chip" data-value="Slack API">Slack</button>
+                    <button type="button" class="chip" data-value="Google APIs (Calendar/Drive/Sheets)">Google APIs</button>
+                    <button type="button" class="chip" data-value="Webhooks">Webhooks</button>
+                    <button type="button" class="chip" data-value="Claude / LLM API">Claude / LLM API</button>
+                </div>
+                <button type="button" class="optional-toggle" data-target="integrationsOptional">Add specifics (optional)</button>
+                <div class="optional-content" id="integrationsOptional">
+                    <textarea id="integrationsDetail" placeholder="e.g., Pull from Slack (mock with sample threads). OAuth simplified to email/password for prototype."></textarea>
+                </div>
 
-                <div class="question" style="margin-top: 1.5rem;">Technology preferences?</div>
-                <div class="hint">Choose based on complexity. Simple apps work great with plain HTML/CSS/JS.</div>
+                <div class="question sub-question">Technology stack</div>
+                <div class="hint">Pick one. If unsure, let Claude decide.</div>
                 <select id="techStack">
-                    <option value="">No preference, let Claude decide</option>
-                    <option value="HTML/CSS/JavaScript, single file, no build step">HTML/CSS/JS (simple, no build step)</option>
-                    <option value="React with Tailwind CSS">React + Tailwind CSS</option>
-                    <option value="Next.js with TypeScript">Next.js + TypeScript</option>
-                    <option value="Vue.js">Vue.js</option>
-                    <option value="Svelte">Svelte</option>
-                    <option value="Python with Flask or FastAPI">Python (Flask / FastAPI)</option>
+                    <option value="">Let Claude choose based on complexity</option>
+                    <option value="HTML/CSS/JavaScript, single file, no build step">HTML / CSS / JS — single file, no build</option>
+                    <option value="React with Tailwind CSS, Vite for local dev">React + Tailwind (Vite)</option>
+                    <option value="Next.js with TypeScript and Tailwind CSS">Next.js + TypeScript + Tailwind</option>
+                    <option value="Next.js with shadcn/ui components and Tailwind">Next.js + shadcn/ui</option>
+                    <option value="Astro for content-heavy sites">Astro (content-heavy)</option>
+                    <option value="SvelteKit">SvelteKit</option>
+                    <option value="Remix">Remix</option>
+                    <option value="Vue.js with Vite">Vue.js (Vite)</option>
+                    <option value="Svelte with Vite">Svelte (Vite)</option>
+                    <option value="Python with FastAPI">Python + FastAPI (backend)</option>
+                    <option value="Python with Flask">Python + Flask (backend)</option>
+                    <option value="Node.js with Express and TypeScript">Node.js + Express + TypeScript</option>
+                    <option value="Python script (no framework)">Python script (plain)</option>
+                    <option value="Bash / shell script">Bash / shell script</option>
                 </select>
             </div>
 
-            <!-- Section 8: Design -->
-            <div class="question-section" data-section="8">
-                <div class="section-label">Design</div>
-                <div class="question">What visual style are you going for?</div>
-                <div class="hint">Describe the mood and aesthetic. References to known products work well.</div>
-                <input type="text" id="visualStyle" placeholder="e.g., Clean and modern like Linear, with plenty of whitespace">
-
-                <div class="question" style="margin-top: 1.5rem;">Color preferences?</div>
-                <div class="hint">Specific hex codes, general direction, or a brand to reference</div>
-                <input type="text" id="colorPalette" placeholder="e.g., Dark mode with electric blue accents, or 'warm earth tones'">
-
-                <div class="question" style="margin-top: 1.5rem;">Layout priorities</div>
-                <div class="checkbox-group">
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="responsive" checked>
-                        <label for="responsive">Responsive (works on all screen sizes)</label>
-                    </div>
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="mobileFocused">
-                        <label for="mobileFocused">Mobile-first (optimize for phones)</label>
-                    </div>
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="desktopFocused">
-                        <label for="desktopFocused">Desktop-focused (complex layouts, data-dense)</label>
-                    </div>
-                </div>
-
-                <div class="question" style="margin-top: 1rem;">Design references or inspiration?</div>
-                <input type="text" id="designReferences" placeholder="e.g., Notion's clean sidebar navigation, Stripe's documentation layout">
-
-                <div class="question" style="margin-top: 1.5rem;">Sample content and data</div>
-                <div class="hint">Provide realistic example data, button labels, and key copy the prototype should use</div>
-                <textarea id="sampleContent" placeholder="e.g., Main CTA: 'Generate Report'&#10;Dashboard greeting: 'Good morning, [Name]'&#10;Sample project: 'Q1 Marketing Campaign' with 12 tasks, 3 overdue&#10;Empty state: 'No projects yet. Create your first one to get started.'"></textarea>
-            </div>
-
-            <!-- Section 9: Scope -->
+            <!-- Section 9: Design -->
             <div class="question-section" data-section="9">
-                <div class="section-label">Scope</div>
-                <div class="question">What's explicitly NOT included in this prototype?</div>
-                <div class="hint">Setting boundaries prevents scope creep and helps Claude focus on what matters</div>
-                <div class="multi-input" id="outOfScopeContainer">
-                    <div class="multi-input-item">
-                        <input type="text" class="out-of-scope" placeholder="e.g., Real authentication (mock it)">
-                        <button class="btn-remove" onclick="removeInput(this)" style="display: none;" aria-label="Remove item">&times;</button>
-                    </div>
+                <div class="section-label">Design</div>
+                <div class="question">Visual style</div>
+                <div class="hint">Pick the moods that fit. Combine freely.</div>
+                <div class="chip-group" data-chip-group="visualStyle">
+                    <button type="button" class="chip" data-value="Minimal — lots of whitespace, restrained">Minimal</button>
+                    <button type="button" class="chip" data-value="Editorial — typography-led, long-form friendly">Editorial</button>
+                    <button type="button" class="chip" data-value="Corporate — professional, trustworthy">Corporate</button>
+                    <button type="button" class="chip" data-value="Playful — friendly, lively, rounded">Playful</button>
+                    <button type="button" class="chip" data-value="Bold — strong colors, confident type">Bold</button>
+                    <button type="button" class="chip" data-value="Elegant — refined, generous spacing">Elegant</button>
+                    <button type="button" class="chip" data-value="Brutalist — raw, monospace, sharp">Brutalist</button>
+                    <button type="button" class="chip" data-value="Retro — nostalgic, vintage cues">Retro</button>
+                    <button type="button" class="chip" data-value="Glass — frosted, translucent surfaces">Glass</button>
+                    <button type="button" class="chip" data-value="Monochrome — black and white only">Monochrome</button>
+                    <button type="button" class="chip" data-value="Data-dense — compact, information-rich">Data-dense</button>
                 </div>
-                <button class="btn-add" onclick="addOutOfScope()">+ Add item</button>
 
-                <div class="question" style="margin-top: 1.5rem;">Any constraints or requirements?</div>
-                <div class="hint">Accessibility needs, performance targets, specific browser support, offline capability, etc.</div>
-                <textarea id="constraints" placeholder="e.g., Must work in Chrome and Safari, should load in under 2 seconds, needs to be accessible (WCAG AA)"></textarea>
+                <div class="question sub-question">Color palette</div>
+                <div class="hint">Pick a preset or describe your own below.</div>
+                <div class="swatch-group" data-radio-group="colorPreset">
+                    <label class="swatch">
+                        <input type="radio" name="colorPreset" value="Monochrome (black, white, grays)" hidden>
+                        <span class="swatch-preview"><span style="background:#111"></span><span style="background:#666"></span><span style="background:#eee"></span></span>
+                        Monochrome
+                    </label>
+                    <label class="swatch">
+                        <input type="radio" name="colorPreset" value="Warm earth tones (terracotta, sand, moss)" hidden>
+                        <span class="swatch-preview"><span style="background:#b55239"></span><span style="background:#d4b896"></span><span style="background:#5e7f4f"></span></span>
+                        Warm earth
+                    </label>
+                    <label class="swatch">
+                        <input type="radio" name="colorPreset" value="Cool blues (navy, sky, white)" hidden>
+                        <span class="swatch-preview"><span style="background:#1a3a6e"></span><span style="background:#5b8fd9"></span><span style="background:#f4f7fb"></span></span>
+                        Cool blues
+                    </label>
+                    <label class="swatch">
+                        <input type="radio" name="colorPreset" value="Vibrant (electric accent on neutral base)" hidden>
+                        <span class="swatch-preview"><span style="background:#0a0a0a"></span><span style="background:#00e5ff"></span><span style="background:#ff3d71"></span></span>
+                        Vibrant
+                    </label>
+                    <label class="swatch">
+                        <input type="radio" name="colorPreset" value="Pastel (soft, gentle)" hidden>
+                        <span class="swatch-preview"><span style="background:#ffd9e0"></span><span style="background:#d4eaff"></span><span style="background:#fff5b8"></span></span>
+                        Pastel
+                    </label>
+                    <label class="swatch">
+                        <input type="radio" name="colorPreset" value="Dark mode with a single accent color" hidden>
+                        <span class="swatch-preview"><span style="background:#0a0a0a"></span><span style="background:#22c55e"></span><span style="background:#2d2d2d"></span></span>
+                        Dark + accent
+                    </label>
+                    <label class="swatch">
+                        <input type="radio" name="colorPreset" value="Forest greens and cream" hidden>
+                        <span class="swatch-preview"><span style="background:#1a4d2e"></span><span style="background:#4a7c59"></span><span style="background:#f5efdc"></span></span>
+                        Forest
+                    </label>
+                    <label class="swatch">
+                        <input type="radio" name="colorPreset" value="High-contrast primary colors" hidden>
+                        <span class="swatch-preview"><span style="background:#ff0000"></span><span style="background:#0000ff"></span><span style="background:#ffff00"></span></span>
+                        Primaries
+                    </label>
+                </div>
+                <input type="text" id="colorPalette" placeholder="Or describe your own: 'dark mode, electric blue #00e5ff accent'">
+
+                <div class="question sub-question">Layout priority</div>
+                <div class="radio-group" data-radio-group="layoutPriority">
+                    <label class="radio-item">
+                        <input type="radio" name="layoutPriority" value="Responsive — works well on all screen sizes">
+                        <span class="radio-label">Responsive<span class="radio-sublabel">Works on all screen sizes</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="layoutPriority" value="Mobile-first — optimized for phones, desktop secondary">
+                        <span class="radio-label">Mobile-first<span class="radio-sublabel">Phone is the primary surface</span></span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="layoutPriority" value="Desktop-dense — complex layouts, data-heavy">
+                        <span class="radio-label">Desktop-dense<span class="radio-sublabel">Complex, data-heavy layouts</span></span>
+                    </label>
+                </div>
+
+                <button type="button" class="optional-toggle" data-target="designOptional">Add references or sample content (optional)</button>
+                <div class="optional-content" id="designOptional">
+                    <div class="question sub-question" style="margin-top: 0.5rem;">Design references</div>
+                    <input type="text" id="designReferences" placeholder="e.g., Linear's sidebar, Stripe's docs layout, Notion's empty states">
+
+                    <div class="question sub-question">Sample content and copy</div>
+                    <div class="hint">Only add if you want specific labels or data. Otherwise Claude will invent realistic samples.</div>
+                    <textarea id="sampleContent" placeholder="e.g., Main CTA: 'Generate Report'&#10;Dashboard greeting: 'Good morning, [Name]'&#10;Sample project: 'Q1 Marketing Campaign' with 12 tasks, 3 overdue"></textarea>
+                </div>
             </div>
 
-            <!-- Section 10: Success -->
+            <!-- Section 10: Scope -->
             <div class="question-section" data-section="10">
-                <div class="section-label">Success</div>
-                <div class="question">What does success look like for this prototype?</div>
-                <div class="hint">How will you know the prototype achieved its goal? Be concrete.</div>
-                <textarea id="successCriteria" placeholder="e.g., A user can complete the core flow (create report, customize, export) in under 2 minutes without guidance. Stakeholders understand the value proposition within 30 seconds of seeing it."></textarea>
+                <div class="section-label">Scope</div>
+                <div class="question">What's explicitly NOT part of this build?</div>
+                <div class="hint">Ticking these tells Claude to mock or skip them. This is the fastest way to prevent scope creep.</div>
+                <div class="chip-group" data-chip-group="outOfScopePreset">
+                    <button type="button" class="chip" data-value="Real authentication (mock login)">Real auth</button>
+                    <button type="button" class="chip" data-value="Real payments (mock checkout)">Real payments</button>
+                    <button type="button" class="chip" data-value="Sending real email">Email sending</button>
+                    <button type="button" class="chip" data-value="Admin panel">Admin panel</button>
+                    <button type="button" class="chip" data-value="Analytics / tracking">Analytics</button>
+                    <button type="button" class="chip" data-value="Multi-tenant / organizations">Multi-tenant</button>
+                    <button type="button" class="chip" data-value="Production database (use in-memory or JSON)">Production DB</button>
+                    <button type="button" class="chip" data-value="Automated tests">Automated tests</button>
+                    <button type="button" class="chip" data-value="Deployment / infrastructure">Deployment</button>
+                    <button type="button" class="chip" data-value="Error tracking (Sentry etc.)">Error tracking</button>
+                    <button type="button" class="chip" data-value="Internationalization / translations">i18n</button>
+                    <button type="button" class="chip" data-value="Performance optimization beyond basics">Deep perf tuning</button>
+                </div>
 
-                <div class="question" style="margin-top: 1.5rem;">Anything else Claude should know?</div>
-                <div class="hint">Edge cases, assumptions, inspiration, prior attempts, or context that doesn't fit elsewhere</div>
-                <textarea id="additionalNotes" placeholder="e.g., We tried building this with Retool but it was too rigid. The key insight is that users want to customize the report layout, not just the data. Previous user interviews showed that PDF export is the most requested feature."></textarea>
+                <button type="button" class="optional-toggle" data-target="outOfScopeCustom">Add custom exclusions (optional)</button>
+                <div class="optional-content" id="outOfScopeCustom">
+                    <div class="multi-input" id="outOfScopeContainer">
+                        <div class="multi-input-item">
+                            <input type="text" class="out-of-scope" placeholder="e.g., Offline support, team collaboration">
+                            <button class="btn-remove" onclick="removeInput(this)" style="display: none;" aria-label="Remove item">&times;</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addOutOfScope()">+ Add item</button>
+                </div>
+
+                <button type="button" class="optional-toggle" data-target="constraintsOptional">Add constraints (optional)</button>
+                <div class="optional-content" id="constraintsOptional">
+                    <div class="hint">Browser support, performance targets, accessibility level, offline, etc.</div>
+                    <textarea id="constraints" placeholder="e.g., Must work in Chrome and Safari. Load in under 2s. WCAG AA accessibility."></textarea>
+                </div>
+            </div>
+
+            <!-- Section 11: Success -->
+            <div class="question-section" data-section="11">
+                <div class="section-label">Success</div>
+                <div class="question">What does success look like?</div>
+                <div class="hint">Concrete, observable. How will you know Claude hit the mark?</div>
+                <textarea id="successCriteria" placeholder="e.g., A user can complete the core flow (create report, customize, export) in under 2 minutes without guidance. Stakeholders grasp the value within 30 seconds."></textarea>
+
+                <button type="button" class="optional-toggle" data-target="notesOptional">Anything else Claude should know? (optional)</button>
+                <div class="optional-content" id="notesOptional">
+                    <div class="hint">Edge cases, prior attempts, hidden constraints, inspiration.</div>
+                    <textarea id="additionalNotes" placeholder="e.g., We tried Retool but it was too rigid. Users want to customize report layout, not just data. PDF export is the most-requested feature."></textarea>
+                </div>
             </div>
 
             <!-- Navigation -->
@@ -1708,9 +2183,13 @@
 
     <script>
         let currentSection = 1;
-        const totalSections = 10;
+        const totalSections = 11;
         const prdData = {};
         let autosaveTimeout;
+
+        // Fields that are collections (chips = arrays, radios = single values, swatches = single)
+        const CHIP_GROUPS = ['problemTags', 'userArchetypes', 'commonFeatures', 'aiFeatures', 'integrations', 'visualStyle', 'outOfScopePreset'];
+        const RADIO_GROUPS = ['projectType', 'prototypeGoal', 'skillLevel', 'layoutPriority', 'colorPreset'];
 
         function updateProgress() {
             const progress = (currentSection / totalSections) * 100;
@@ -1837,44 +2316,145 @@
         }
 
         function saveCurrentSection() {
-            document.querySelectorAll('input, textarea, select').forEach(input => {
-                if (input.type === 'checkbox') {
-                    prdData[input.id] = input.checked;
-                } else if (input.className && input.className.includes('-')) {
-                    // multi-inputs handled below
-                } else if (input.id) {
-                    prdData[input.id] = input.value;
+            // Capture any element with an id (text inputs, textareas, selects)
+            document.querySelectorAll('input[type="text"], textarea, select').forEach(input => {
+                if (input.id) prdData[input.id] = input.value;
+            });
+
+            // Capture checkbox state by id (retained for any legacy checkboxes)
+            document.querySelectorAll('input[type="checkbox"]').forEach(input => {
+                if (input.id) prdData[input.id] = input.checked;
+            });
+
+            // Capture chip selections (multi-select tag groups → arrays of strings)
+            CHIP_GROUPS.forEach(key => {
+                const group = document.querySelector(`[data-chip-group="${key}"]`);
+                if (group) {
+                    prdData[key] = Array.from(group.querySelectorAll('.chip.selected')).map(c => c.dataset.value);
                 }
             });
-            prdData.keyScreens = Array.from(document.querySelectorAll('.key-screen')).map(el => el.value).filter(v => v);
-            prdData.coreFeatures = Array.from(document.querySelectorAll('.core-feature')).map(el => el.value).filter(v => v);
-            prdData.outOfScope = Array.from(document.querySelectorAll('.out-of-scope')).map(el => el.value).filter(v => v);
+
+            // Capture radio selections (single value strings)
+            RADIO_GROUPS.forEach(key => {
+                const checked = document.querySelector(`input[name="${key}"]:checked`);
+                prdData[key] = checked ? checked.value : '';
+            });
+
+            // Multi-inputs (collections of free-text entries)
+            prdData.keyScreens = Array.from(document.querySelectorAll('.key-screen')).map(el => el.value.trim()).filter(v => v);
+            prdData.coreFeatures = Array.from(document.querySelectorAll('.core-feature')).map(el => el.value.trim()).filter(v => v);
+            prdData.outOfScope = Array.from(document.querySelectorAll('.out-of-scope')).map(el => el.value.trim()).filter(v => v);
         }
 
         function generatePRD() {
             saveCurrentSection();
 
-            let layoutPrefs = [];
-            if (prdData.responsive) layoutPrefs.push('Responsive');
-            if (prdData.mobileFocused) layoutPrefs.push('Mobile-first');
-            if (prdData.desktopFocused) layoutPrefs.push('Desktop-focused');
-            const layoutText = layoutPrefs.length > 0 ? layoutPrefs.join(', ') : 'Flexible';
+            const name = prdData.productName || '[Product Name]';
+            const type = prdData.projectType || 'Interactive web app (multi-page, stateful UI)';
+            const typeNote = prdData.projectTypeNote ? ` (${prdData.projectTypeNote.trim()})` : '';
 
-            const techLine = prdData.techStack ? prdData.techStack : 'Choose the best technology for this project. For simple apps, use a single HTML file with inline CSS and JS. For complex apps, use React or Next.js.';
+            // Shape the opening sentence based on project type
+            const hasUI = /web app|landing page|dashboard|extension|AI-powered feature/i.test(type);
+            const opener = hasUI
+                ? `Build a fully working, interactive prototype of "${name}"${typeNote}. Read the full specification below before writing any code. Implement every screen and feature described. Use realistic sample data throughout. Never use lorem ipsum or placeholder text.`
+                : `Build a working ${type.replace(/\s*\(.+?\)\s*/g, '').toLowerCase()} called "${name}"${typeNote}. Read the full specification below before writing any code. Implement every feature described. Use realistic sample data throughout.`;
 
-            const prd = `Build a fully working, interactive prototype of "${prdData.productName || '[Product Name]'}". Read the full specification below before writing any code. Implement every screen and feature described. Use realistic sample data throughout. Never use lorem ipsum or placeholder text.
+            // Problem block: tags + statement
+            const problemTags = (prdData.problemTags || []).join(', ');
+            const problemParts = [
+                prdData.problemStatement || '[Problem description]',
+                problemTags ? `Key pain points: ${problemTags}.` : ''
+            ].filter(Boolean);
+            const problemBlock = problemParts.join('\n\n');
+
+            // Users block: archetypes + skill level + optional context
+            const archetypes = (prdData.userArchetypes || []).join(', ');
+            const usersParts = [];
+            if (archetypes) usersParts.push(`Primary audience: ${archetypes}.`);
+            if (prdData.skillLevel) usersParts.push(`Skill level: ${prdData.skillLevel}.`);
+            if (prdData.targetUsersContext) usersParts.push(prdData.targetUsersContext.trim());
+            const usersBlock = usersParts.length ? usersParts.join('\n') : '[Target user description]';
+
+            // Features block: must-haves + quick-add capabilities + AI
+            const coreFeatures = (prdData.coreFeatures && prdData.coreFeatures.length)
+                ? prdData.coreFeatures.map((f, i) => `<feature priority="must" order="${i + 1}">\n${f}\n</feature>`).join('\n\n')
+                : '<feature priority="must" order="1">[Define at least one core feature]</feature>';
+
+            const quickAdds = (prdData.commonFeatures || []).join(', ');
+            const quickAddsBlock = quickAdds ? `\n\n<capabilities>\nAlso wire in these capabilities where they make sense: ${quickAdds}.\n</capabilities>` : '';
+
+            const aiList = prdData.aiFeatures || [];
+            const aiDetail = prdData.aiFeaturesDetail ? prdData.aiFeaturesDetail.trim() : '';
+            let aiBlock = '';
+            if (aiList.length || aiDetail) {
+                const aiParts = [];
+                if (aiList.length) aiParts.push(`AI capabilities: ${aiList.join(', ')}.`);
+                if (aiDetail) aiParts.push(aiDetail);
+                const usesRealLLM = (prdData.integrations || []).some(i => /LLM API|Claude/i.test(i));
+                aiParts.push(usesRealLLM
+                    ? 'Implement real LLM calls via the Claude / LLM API listed in integrations.'
+                    : 'Mock the LLM output with realistic static responses unless otherwise specified.');
+                aiBlock = `\n\n<ai-features>\n${aiParts.join('\n')}\n</ai-features>`;
+            }
+
+            // Integrations block
+            const integList = prdData.integrations || [];
+            const integDetail = prdData.integrationsDetail ? prdData.integrationsDetail.trim() : '';
+            let integrationsBlock;
+            if (!integList.length && !integDetail) {
+                integrationsBlock = 'No external integrations. Mock any data sources with realistic static data.';
+            } else {
+                const parts = [];
+                if (integList.length) parts.push(`Services involved: ${integList.join(', ')}.`);
+                if (integDetail) parts.push(integDetail);
+                parts.push('Mock these with realistic sample data in the prototype. Only implement real API calls for the Claude / LLM API if it is listed.');
+                integrationsBlock = parts.join('\n');
+            }
+
+            // Tech stack
+            const techLine = prdData.techStack || 'Choose the best technology for this project type. For simple apps, a single HTML file with inline CSS/JS is fine. For complex apps, prefer Next.js + TypeScript + Tailwind.';
+
+            // Design
+            const styles = (prdData.visualStyle || []).join(', ');
+            const styleLine = styles || 'Clean, modern, professional';
+            const colorParts = [prdData.colorPreset, prdData.colorPalette].filter(v => v && v.trim()).map(v => v.trim());
+            const colorLine = colorParts.length ? colorParts.join('; ') : 'Use a professional, accessible color palette';
+            const layoutLine = prdData.layoutPriority || 'Responsive — works well on all screen sizes';
+
+            // Screens block (skip cleanly for non-UI types)
+            const screens = prdData.keyScreens || [];
+            let screensBlock;
+            if (screens.length) {
+                screensBlock = `Build each of these as fully functional views:\n\n${screens.map((s, i) => `${i + 1}. ${s}`).join('\n')}`;
+            } else if (hasUI) {
+                screensBlock = 'Infer the necessary screens from the user flow and features above.';
+            } else {
+                screensBlock = 'No distinct UI screens — this is a CLI, API, or automation build.';
+            }
+
+            // Scope
+            const outPreset = prdData.outOfScopePreset || [];
+            const outCustom = prdData.outOfScope || [];
+            const allOutOfScope = [...outPreset, ...outCustom];
+            const scopeText = allOutOfScope.length
+                ? allOutOfScope.map(item => `- ${item}`).join('\n')
+                : '- [Nothing explicitly excluded — use judgement]';
+
+            const prd = `${opener}
+
+<project-type>${type}${typeNote}</project-type>
 
 <product>
-<name>${prdData.productName || '[Product Name]'}</name>
-<goal>${prdData.prototypeGoal || 'Build a working prototype'}</goal>
+<name>${name}</name>
+<goal>${prdData.prototypeGoal || 'Build a working version that demonstrates the concept end-to-end'}</goal>
 <problem>
-${prdData.problemStatement || '[Problem description]'}
+${problemBlock}
 </problem>
 <solution>
 ${prdData.proposedSolution || '[Solution description]'}
 </solution>
 <users>
-${prdData.targetUsers || '[Target user description]'}
+${usersBlock}
 </users>
 </product>
 
@@ -1884,13 +2464,12 @@ ${prdData.targetUsers || '[Target user description]'}
 ${prdData.dataModel || 'Infer a sensible data model from the features described below.'}
 </data-model>
 <integrations>
-${prdData.integrations || 'No external integrations. Mock any data sources with realistic static data.'}
+${integrationsBlock}
 </integrations>
 </technical>
 
 <features>
-${prdData.coreFeatures && prdData.coreFeatures.length > 0 ? prdData.coreFeatures.map((f, i) => `<feature priority="${i + 1}">\n${f}\n</feature>`).join('\n\n') : '<feature priority="1">[Define core features]</feature>'}
-${prdData.aiFeatures ? `\n<ai-features>\n${prdData.aiFeatures}\n</ai-features>` : ''}
+${coreFeatures}${quickAddsBlock}${aiBlock}
 </features>
 
 <user-flow>
@@ -1900,44 +2479,48 @@ ${prdData.primaryFlow || '[User flow steps]'}
 </user-flow>
 
 <screens>
-Build each of these screens as fully functional views:
-
-${prdData.keyScreens && prdData.keyScreens.length > 0 ? prdData.keyScreens.map((s, i) => `${i + 1}. ${s}`).join('\n') : '[Key screens]'}
+${screensBlock}
 </screens>
 
 <design>
-<style>${prdData.visualStyle || 'Clean, modern, professional'}</style>
-<colors>${prdData.colorPalette || 'Use a professional, accessible color palette'}</colors>
-<layout>${layoutText}</layout>
-${prdData.designReferences ? `<references>${prdData.designReferences}</references>` : ''}
+<style>${styleLine}</style>
+<colors>${colorLine}</colors>
+<layout>${layoutLine}</layout>${prdData.designReferences ? `\n<references>${prdData.designReferences}</references>` : ''}
 
 Apply these design principles:
 - Clear visual hierarchy with consistent spacing
 - Accessible contrast ratios (WCAG AA minimum)
-- Smooth transitions for state changes (300ms ease)
-- Hover and focus states on all interactive elements
-- Empty states, loading states, and error states for every view
+- Smooth transitions for state changes (around 300ms ease)
+- Hover, focus, and active states on every interactive element
+- Empty, loading, and error states for every view
 </design>
 
-<sample-data>
-Use this content and data in the prototype. Do not use generic placeholders:
+<code-style>
+- Write the minimum code required. No speculative abstractions, feature flags, or backwards-compat shims.
+- No comments unless the WHY is non-obvious (hidden constraint, workaround, surprising behaviour).
+- No lorem ipsum, no "foo/bar" — use realistic, domain-appropriate sample data throughout.
+- Trust framework guarantees. Validate only at real system boundaries (user input, external APIs).
+- Keep the file structure flat unless the chosen stack requires otherwise.
+</code-style>
 
-${prdData.sampleContent || 'Generate realistic sample data that matches the product domain.'}
+<sample-data>
+${prdData.sampleContent ? prdData.sampleContent : 'Generate realistic sample data that matches the product domain. Use believable names, dates, numbers, and copy that a real user would encounter.'}
 </sample-data>
 
 <scope>
 <out-of-scope>
-Do NOT build these. Skip or mock them:
-${prdData.outOfScope && prdData.outOfScope.length > 0 ? prdData.outOfScope.map(item => `- ${item}`).join('\n') : '- [Nothing explicitly excluded]'}
-</out-of-scope>
-${prdData.constraints ? `<constraints>\n${prdData.constraints}\n</constraints>` : ''}
+Do NOT build these. Skip, mock, or stub them:
+${scopeText}
+</out-of-scope>${prdData.constraints ? `\n<constraints>\n${prdData.constraints}\n</constraints>` : ''}
 </scope>
 
 <acceptance-criteria>
-The prototype is complete when:
-${prdData.successCriteria || '- A user can complete the primary flow end-to-end without errors'}
-</acceptance-criteria>
-${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>` : ''}`;
+Before declaring the build complete, verify end-to-end:
+- The primary user flow runs start to finish without errors
+- Every must-have feature is reachable and functional
+- Sample data is realistic and consistent (no placeholders, no "foo/bar")
+- Hover, focus, empty, loading, and error states are present where applicable${prdData.successCriteria ? `\n\nProject-specific success criteria:\n${prdData.successCriteria}` : ''}
+</acceptance-criteria>${prdData.additionalNotes ? `\n\n<context>\n${prdData.additionalNotes}\n</context>` : ''}`;
 
             document.getElementById('prdOutput').textContent = prd;
             document.getElementById('mainCard').style.display = 'none';
@@ -2164,12 +2747,105 @@ ${prdData.additionalNotes ? `\n<context>\n${prdData.additionalNotes}\n</context>
             updateProgress();
         }
 
+        // Chip toggle: multi-select tag behaviour
+        function setupChips() {
+            document.querySelectorAll('.chip-group').forEach(group => {
+                group.querySelectorAll('.chip').forEach(chip => {
+                    chip.addEventListener('click', () => {
+                        chip.classList.toggle('selected');
+                        const pressed = chip.classList.contains('selected');
+                        chip.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+                        triggerAutosave();
+                    });
+                    if (!chip.hasAttribute('aria-pressed')) {
+                        chip.setAttribute('aria-pressed', 'false');
+                    }
+                });
+            });
+        }
+
+        // Radio-item visual state: sync .selected class with the hidden radio input
+        function setupRadios() {
+            document.querySelectorAll('.radio-item, .swatch').forEach(item => {
+                const input = item.querySelector('input[type="radio"]');
+                if (!input) return;
+                input.addEventListener('change', () => {
+                    const group = input.name;
+                    document.querySelectorAll(`input[name="${group}"]`).forEach(sibling => {
+                        const siblingItem = sibling.closest('.radio-item, .swatch');
+                        if (siblingItem) siblingItem.classList.toggle('selected', sibling.checked);
+                    });
+                    triggerAutosave();
+                });
+                // Reflect initial state on load
+                if (input.checked) item.classList.add('selected');
+            });
+        }
+
+        // Collapsible optional sections
+        function setupOptionalToggles() {
+            document.querySelectorAll('.optional-toggle').forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const targetId = toggle.dataset.target;
+                    const target = document.getElementById(targetId);
+                    if (!target) return;
+                    const open = target.classList.toggle('show');
+                    toggle.classList.toggle('open', open);
+                    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                });
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        }
+
+        // Restore chip/radio/swatch visual state when loading a draft
+        function restoreSelectionState() {
+            CHIP_GROUPS.forEach(key => {
+                const values = Array.isArray(prdData[key]) ? prdData[key] : [];
+                if (!values.length) return;
+                const group = document.querySelector(`[data-chip-group="${key}"]`);
+                if (!group) return;
+                group.querySelectorAll('.chip').forEach(chip => {
+                    if (values.includes(chip.dataset.value)) {
+                        chip.classList.add('selected');
+                        chip.setAttribute('aria-pressed', 'true');
+                    }
+                });
+            });
+            RADIO_GROUPS.forEach(key => {
+                const value = prdData[key];
+                if (!value) return;
+                const input = document.querySelector(`input[name="${key}"][value="${CSS.escape(value)}"]`);
+                if (input) {
+                    input.checked = true;
+                    const item = input.closest('.radio-item, .swatch');
+                    if (item) item.classList.add('selected');
+                }
+            });
+            // Auto-open optional sections that have content so the user sees it
+            ['projectTypeNote', 'targetUsersContext', 'aiFeaturesDetail', 'integrationsDetail', 'designReferences', 'sampleContent', 'constraints', 'additionalNotes'].forEach(id => {
+                const el = document.getElementById(id);
+                if (!el || !el.value) return;
+                const parent = el.closest('.optional-content');
+                if (!parent) return;
+                parent.classList.add('show');
+                const toggle = document.querySelector(`.optional-toggle[data-target="${parent.id}"]`);
+                if (toggle) {
+                    toggle.classList.add('open');
+                    toggle.setAttribute('aria-expanded', 'true');
+                }
+            });
+        }
+
         // Init
         document.addEventListener('DOMContentLoaded', function() {
+            setupChips();
+            setupRadios();
+            setupOptionalToggles();
             updateProgress();
             loadLibrary();
             setupAutosave();
             loadDraft();
+            restoreSelectionState();
             updateNavDots();
             document.addEventListener('keydown', handleKeyboardShortcuts);
 
