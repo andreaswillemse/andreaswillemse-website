@@ -109,4 +109,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://andreaswillemse.nl/blog/van-waterleiding-tot-waardepropositie</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://andreaswillemse.nl/blog/van-waterleiding-tot-waardepropositie" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://andreaswillemse.nl/en/blog/van-waterleiding-tot-waardepropositie" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andreaswillemse.nl/blog/van-waterleiding-tot-waardepropositie" />
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://andreaswillemse.nl/en/blog/van-waterleiding-tot-waardepropositie</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://andreaswillemse.nl/blog/van-waterleiding-tot-waardepropositie" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://andreaswillemse.nl/en/blog/van-waterleiding-tot-waardepropositie" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andreaswillemse.nl/blog/van-waterleiding-tot-waardepropositie" />
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
