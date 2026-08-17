@@ -1,0 +1,8 @@
+# De CV-pagina bevat telefoonnummer en e-mailadres: nooit indexeren.
+# Dit staat los van de meta-tag in cv.html, zodat een export zonder head tags
+# alsnog uit de zoekresultaten blijft.
+/cv
+  X-Robots-Tag: noindex, nofollow
+
+/cv.html
+  X-Robots-Tag: noindex, nofollow
