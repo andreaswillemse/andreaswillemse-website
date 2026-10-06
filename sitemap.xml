@@ -127,4 +127,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://andreaswillemse.nl/en/blog/er-zit-altijd-iemand-aan-de-knop" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop" />
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://andreaswillemse.nl/en/blog/er-zit-altijd-iemand-aan-de-knop</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://andreaswillemse.nl/en/blog/er-zit-altijd-iemand-aan-de-knop" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop" />
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

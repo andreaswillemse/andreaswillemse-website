@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Er zit altijd iemand aan de knop - Andreas Willemse</title>
+    <meta name="title" content="Er zit altijd iemand aan de knop - Andreas Willemse">
+    <meta name="description" content="Wat ik als Product Owner van een soeverein AI-platform leerde over taalmodellen, antropomorfisme en wat soevereiniteit echt is. Elk AI-systeem is door mensen gekozen, ingericht en aangezet.">
+    <meta name="keywords" content="AI, soevereiniteit, Sovereign AI, antropomorfisme, taalmodellen, Product Owner, open source, Cloud Sovereignty Framework, Amsterdam">
+    <meta name="author" content="Andreas Willemse">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop">
+    <link rel="alternate" hreflang="nl" href="https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop">
+    <link rel="alternate" hreflang="en" href="https://andreaswillemse.nl/en/blog/er-zit-altijd-iemand-aan-de-knop">
+    <link rel="alternate" hreflang="x-default" href="https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop">
+    <meta property="og:title" content="Er zit altijd iemand aan de knop">
+    <meta property="og:description" content="Wat ik als Product Owner van een soeverein AI-platform leerde over taalmodellen, antropomorfisme en wat soevereiniteit echt is. Elk AI-systeem is door mensen gekozen, ingericht en aangezet.">
+    <meta property="og:image" content="https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop.jpg">
+    <meta property="og:locale" content="nl_NL">
+    <meta property="og:site_name" content="Andreas Willemse">
+    <meta property="article:author" content="Andreas Willemse">
+    <meta property="article:published_time" content="2026-10-06">
+    <meta property="article:section" content="Sovereign AI">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Sovereign AI">
+    <meta property="article:tag" content="Product Owner">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop">
+    <meta property="twitter:title" content="Er zit altijd iemand aan de knop">
+    <meta property="twitter:description" content="Wat ik als Product Owner van een soeverein AI-platform leerde over taalmodellen, antropomorfisme en wat soevereiniteit echt is. Elk AI-systeem is door mensen gekozen, ingericht en aangezet.">
+    <meta property="twitter:image" content="https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop.jpg">
+
+    <!-- Structured Data - Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Er zit altijd iemand aan de knop",
+        "description": "Wat ik als Product Owner van een soeverein AI-platform leerde over taalmodellen, antropomorfisme en wat soevereiniteit echt is. Elk AI-systeem is door mensen gekozen, ingericht en aangezet.",
+        "author": {
+            "@type": "Person",
+            "name": "Andreas Willemse",
+            "url": "https://andreaswillemse.nl/"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Andreas Willemse"
+        },
+        "datePublished": "2026-10-06",
+        "dateModified": "2026-10-06",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop"
+        },
+        "url": "https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop",
+        "image": "https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop.jpg",
+        "articleSection": "Sovereign AI",
+        "keywords": ["Sovereign AI", "soevereiniteit", "antropomorfisme", "taalmodellen", "verantwoordelijkheid"],
+        "wordCount": 1360,
+        "inLanguage": "nl"
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231a3a2e'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='%23fafafa' font-family='monospace' font-weight='bold'>AW</text></svg>">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1a3a2e">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            try {
+                var saved = localStorage.getItem('theme');
+                var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.setAttribute('data-theme', saved || (prefers ? 'dark' : 'light'));
+            } catch (e) {}
+        })();
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --steel: #2d2d2d;
+            --steel-light: #404040;
+            --white: #fafafa;
+            --off-white: #e8e8e8;
+            --forest: #1a3a2e;
+            --forest-light: #2d5a45;
+            --spacing: 2rem;
+            --max-width: 1200px;
+            --surface-tinted: #c8d5cc;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.7;
+            font-size: 18px;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(26, 58, 46, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(45, 45, 45, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--off-white);
+            z-index: 1000;
+            padding: 1.5rem var(--spacing);
+        }
+
+        nav .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -0.02em;
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--steel);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--forest);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--forest);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .lang-switch {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--steel);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+            border: 1px solid var(--off-white);
+            padding: 0.3rem 0.6rem;
+        }
+
+        .lang-switch:hover {
+            color: var(--forest);
+            border-color: var(--forest);
+        }
+
+        /* Theme toggle */
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--off-white);
+            color: var(--steel);
+            cursor: pointer;
+            padding: 0;
+            width: 34px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            color: var(--forest);
+            border-color: var(--forest);
+        }
+
+        .theme-toggle svg {
+            width: 16px;
+            height: 16px;
+            display: block;
+        }
+
+        .theme-toggle .theme-icon-moon { display: none; }
+        [data-theme="dark"] .theme-toggle .theme-icon-sun { display: none; }
+        [data-theme="dark"] .theme-toggle .theme-icon-moon { display: block; }
+
+        /* Hamburger menu toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 24px;
+            height: 18px;
+            position: relative;
+            padding: 0;
+        }
+
+        .menu-toggle span,
+        .menu-toggle span::before,
+        .menu-toggle span::after {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--black);
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle span { top: 8px; }
+        .menu-toggle span::before,
+        .menu-toggle span::after { content: ''; }
+        .menu-toggle span::before { top: -7px; }
+        .menu-toggle span::after { top: 7px; }
+
+        nav.menu-open .menu-toggle span { background: transparent; }
+        nav.menu-open .menu-toggle span::before { top: 0; transform: rotate(45deg); }
+        nav.menu-open .menu-toggle span::after { top: 0; transform: rotate(-45deg); }
+
+        /* Article Layout */
+        .article-header {
+            padding: calc(80px + 4rem) var(--spacing) 3rem;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--forest);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--black);
+        }
+
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover svg {
+            transform: translateX(-3px);
+        }
+
+        .article-meta {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--forest);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .article-meta .divider {
+            width: 4px;
+            height: 4px;
+            background: var(--forest);
+            border-radius: 50%;
+        }
+
+        .article-header h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-intro {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: var(--steel);
+            font-weight: 300;
+            border-left: 4px solid var(--forest);
+            padding-left: 1.5rem;
+        }
+
+        /* Article Hero Image */
+        .article-hero-image {
+            max-width: 780px;
+            margin: 0 auto 2rem;
+            padding: 0 var(--spacing);
+        }
+
+        .article-hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Article Content */
+        .article-content {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 var(--spacing) 4rem;
+        }
+
+        .article-content h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .article-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.15em;
+            width: 4px;
+            height: 1em;
+            background: var(--forest);
+        }
+
+        .article-content p {
+            margin-bottom: 1.4rem;
+            color: var(--steel-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .article-content em {
+            font-style: italic;
+        }
+
+        .article-content a {
+            color: var(--forest);
+            text-decoration: none;
+            border-bottom: 1px solid var(--forest);
+            transition: all 0.3s ease;
+        }
+
+        .article-content a:hover {
+            color: var(--black);
+            border-bottom-color: var(--black);
+        }
+
+        /* Ordered lists */
+        .article-content ol {
+            margin: 0 0 1.4rem;
+            padding-left: 1.6rem;
+        }
+
+        .article-content ol li {
+            color: var(--steel-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 0.6rem;
+            padding-left: 0.3rem;
+        }
+
+        .article-content ol li::marker {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            color: var(--forest);
+        }
+
+        /* Article figures */
+        .article-content figure {
+            margin: 2.5rem 0;
+        }
+
+        .article-content figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        figcaption {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--forest);
+            margin-top: 0.6rem;
+        }
+
+        figcaption a {
+            color: var(--forest);
+            text-decoration: none;
+            border-bottom: 1px solid var(--forest);
+        }
+
+        figcaption a:hover {
+            color: var(--black);
+            border-bottom-color: var(--black);
+        }
+
+        /* Video embed */
+        .video-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Divider */
+        .article-divider {
+            border: none;
+            height: 1px;
+            background: var(--off-white);
+            margin: 3rem 0;
+        }
+
+        /* Article Footer / CTA */
+        .article-footer {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 var(--spacing) 5rem;
+        }
+
+        .article-cta {
+            background: var(--off-white);
+            padding: 2.5rem;
+            border-left: 4px solid var(--forest);
+        }
+
+        .article-cta p {
+            font-size: 1.05rem;
+            color: var(--steel-light);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-cta p:last-child {
+            margin-bottom: 0;
+        }
+
+        .article-cta a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--forest);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid var(--forest);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .article-cta a:hover {
+            color: var(--black);
+            border-bottom-color: var(--black);
+        }
+
+        /* Reading progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--forest);
+            z-index: 1001;
+            transition: width 0.1s linear;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 3rem var(--spacing);
+            text-align: center;
+        }
+
+        footer p {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* Focus & Active States */
+        a:focus-visible,
+        button:focus-visible,
+        .btn:focus-visible,
+        .lang-switch:focus-visible,
+        .menu-toggle:focus-visible,
+        .back-link:focus-visible,
+        .blog-card:focus-visible {
+            outline: 2px solid var(--forest);
+            outline-offset: 2px;
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        /* Dark Mode */
+        [data-theme="dark"] {
+            --black: #e8e8ec;
+            --steel: #c8c8cc;
+            --steel-light: #a0a0a8;
+            --white: #111318;
+            --off-white: #2a2a30;
+            --forest: #5b9a7a;
+            --forest-light: #7ab89a;
+            --surface-tinted: #1a2420;
+        }
+
+        [data-theme="dark"] nav {
+            background: rgba(17, 19, 24, 0.95);
+        }
+
+        [data-theme="dark"] nav ul {
+            background: rgba(17, 19, 24, 0.98);
+        }
+
+        [data-theme="dark"] .article-cta {
+            background: #1a1b20;
+        }
+
+        [data-theme="dark"] footer {
+            background: #0a0a0f;
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(250, 250, 250, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--off-white);
+            }
+
+            [data-theme="dark"] nav ul {
+                background: rgba(17, 19, 24, 0.98);
+            }
+
+            nav.menu-open ul { display: flex; }
+
+            nav ul li a {
+                display: block;
+                padding: 0.75rem var(--spacing);
+                font-size: 0.8rem;
+            }
+
+            .article-header {
+                padding: calc(80px + 2rem) 1.25rem 2rem;
+            }
+
+            .article-content {
+                padding: 0 1.25rem 3rem;
+            }
+
+            .article-footer {
+                padding: 0 1.25rem 3rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.15rem;
+                margin-top: 2.5rem;
+            }
+
+            .article-cta {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.1s; }
+        .fade-in-delay-2 { animation-delay: 0.2s; }
+        .fade-in-delay-3 { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Keyword highlights */
+        mark.hl {
+            background: linear-gradient(180deg, transparent 45%, rgba(255, 230, 0, 0.35) 45%, rgba(255, 230, 0, 0.35) 90%, transparent 90%);
+            color: inherit;
+            padding: 0 0.1em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Reading Progress -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation -->
+    <nav aria-label="Hoofdnavigatie">
+        <div class="container">
+            <a href="/" class="logo" aria-label="Andreas Willemse - Home">AW</a>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="/#about">Over</a></li>
+                    <li><a href="/#experience">Ervaring</a></li>
+                    <li><a href="/#skills">Vaardigheden</a></li>
+                    <li><a href="/#blog">Blog</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+                <a href="/en/blog/er-zit-altijd-iemand-aan-de-knop" class="lang-switch" aria-label="Switch to English">EN</a>
+                <button class="theme-toggle" type="button" aria-label="Wissel tussen licht en donker thema" title="Wissel thema">
+                    <svg class="theme-icon theme-icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2"/><path d="M12 20v2"/>
+                        <path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/>
+                        <path d="M2 12h2"/><path d="M20 12h2"/>
+                        <path d="M4.93 19.07l1.41-1.41"/><path d="M17.66 6.34l1.41-1.41"/>
+                    </svg>
+                    <svg class="theme-icon theme-icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Article Header -->
+        <header class="article-header">
+            <a href="/#blog" class="back-link fade-in">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Terug naar overzicht
+            </a>
+            <div class="article-meta fade-in fade-in-delay-1">
+                <span>Sovereign AI</span>
+                <span class="divider"></span>
+                <span>Oktober 2026</span>
+                <span class="divider"></span>
+                <span>7 min leestijd</span>
+            </div>
+            <h1 class="fade-in fade-in-delay-2">Er zit altijd iemand aan de knop</h1>
+            <p class="article-intro fade-in fade-in-delay-3">
+                Sinds een paar maanden ben ik bij mijn huidige opdrachtgever Product Owner van een team dat een <mark class="hl">soeverein AI-platform</mark> bouwt. Op zo'n platform kunnen organisaties hun eigen, veilige AI-toepassingen bouwen. Ik werk er samen met slimme AI-engineers. Van hen leerde ik meer over AI dan in de jaren ervoor. Dit zijn mijn belangrijkste lessen.
+            </p>
+        </header>
+
+        <!-- Article Image -->
+        <div class="article-hero-image">
+            <figure>
+                <img src="/blog/er-zit-altijd-iemand-aan-de-knop.jpg" alt="Zwart-wit illustratie van een man met een kalme glimlach, omringd door rijen robotskeletten met gloeiende rode ogen" width="1500" height="844" loading="lazy">
+                <figcaption>Beeld: <a href="https://www.vn.nl" target="_blank" rel="noopener noreferrer">vn.nl</a></figcaption>
+            </figure>
+        </div>
+
+        <!-- Article Content -->
+        <article class="article-content">
+            <h2>Onder de motorkap</h2>
+            <p>
+                Van buiten lijkt een taalmodel slim. Het praat terug en snapt je vraag. Van binnen is het een groot bestand met miljarden getallen, die tijdens de training zijn bijgesteld.
+            </p>
+            <p>
+                Wat doet dat bestand? Het voorspelt welk stukje tekst er waarschijnlijk volgt. Dan het stukje daarna, en zo verder. Zo ontstaat een heel antwoord.
+            </p>
+            <p>
+                Dat rekenwerk gebeurt op GPU's, chips die ooit voor computergraphics zijn ontworpen. Een model kan bovendien alleen werken met de tekst die je het geeft. Daarom bestaat RAG: je geeft het model eerst de juiste stukken uit je eigen documenten, zodat het niet hoeft te gokken.
+            </p>
+            <p>
+                Voor mij was dit het begin van de <mark class="hl">demystificatie</mark>. AI werd techniek. En techniek kun je begrijpen, meten en verbeteren.
+            </p>
+            <h2>De praktijk</h2>
+            <p>
+                Een AI-platform heeft eigen hardware nodig, en die is lastig te krijgen. Het gaat om GPU's zoals de H100 en de nieuwere H200 van Nvidia. Ze zijn schaars en duur, en grote leveranciers hebben lange wachttijden. Ook een eigen stuk rack in een datacenter regel je niet zomaar.
+            </p>
+            <p>
+                Hoe je cloud en AI met elkaar verbindt, is misschien wel de belangrijkste vraag van dit moment. Bijna alles wat je met AI doet, raakt aan data. Die wil je niet zomaar naar buiten sturen. Tegelijk zit de meeste rekenkracht juist buiten de deur. Daar moet je een keuze in maken, en die is zelden eenvoudig.
+            </p>
+            <p>
+                Een prettige verrassing: veel taken kunnen prima met een <mark class="hl">klein model</mark>. Denk aan een tekst samenvatten, een document indelen of een veld uit een formulier halen. Zo'n model is snel en goedkoop en draait op bescheiden hardware. Een groot model kost dan vooral meer geld.
+            </p>
+            <p>
+                Ik leerde ook iets over vertrouwen. <mark class="hl">Een taalmodel klinkt altijd zeker van zijn zaak</mark>, ook als het ernaast zit. Op grote schaal worden kleine fouten zo snel grote fouten.
+            </p>
+            <h2>Antropomorfisme</h2>
+            <p>
+                We zeggen het allemaal. "AI besluit." "AI denkt dat." "Het model raakte in paniek." Ik betrapte mezelf er ook op. Het gaat vanzelf, want het ding praat terug. Daar is een woord voor: <mark class="hl">antropomorfisme.</mark> We geven menselijke eigenschappen aan iets wat geen mens is.
+            </p>
+            <p>
+                Dat doen we al heel lang. We geven stormen een naam en schelden op de printer. Bij een taalmodel is de verleiding groter, want het spreekt onze taal. "Ik begrijp je" komt uit dezelfde berekening als elke andere zin. Het gevoel van begrip ontstaat bij ons, de lezer.
+            </p>
+            <p>
+                De filosoof Daniel Dennett noemde dit de intentionele houding. We doen alsof iets wensen en overtuigingen heeft, omdat we zijn gedrag dan makkelijker voorspellen. Dat is handig. Het wordt een probleem als we vergeten dat we doen alsof.
+            </p>
+            <p>
+                Die discussie speelt nu ook in Nederland. Op 20 september schreven Felienne Hermans, Antal van den Bosch, Iris van Rooij en andere AI-specialisten in Vrij Nederland: <a href="https://www.vn.nl/klopping-corvee" target="_blank" rel="noopener noreferrer">"Wij hebben het gehad met Klöpping-corvee"</a>. Je kunt <a href="https://www.netkwesties.nl/documenten/20290920%20NK%20VN%20BRIEF%20TEGEN%20KLOPPING.pdf" target="_blank" rel="noopener noreferrer">de brief hier volledig lezen</a>. Ze zijn het zat om na elk talkshowoptreden van Alexander Klöpping de schade te moeten herstellen. Een van hun bezwaren: zijn verhalen zitten vol antropomorfismen. Zoals een AI-systeem dat in paniek raakt. Volgens de schrijvers kan dat niet, omdat paniek geen gevolg is van rekenwerk. Taalkundige Marc van Oostendorp <a href="https://neerlandistiek.nl/2026/09/kunnen-bots-in-paniek-raken/" target="_blank" rel="noopener noreferrer">vroeg zich daarop af</a> of een bot misschien toch in paniek kan raken. Een mooie vraag voor filosofen.
+            </p>
+            <p>
+                Voor mijn werk weegt een ander gevaar zwaarder. Zodra je AI een mens noemt, <mark class="hl">verdwijnen de echte mensen uit beeld</mark>. Mensen kozen de data waarmee het model is getraind. Mensen schreven de instructies die bepalen hoe het reageert. Mensen trokken de grenzen van wat het wel en niet mag zeggen. Mensen besloten waar het draait, wie erbij kan en wat er met jouw vragen gebeurt.
+            </p>
+            <p>
+                Wie AI als mens neemt, ziet die keuzes niet meer. Een fout lijkt dan iets wat de machine deed. Zo raak je de verantwoordelijkheid kwijt. Die ligt altijd bij een organisatie, een team of een persoon.
+            </p>
+            <p>
+                De berichten over 'ontsnapte' agents van OpenAI zijn een goed voorbeeld. In juli <a href="https://www.computable.nl/2026/07/23/ai-ontsnapt-uit-sandbox-openai-meldt-ongezien-cyberincident/" target="_blank" rel="noopener noreferrer">brak een agent in bij Hugging Face</a>. In september <a href="https://tech.yahoo.com/ai/chatgpt/articles/openai-says-ai-agents-escaped-152502166.html" target="_blank" rel="noopener noreferrer">vond een ander model een weg naar internet</a>. OpenAI legde de training daarna voor de tweede keer stil.
+            </p>
+            <p>
+                Het woord 'ontsnappen' doet denken aan een dier dat uit zijn kooi breekt. Een typisch geval van antropomorfisme. Wie de verslagen leest, ziet vooral mensenwerk. Mensen hadden de veiligheidsgrenzen van het model bewust verlaagd, om te meten wat het kon. Mensen hadden de netwerkregels verkeerd ingesteld. Een automatische noodstop werkte niet. Pas na tweeënhalf uur stopte iemand de training met de hand. OpenAI gaf zelf toe dat er een gat zat in de controles op het netwerk.
+            </p>
+            <p>
+                Dat maakt het niet minder ernstig. Ook een kerncentrale kan uit de hand lopen, met een ramp als gevolg. Toch liggen er onder elke kernramp menselijke besluiten en fouten. Een ontwerp, een bezuiniging, een test die nooit had mogen doorgaan. Bij AI is dat net zo. <mark class="hl">Mensen bouwen het, mensen zetten het aan en mensen zijn verantwoordelijk als het misgaat</mark>.
+            </p>
+            <p>
+                Voor mij als Product Owner was dit de belangrijkste les. <mark class="hl">Het model is gereedschap. De keuzes eromheen zijn van ons.</mark>
+            </p>
+            <h2>Wat soevereiniteit echt is</h2>
+            <p>
+                Soevereiniteit klinkt als een postcode. Zolang de servers in Europa staan, zit je goed. In het begin dacht ik dat ook. Dat bleek veel te simpel.
+            </p>
+            <p>
+                <mark class="hl">Soevereiniteit heeft lagen.</mark> Bij elke laag hoort een eigen vraag:
+            </p>
+            <ol>
+                <li>Waar staan de gegevens?</li>
+                <li>Welk recht geldt er? Data in een Europees datacenter van een Amerikaans bedrijf valt ook onder Amerikaanse wetgeving.</li>
+                <li>Wie beheert het systeem? Wie kan erbij, en vanuit welk land?</li>
+                <li>Waar komt het model vandaan? Wat weet je van de data waarop het is getraind? Elk model neemt de bias uit die data mee. En de keuzes van de maker over wat het wel en niet mag zeggen.</li>
+                <li>Is het open source? Dat geldt voor elk onderdeel: het model, het besturingssysteem, de database en de software die alles aanstuurt. Open software kun je zelf draaien, bekijken en aanpassen. Bij gesloten software ben je afhankelijk van de maker.</li>
+                <li>Waar komt de hardware vandaan? En kun je die morgen nog krijgen?</li>
+            </ol>
+            <p>
+                Op de ene laag kun je goed scoren en op de andere slecht. Een Europees model op Amerikaanse GPU's. Eigen servers met software die je niet zelf kunt aanpassen. Elke laag heeft een prijs, in geld, in tijd of in gemak.
+            </p>
+            <p>
+                De Europese Commissie probeert dit meetbaar te maken. In haar <a href="https://commission.europa.eu/document/09579818-64a6-4dd5-9577-446ab6219113_en" target="_blank" rel="noopener noreferrer">Cloud Sovereignty Framework</a> beoordeelt ze clouddiensten op acht punten, zoals recht, beheer, toeleveringsketen en veiligheid. De uitkomst is een niveau op een schaal van vijf: de SEAL-niveaus. SEAL-0 betekent geen enkele soevereiniteit. SEAL-4 betekent dat de hele keten Europees is, van chip tot software. Voor haar eigen inkoop vraagt de Commissie minimaal SEAL-2, soevereiniteit over de data. De meeste aanbieders die ze <a href="https://commission.europa.eu/news-and-media/news/commission-advances-cloud-sovereignty-through-strategic-procurement-2026-04-17_en" target="_blank" rel="noopener noreferrer">in april selecteerde</a>, kwamen uit op SEAL-3.
+            </p>
+            <p>
+                <mark class="hl">Volledig soeverein bestaat bijna niet.</mark> Dat vond ik eerst teleurstellend. Inmiddels vind ik het een eerlijk uitgangspunt. Je bent altijd ergens van afhankelijk. Weet dan van wie, en kies daar bewust voor.
+            </p>
+            <h2>Wat ik meeneem</h2>
+            <p>
+                Werk je met AI, of moet je erover beslissen? Dit zijn de vragen die ik nu altijd stel:
+            </p>
+            <ol>
+                <li>Wie zit er aan de knop? Wie heeft het model gekozen, de instructies geschreven en de grenzen bepaald?</li>
+                <li>Is dit het kleinste model dat het werk goed doet?</li>
+                <li>Waar gaat de data naartoe, en onder welk recht valt die plek?</li>
+                <li>Van wie zijn we afhankelijk, per laag? En kiezen we daar bewust voor?</li>
+                <li>Welke onderdelen zijn open source? En wat weten we van de bias in het model?</li>
+            </ol>
+            <p>
+                Elk AI-systeem is gekozen, ingericht en aangezet door mensen. Zij bepalen wat het mag, waar het draait en wie erbij kan. Als Product Owner ben ik een van die mensen. <mark class="hl">Er zit altijd iemand aan de knop.</mark>
+            </p>
+
+            <hr class="article-divider">
+        </article>
+
+        <!-- Article Footer CTA -->
+        <div class="article-footer">
+            <div class="article-cta">
+                <p>
+                    Lees ook: <a href="/blog/ai-product-management">AI &amp; Product Management: een visie vanuit de praktijk</a>
+                </p>
+                <p>
+                    <a href="https://linkedin.com/in/andreaswillemse" target="_blank" rel="noopener noreferrer">Stuur me een bericht op LinkedIn &rarr;</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Andreas Willemse - Product Owner & Manager, Amsterdam</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navEl = document.querySelector('nav');
+        if (menuToggle && navEl) {
+            menuToggle.addEventListener('click', () => {
+                const open = navEl.classList.toggle('menu-open');
+                menuToggle.setAttribute('aria-expanded', open);
+            });
+            document.querySelectorAll('nav ul a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navEl.classList.remove('menu-open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // Reading progress bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        });
+
+        // Theme toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        if (themeToggle) {
+            const updateLabel = (t) => {
+                themeToggle.setAttribute('aria-label', t === 'dark' ? 'Schakel naar licht thema' : 'Schakel naar donker thema');
+            };
+            updateLabel(document.documentElement.getAttribute('data-theme'));
+            themeToggle.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme');
+                const next = current === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                updateLabel(next);
+            });
+        }
+    </script>
+</body>
+</html>

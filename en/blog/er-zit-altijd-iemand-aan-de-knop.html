@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>There&#x27;s always someone at the controls - Andreas Willemse</title>
+    <meta name="title" content="There&#x27;s always someone at the controls - Andreas Willemse">
+    <meta name="description" content="What I learned as Product Owner of a sovereign AI platform about language models, anthropomorphism and what sovereignty really is. Every AI system is chosen, set up and switched on by people.">
+    <meta name="keywords" content="AI, sovereignty, Sovereign AI, anthropomorphism, language models, Product Owner, open source, Cloud Sovereignty Framework, Amsterdam">
+    <meta name="author" content="Andreas Willemse">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://andreaswillemse.nl/en/blog/er-zit-altijd-iemand-aan-de-knop">
+    <link rel="alternate" hreflang="nl" href="https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop">
+    <link rel="alternate" hreflang="en" href="https://andreaswillemse.nl/en/blog/er-zit-altijd-iemand-aan-de-knop">
+    <link rel="alternate" hreflang="x-default" href="https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://andreaswillemse.nl/en/blog/er-zit-altijd-iemand-aan-de-knop">
+    <meta property="og:title" content="There&#x27;s always someone at the controls">
+    <meta property="og:description" content="What I learned as Product Owner of a sovereign AI platform about language models, anthropomorphism and what sovereignty really is. Every AI system is chosen, set up and switched on by people.">
+    <meta property="og:image" content="https://andreaswillemse.nl/en/blog/er-zit-altijd-iemand-aan-de-knop.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Andreas Willemse">
+    <meta property="article:author" content="Andreas Willemse">
+    <meta property="article:published_time" content="2026-10-06">
+    <meta property="article:section" content="Sovereign AI">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Sovereign AI">
+    <meta property="article:tag" content="Product Owner">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://andreaswillemse.nl/en/blog/er-zit-altijd-iemand-aan-de-knop">
+    <meta property="twitter:title" content="There&#x27;s always someone at the controls">
+    <meta property="twitter:description" content="What I learned as Product Owner of a sovereign AI platform about language models, anthropomorphism and what sovereignty really is. Every AI system is chosen, set up and switched on by people.">
+    <meta property="twitter:image" content="https://andreaswillemse.nl/en/blog/er-zit-altijd-iemand-aan-de-knop.jpg">
+
+    <!-- Structured Data - Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "There&#x27;s always someone at the controls",
+        "description": "What I learned as Product Owner of a sovereign AI platform about language models, anthropomorphism and what sovereignty really is. Every AI system is chosen, set up and switched on by people.",
+        "author": {
+            "@type": "Person",
+            "name": "Andreas Willemse",
+            "url": "https://andreaswillemse.nl/"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Andreas Willemse"
+        },
+        "datePublished": "2026-10-06",
+        "dateModified": "2026-10-06",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://andreaswillemse.nl/en/blog/er-zit-altijd-iemand-aan-de-knop"
+        },
+        "url": "https://andreaswillemse.nl/en/blog/er-zit-altijd-iemand-aan-de-knop",
+        "image": "https://andreaswillemse.nl/en/blog/er-zit-altijd-iemand-aan-de-knop.jpg",
+        "articleSection": "Sovereign AI",
+        "keywords": ["Sovereign AI", "sovereignty", "anthropomorphism", "language models", "responsibility"],
+        "wordCount": 1400,
+        "inLanguage": "en"
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231a3a2e'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='%23fafafa' font-family='monospace' font-weight='bold'>AW</text></svg>">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1a3a2e">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            try {
+                var saved = localStorage.getItem('theme');
+                var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.setAttribute('data-theme', saved || (prefers ? 'dark' : 'light'));
+            } catch (e) {}
+        })();
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --steel: #2d2d2d;
+            --steel-light: #404040;
+            --white: #fafafa;
+            --off-white: #e8e8e8;
+            --forest: #1a3a2e;
+            --forest-light: #2d5a45;
+            --spacing: 2rem;
+            --max-width: 1200px;
+            --surface-tinted: #c8d5cc;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.7;
+            font-size: 18px;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(26, 58, 46, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(45, 45, 45, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--off-white);
+            z-index: 1000;
+            padding: 1.5rem var(--spacing);
+        }
+
+        nav .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -0.02em;
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--steel);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--forest);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--forest);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .lang-switch {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--steel);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+            border: 1px solid var(--off-white);
+            padding: 0.3rem 0.6rem;
+        }
+
+        .lang-switch:hover {
+            color: var(--forest);
+            border-color: var(--forest);
+        }
+
+        /* Theme toggle */
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--off-white);
+            color: var(--steel);
+            cursor: pointer;
+            padding: 0;
+            width: 34px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            color: var(--forest);
+            border-color: var(--forest);
+        }
+
+        .theme-toggle svg {
+            width: 16px;
+            height: 16px;
+            display: block;
+        }
+
+        .theme-toggle .theme-icon-moon { display: none; }
+        [data-theme="dark"] .theme-toggle .theme-icon-sun { display: none; }
+        [data-theme="dark"] .theme-toggle .theme-icon-moon { display: block; }
+
+        /* Hamburger menu toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 24px;
+            height: 18px;
+            position: relative;
+            padding: 0;
+        }
+
+        .menu-toggle span,
+        .menu-toggle span::before,
+        .menu-toggle span::after {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--black);
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle span { top: 8px; }
+        .menu-toggle span::before,
+        .menu-toggle span::after { content: ''; }
+        .menu-toggle span::before { top: -7px; }
+        .menu-toggle span::after { top: 7px; }
+
+        nav.menu-open .menu-toggle span { background: transparent; }
+        nav.menu-open .menu-toggle span::before { top: 0; transform: rotate(45deg); }
+        nav.menu-open .menu-toggle span::after { top: 0; transform: rotate(-45deg); }
+
+        /* Article Layout */
+        .article-header {
+            padding: calc(80px + 4rem) var(--spacing) 3rem;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--forest);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--black);
+        }
+
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover svg {
+            transform: translateX(-3px);
+        }
+
+        .article-meta {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--forest);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .article-meta .divider {
+            width: 4px;
+            height: 4px;
+            background: var(--forest);
+            border-radius: 50%;
+        }
+
+        .article-header h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-intro {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: var(--steel);
+            font-weight: 300;
+            border-left: 4px solid var(--forest);
+            padding-left: 1.5rem;
+        }
+
+        /* Article Hero Image */
+        .article-hero-image {
+            max-width: 780px;
+            margin: 0 auto 2rem;
+            padding: 0 var(--spacing);
+        }
+
+        .article-hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Article Content */
+        .article-content {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 var(--spacing) 4rem;
+        }
+
+        .article-content h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .article-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.15em;
+            width: 4px;
+            height: 1em;
+            background: var(--forest);
+        }
+
+        .article-content p {
+            margin-bottom: 1.4rem;
+            color: var(--steel-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .article-content em {
+            font-style: italic;
+        }
+
+        .article-content a {
+            color: var(--forest);
+            text-decoration: none;
+            border-bottom: 1px solid var(--forest);
+            transition: all 0.3s ease;
+        }
+
+        .article-content a:hover {
+            color: var(--black);
+            border-bottom-color: var(--black);
+        }
+
+        /* Ordered lists */
+        .article-content ol {
+            margin: 0 0 1.4rem;
+            padding-left: 1.6rem;
+        }
+
+        .article-content ol li {
+            color: var(--steel-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 0.6rem;
+            padding-left: 0.3rem;
+        }
+
+        .article-content ol li::marker {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            color: var(--forest);
+        }
+
+        /* Article figures */
+        .article-content figure {
+            margin: 2.5rem 0;
+        }
+
+        .article-content figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        figcaption {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--forest);
+            margin-top: 0.6rem;
+        }
+
+        figcaption a {
+            color: var(--forest);
+            text-decoration: none;
+            border-bottom: 1px solid var(--forest);
+        }
+
+        figcaption a:hover {
+            color: var(--black);
+            border-bottom-color: var(--black);
+        }
+
+        /* Video embed */
+        .video-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Divider */
+        .article-divider {
+            border: none;
+            height: 1px;
+            background: var(--off-white);
+            margin: 3rem 0;
+        }
+
+        /* Article Footer / CTA */
+        .article-footer {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 var(--spacing) 5rem;
+        }
+
+        .article-cta {
+            background: var(--off-white);
+            padding: 2.5rem;
+            border-left: 4px solid var(--forest);
+        }
+
+        .article-cta p {
+            font-size: 1.05rem;
+            color: var(--steel-light);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-cta p:last-child {
+            margin-bottom: 0;
+        }
+
+        .article-cta a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--forest);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid var(--forest);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .article-cta a:hover {
+            color: var(--black);
+            border-bottom-color: var(--black);
+        }
+
+        /* Reading progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--forest);
+            z-index: 1001;
+            transition: width 0.1s linear;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 3rem var(--spacing);
+            text-align: center;
+        }
+
+        footer p {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* Focus & Active States */
+        a:focus-visible,
+        button:focus-visible,
+        .btn:focus-visible,
+        .lang-switch:focus-visible,
+        .menu-toggle:focus-visible,
+        .back-link:focus-visible,
+        .blog-card:focus-visible {
+            outline: 2px solid var(--forest);
+            outline-offset: 2px;
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        /* Dark Mode */
+        [data-theme="dark"] {
+            --black: #e8e8ec;
+            --steel: #c8c8cc;
+            --steel-light: #a0a0a8;
+            --white: #111318;
+            --off-white: #2a2a30;
+            --forest: #5b9a7a;
+            --forest-light: #7ab89a;
+            --surface-tinted: #1a2420;
+        }
+
+        [data-theme="dark"] nav {
+            background: rgba(17, 19, 24, 0.95);
+        }
+
+        [data-theme="dark"] nav ul {
+            background: rgba(17, 19, 24, 0.98);
+        }
+
+        [data-theme="dark"] .article-cta {
+            background: #1a1b20;
+        }
+
+        [data-theme="dark"] footer {
+            background: #0a0a0f;
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(250, 250, 250, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--off-white);
+            }
+
+            [data-theme="dark"] nav ul {
+                background: rgba(17, 19, 24, 0.98);
+            }
+
+            nav.menu-open ul { display: flex; }
+
+            nav ul li a {
+                display: block;
+                padding: 0.75rem var(--spacing);
+                font-size: 0.8rem;
+            }
+
+            .article-header {
+                padding: calc(80px + 2rem) 1.25rem 2rem;
+            }
+
+            .article-content {
+                padding: 0 1.25rem 3rem;
+            }
+
+            .article-footer {
+                padding: 0 1.25rem 3rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.15rem;
+                margin-top: 2.5rem;
+            }
+
+            .article-cta {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.1s; }
+        .fade-in-delay-2 { animation-delay: 0.2s; }
+        .fade-in-delay-3 { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Keyword highlights */
+        mark.hl {
+            background: linear-gradient(180deg, transparent 45%, rgba(255, 230, 0, 0.35) 45%, rgba(255, 230, 0, 0.35) 90%, transparent 90%);
+            color: inherit;
+            padding: 0 0.1em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Reading Progress -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation -->
+    <nav aria-label="Main navigation">
+        <div class="container">
+            <a href="/en/" class="logo" aria-label="Andreas Willemse - Home">AW</a>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="/en/#about">About</a></li>
+                    <li><a href="/en/#experience">Experience</a></li>
+                    <li><a href="/en/#skills">Skills</a></li>
+                    <li><a href="/en/#blog">Blog</a></li>
+                    <li><a href="/en/#contact">Contact</a></li>
+                </ul>
+                <a href="/blog/er-zit-altijd-iemand-aan-de-knop" class="lang-switch" aria-label="Schakel naar Nederlands">NL</a>
+                <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle theme">
+                    <svg class="theme-icon theme-icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2"/><path d="M12 20v2"/>
+                        <path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/>
+                        <path d="M2 12h2"/><path d="M20 12h2"/>
+                        <path d="M4.93 19.07l1.41-1.41"/><path d="M17.66 6.34l1.41-1.41"/>
+                    </svg>
+                    <svg class="theme-icon theme-icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Article Header -->
+        <header class="article-header">
+            <a href="/en/#blog" class="back-link fade-in">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to overview
+            </a>
+            <div class="article-meta fade-in fade-in-delay-1">
+                <span>Sovereign AI</span>
+                <span class="divider"></span>
+                <span>October 2026</span>
+                <span class="divider"></span>
+                <span>7 min read</span>
+            </div>
+            <h1 class="fade-in fade-in-delay-2">There's always someone at the controls</h1>
+            <p class="article-intro fade-in fade-in-delay-3">
+                For a few months now, I've been Product Owner of a team building a <mark class="hl">sovereign AI platform</mark> for my current client. On a platform like this, organisations can build their own secure AI applications. I work alongside smart AI engineers. I've learned more about AI from them than in all the years before. These are my main lessons.
+            </p>
+        </header>
+
+        <!-- Article Image -->
+        <div class="article-hero-image">
+            <figure>
+                <img src="/en/blog/er-zit-altijd-iemand-aan-de-knop.jpg" alt="Black-and-white illustration of a man with a calm smile, surrounded by rows of robot skeletons with glowing red eyes" width="1500" height="844" loading="lazy">
+                <figcaption>Image: <a href="https://www.vn.nl" target="_blank" rel="noopener noreferrer">vn.nl</a></figcaption>
+            </figure>
+        </div>
+
+        <!-- Article Content -->
+        <article class="article-content">
+            <h2>Under the hood</h2>
+            <p>
+                From the outside, a language model seems smart. It talks back and understands your question. On the inside, it's a big file with billions of numbers, adjusted during training.
+            </p>
+            <p>
+                What does that file do? It predicts which piece of text is likely to come next. Then the piece after that, and so on. That's how a full answer takes shape.
+            </p>
+            <p>
+                That computation runs on GPUs, chips originally designed for computer graphics. A model can also only work with the text you give it. That's why RAG exists: you first hand the model the right passages from your own documents, so it doesn't have to guess.
+            </p>
+            <p>
+                For me, this was the start of <mark class="hl">demystification</mark>. AI became technology. And technology is something you can understand, measure and improve.
+            </p>
+            <h2>In practice</h2>
+            <p>
+                An AI platform needs its own hardware, and that's hard to get. We're talking about GPUs like Nvidia's H100 and the newer H200. They're scarce and expensive, and the big suppliers have long waiting times. Getting your own rack space in a data centre isn't easy either.
+            </p>
+            <p>
+                How you connect cloud and AI may be the most important question right now. Almost everything you do with AI touches data. You don't want to send that data outside lightly. Yet most computing power sits outside your walls. You have to make a choice there, and it's rarely simple.
+            </p>
+            <p>
+                A pleasant surprise: many tasks work fine with a <mark class="hl">small model</mark>. Think of summarising a text, classifying a document or pulling a field from a form. A small model is fast and cheap and runs on modest hardware. A big model then mostly costs more money.
+            </p>
+            <p>
+                I also learned something about trust. <mark class="hl">A language model always sounds sure of itself</mark>, even when it's wrong. At scale, small mistakes quickly become big ones.
+            </p>
+            <h2>Anthropomorphism</h2>
+            <p>
+                We all say it. "AI decides." "AI thinks that." "The model panicked." I've caught myself doing it too. It happens naturally, because the thing talks back. There's a word for it: <mark class="hl">anthropomorphism.</mark> We give human traits to something that isn't human.
+            </p>
+            <p>
+                We've done this for a long time. We name storms and swear at the printer. With a language model the temptation is stronger, because it speaks our language. "I understand you" comes out of the same calculation as any other sentence. The feeling of being understood arises in us, the reader.
+            </p>
+            <p>
+                The philosopher Daniel Dennett called this the intentional stance. We act as if something has desires and beliefs, because that makes its behaviour easier to predict. That's useful. It becomes a problem when we forget we're pretending.
+            </p>
+            <p>
+                This debate is very much alive in the Netherlands right now. In September, a group of Dutch AI scientists and journalists, including Felienne Hermans, Antal van den Bosch and Iris van Rooij, published <a href="https://www.vn.nl/klopping-corvee" target="_blank" rel="noopener noreferrer">an open letter</a> in the Dutch weekly Vrij Nederland (in Dutch; you can also <a href="https://www.netkwesties.nl/documenten/20290920%20NK%20VN%20BRIEF%20TEGEN%20KLOPPING.pdf" target="_blank" rel="noopener noreferrer">read the full letter</a>). It was aimed at Alexander Klöpping, a tech journalist and regular guest on Dutch talk shows. They're tired of having to repair the damage after each of his appearances. One of their objections: his stories are full of anthropomorphisms. Like an AI system that panics. According to the authors, that's impossible, because panic doesn't follow from computation. The Dutch linguist Marc van Oostendorp <a href="https://neerlandistiek.nl/2026/09/kunnen-bots-in-paniek-raken/" target="_blank" rel="noopener noreferrer">responded</a> (in Dutch) by asking whether a bot might be able to panic after all. A nice question for philosophers.
+            </p>
+            <p>
+                In my work, another danger weighs more heavily. As soon as you treat AI as a person, <mark class="hl">the real people disappear from view</mark>. People chose the data the model was trained on. People wrote the instructions that shape how it responds. People drew the lines of what it may and may not say. People decided where it runs, who has access and what happens to your questions.
+            </p>
+            <p>
+                If you see AI as a person, you stop seeing those choices. A mistake then looks like something the machine did. That's how responsibility gets lost. It always lies with an organisation, a team or a person.
+            </p>
+            <p>
+                The news about 'escaped' OpenAI agents is a good example. In July, an agent <a href="https://www.techzine.eu/news/security/143356/openai-suspects-more-escaped-ai-agents-following-the-hugging-face-incident/" target="_blank" rel="noopener noreferrer">broke into Hugging Face</a>. In September, <a href="https://tech.yahoo.com/ai/chatgpt/articles/openai-says-ai-agents-escaped-152502166.html" target="_blank" rel="noopener noreferrer">another model found its way onto the internet</a>. OpenAI then paused training for the second time.
+            </p>
+            <p>
+                The word 'escape' brings to mind an animal breaking out of its cage. A textbook case of anthropomorphism. Read the reports and you mostly see human work. People had deliberately lowered the model's safety limits to measure what it could do. People had set up the network rules wrongly. An automatic emergency stop failed. Only after two and a half hours did someone stop the training by hand. OpenAI itself admitted there was a gap in its network controls.
+            </p>
+            <p>
+                That doesn't make it any less serious. A nuclear power plant can also get out of control, with disaster as a result. Yet under every nuclear disaster lie human decisions and mistakes. A design, a budget cut, a test that should never have gone ahead. AI is no different. <mark class="hl">People build it, people switch it on, and people are responsible when it goes wrong</mark>.
+            </p>
+            <p>
+                For me as a Product Owner, this was the most important lesson. <mark class="hl">The model is a tool. The choices around it are ours.</mark>
+            </p>
+            <h2>What sovereignty really is</h2>
+            <p>
+                Sovereignty sounds like a postcode. As long as the servers are in Europe, you're fine. At first I thought so too. That turned out to be far too simple.
+            </p>
+            <p>
+                <mark class="hl">Sovereignty has layers.</mark> Each layer comes with its own question:
+            </p>
+            <ol>
+                <li>Where is the data stored?</li>
+                <li>Which law applies? Data in a European data centre owned by an American company also falls under American law.</li>
+                <li>Who runs the system? Who has access, and from which country?</li>
+                <li>Where does the model come from? What do you know about the data it was trained on? Every model carries the bias of that data. And the maker's choices about what it may and may not say.</li>
+                <li>Is it open source? That applies to every component: the model, the operating system, the database and the software that runs everything. Open software is something you can run, inspect and change yourself. With closed software, you depend on the maker.</li>
+                <li>Where does the hardware come from? And can you still get it tomorrow?</li>
+            </ol>
+            <p>
+                You can score well on one layer and badly on another. A European model on American GPUs. Your own servers running software you can't change. Each layer has a price, in money, time or convenience.
+            </p>
+            <p>
+                The European Commission is trying to make this measurable. Its <a href="https://commission.europa.eu/document/09579818-64a6-4dd5-9577-446ab6219113_en" target="_blank" rel="noopener noreferrer">Cloud Sovereignty Framework</a> assesses cloud services on eight points, such as law, operations, supply chain and security. The outcome is a level on a five-point scale: the SEAL levels. SEAL-0 means no sovereignty at all. SEAL-4 means the whole chain is European, from chip to software. For its own procurement, the Commission requires at least SEAL-2, sovereignty over data. Most of the providers it <a href="https://commission.europa.eu/news-and-media/news/commission-advances-cloud-sovereignty-through-strategic-procurement-2026-04-17_en" target="_blank" rel="noopener noreferrer">selected in April</a> came out at SEAL-3.
+            </p>
+            <p>
+                <mark class="hl">Full sovereignty hardly exists.</mark> I found that disappointing at first. Now I see it as an honest starting point. You always depend on someone. So know on whom, and make that choice deliberately.
+            </p>
+            <h2>What I take away</h2>
+            <p>
+                Do you work with AI, or do you have to make decisions about it? These are the questions I now always ask:
+            </p>
+            <ol>
+                <li>Who's at the controls? Who chose the model, wrote the instructions and set the limits?</li>
+                <li>Is this the smallest model that does the job well?</li>
+                <li>Where does the data go, and which law applies there?</li>
+                <li>Who do we depend on, per layer? And are we choosing that deliberately?</li>
+                <li>Which components are open source? And what do we know about the bias in the model?</li>
+            </ol>
+            <p>
+                Every AI system is chosen, set up and switched on by people. They decide what it may do, where it runs and who has access. As a Product Owner, I'm one of those people. <mark class="hl">There's always someone at the controls.</mark>
+            </p>
+
+            <hr class="article-divider">
+        </article>
+
+        <!-- Article Footer CTA -->
+        <div class="article-footer">
+            <div class="article-cta">
+                <p>
+                    Also read: <a href="/en/blog/ai-product-management">AI &amp; Product Management: a practitioner's perspective</a>
+                </p>
+                <p>
+                    <a href="https://linkedin.com/in/andreaswillemse" target="_blank" rel="noopener noreferrer">Send me a message on LinkedIn &rarr;</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Andreas Willemse - Product Owner & Manager, Amsterdam</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navEl = document.querySelector('nav');
+        if (menuToggle && navEl) {
+            menuToggle.addEventListener('click', () => {
+                const open = navEl.classList.toggle('menu-open');
+                menuToggle.setAttribute('aria-expanded', open);
+            });
+            document.querySelectorAll('nav ul a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navEl.classList.remove('menu-open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // Reading progress bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        });
+
+        // Theme toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        if (themeToggle) {
+            const updateLabel = (t) => {
+                themeToggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+            };
+            updateLabel(document.documentElement.getAttribute('data-theme'));
+            themeToggle.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme');
+                const next = current === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                updateLabel(next);
+            });
+        }
+    </script>
+</body>
+</html>
