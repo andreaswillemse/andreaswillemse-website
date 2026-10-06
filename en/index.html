@@ -721,18 +721,19 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
 
-        .blog-card { display: flex; gap: 1.25rem; align-items: flex-start; }
         .blog-card-thumb {
-            width: 96px;
-            height: 96px;
-            flex-shrink: 0;
+            float: left;
+            width: 112px;
+            height: 112px;
             object-fit: cover;
             object-position: center;
+            margin: 0.2rem 1.25rem 0.5rem 0;
         }
-        .blog-card-body { min-width: 0; }
+        .blog-card-meta, .blog-card-link { clear: both; }
+        .blog-card-link { display: block; }
         @media (max-width: 600px) {
-            .blog-card { gap: 1rem; padding: 1.5rem; }
-            .blog-card-thumb { width: 72px; height: 72px; }
+            .blog-card { padding: 1.5rem; }
+            .blog-card-thumb { width: 96px; height: 96px; margin-right: 1rem; }
         }
 
         .blog-card-label {
@@ -1131,8 +1132,7 @@
             <h2>How I think</h2>
             <div class="blog-grid">
                 <a href="/en/blog/er-zit-altijd-iemand-aan-de-knop" class="blog-card">
-                    <img class="blog-card-thumb" src="/blog/er-zit-altijd-iemand-aan-de-knop.jpg" alt="" width="96" height="96" loading="lazy">
-                    <div class="blog-card-body">
+                    <img class="blog-card-thumb" src="/blog/er-zit-altijd-iemand-aan-de-knop.jpg" alt="" width="112" height="112" loading="lazy">
                     <div class="blog-card-label">Sovereign AI</div>
                     <h3 class="blog-card-title">There's always someone at the controls</h3>
                     <p class="blog-card-excerpt">
@@ -1143,11 +1143,9 @@
                         <span>7 min read</span>
                     </div>
                     <span class="blog-card-link">Read article &rarr;</span>
-                    </div>
                 </a>
                 <a href="/en/blog/van-waterleiding-tot-waardepropositie" class="blog-card">
-                    <img class="blog-card-thumb" src="/blog/van-waterleiding-tot-waardepropositie-og.jpg" alt="" width="96" height="96" loading="lazy">
-                    <div class="blog-card-body">
+                    <img class="blog-card-thumb" src="/blog/van-waterleiding-tot-waardepropositie-og.jpg" alt="" width="112" height="112" loading="lazy">
                     <div class="blog-card-label">Product management</div>
                     <h3 class="blog-card-title">From water pipes to value propositions</h3>
                     <p class="blog-card-excerpt">
@@ -1158,11 +1156,9 @@
                         <span>3 min read</span>
                     </div>
                     <span class="blog-card-link">Read article &rarr;</span>
-                    </div>
                 </a>
                 <a href="/en/blog/angine-de-poitrine" class="blog-card">
-                    <img class="blog-card-thumb" src="/blog/angine-de-poitrine.jpg" alt="" width="96" height="96" loading="lazy">
-                    <div class="blog-card-body">
+                    <img class="blog-card-thumb" src="/blog/angine-de-poitrine.jpg" alt="" width="112" height="112" loading="lazy">
                     <div class="blog-card-label">Creativity</div>
                     <h3 class="blog-card-title">I guarantee you a remarkable experience: Angine de Poitrine</h3>
                     <p class="blog-card-excerpt">
@@ -1173,7 +1169,6 @@
                         <span>4 min read</span>
                     </div>
                     <span class="blog-card-link">Read article &rarr;</span>
-                    </div>
                 </a>
             </div>
             <a href="/en/blog/" class="all-articles-link">All articles &rarr;</a>
