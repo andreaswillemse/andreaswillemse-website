@@ -818,6 +818,18 @@
             color: var(--black);
         }
 
+        .blueprint-note {
+            font-size: 0.95rem;
+            color: var(--steel-light);
+            line-height: 1.6;
+            margin-top: 1.5rem;
+        }
+
+        .blueprint-note a {
+            color: inherit;
+            text-decoration: underline;
+        }
+
         .all-articles-link {
             font-family: 'Space Mono', monospace;
             font-size: 0.85rem;
@@ -1091,7 +1103,6 @@
                     <li><a href="#experience">Track record</a></li>
                     <li><a href="#skills">Expertise</a></li>
                     <li><a href="/blog/">Gedachten</a></li>
-                    <li><a href="#tools">Tools</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <a href="/en/" class="lang-switch" aria-label="Switch to English">EN</a>
@@ -1269,51 +1280,9 @@
                     </div>
                     <span class="blog-card-link">Lees artikel &rarr;</span>
                 </a>
-                <a href="/blog/ai-prototypes-pm" class="blog-card">
-                    <div class="blog-card-label">Product Management</div>
-                    <h3 class="blog-card-title">AI-prototypes bouwen als PM: een superkracht met een schaduwkant</h3>
-                    <p class="blog-card-excerpt">
-                        Als PM kun je nu zelf werkende software bouwen. Maar hoe lager de drempel,
-                        hoe groter de kans dat er dingen misgaan die je niet ziet aankomen.
-                    </p>
-                    <div class="blog-card-meta">
-                        <span>Maart 2026</span>
-                        <span>6 min leestijd</span>
-                    </div>
-                    <span class="blog-card-link">Lees artikel &rarr;</span>
-                </a>
-                <a href="/blog/ai-product-management" class="blog-card">
-                    <div class="blog-card-label">Product Management</div>
-                    <h3 class="blog-card-title">AI in productontwikkeling: tien stellingen vanuit de praktijk</h3>
-                    <p class="blog-card-excerpt">
-                        Tien stellingen over AI in product management. Hoe zet je AI slim in als
-                        hulpmiddel zonder creativiteit en eigenaarschap uit handen te geven?
-                    </p>
-                    <div class="blog-card-meta">
-                        <span>Februari 2026</span>
-                        <span>5 min leestijd</span>
-                    </div>
-                    <span class="blog-card-link">Lees artikel &rarr;</span>
-                </a>
             </div>
             <a href="/blog/" class="all-articles-link">Alle artikelen &rarr;</a>
-        </div>
-    </section>
-
-    <!-- Tools Section -->
-    <section id="tools" class="fade-in-section" aria-label="Tools">
-        <div class="container">
-            <h2>Tools</h2>
-            <div class="blog-grid">
-                <a href="/tools/blueprint/" class="blog-card">
-                    <div class="blog-card-label">Claude Code</div>
-                    <h3 class="blog-card-title">Blueprint: prompt generator voor Claude Code</h3>
-                    <p class="blog-card-excerpt">
-                        Beantwoord een paar vragen over wat je wilt bouwen. Blueprint maakt er een gestructureerde, kant-en-klare Claude Code prompt van.
-                    </p>
-                    <span class="blog-card-link">Open Blueprint &rarr;</span>
-                </a>
-            </div>
+            <p class="blueprint-note">Ook gebouwd: <a href="/tools/blueprint/">Blueprint</a>, een hulpmiddel dat van een paar antwoorden een kant-en-klare Claude Code-prompt maakt.</p>
         </div>
     </section>
 
