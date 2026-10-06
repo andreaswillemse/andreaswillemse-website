@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina niet gevonden | Andreas Willemse</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#1a3a2e">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231a3a2e'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='%23fafafa' font-family='monospace' font-weight='bold'>AW</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            try {
+                var saved = localStorage.getItem('theme');
+                var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.setAttribute('data-theme', saved || (prefers ? 'dark' : 'light'));
+            } catch (e) {}
+        })();
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --black: #0a0a0a;
+            --steel-light: #404040;
+            --white: #fafafa;
+            --forest: #1a3a2e;
+        }
+
+        [data-theme="dark"] {
+            --black: #e8e8ec;
+            --steel-light: #a0a0a8;
+            --white: #111318;
+            --forest: #5b9a7a;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.7;
+            font-size: 18px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        main { max-width: 640px; margin: 0 auto; width: 100%; }
+
+        .code {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: clamp(4rem, 16vw, 8rem);
+            line-height: 1;
+            color: var(--forest);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            margin-bottom: 1rem;
+        }
+
+        p { color: var(--steel-light); margin-bottom: 2rem; }
+
+        .actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+        .btn {
+            font-family: 'Space Mono', monospace;
+            padding: 0.9rem 2rem;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: 2px solid var(--forest);
+            color: var(--forest);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .btn:hover, .btn:focus-visible { background: var(--forest); color: var(--white); }
+        .btn-primary { background: var(--forest); color: var(--white); }
+        .btn-primary:hover, .btn-primary:focus-visible { background: transparent; color: var(--forest); }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="code" aria-hidden="true">404</div>
+        <h1 id="title">Deze pagina bestaat niet</h1>
+        <p id="text">De link is verouderd of er zit een typefout in. Hier kom je weer verder.</p>
+        <div class="actions">
+            <a class="btn btn-primary" id="home" href="/">Naar de homepage</a>
+            <a class="btn" href="https://www.linkedin.com/in/andreaswillemse" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+    </main>
+    <script>
+        if (location.pathname.indexOf('/en/') === 0) {
+            document.documentElement.lang = 'en';
+            document.title = 'Page not found | Andreas Willemse';
+            document.getElementById('title').textContent = "This page doesn't exist";
+            document.getElementById('text').textContent = 'The link is outdated or contains a typo. Here is a way forward.';
+            var home = document.getElementById('home');
+            home.textContent = 'Go to the homepage';
+            home.href = '/en/';
+        }
+    </script>
+</body>
+</html>
