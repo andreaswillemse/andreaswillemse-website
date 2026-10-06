@@ -424,6 +424,31 @@
             color: var(--black);
         }
 
+        .blog-card-title { hyphens: manual; overflow-wrap: break-word; }
+
+        .blog-card-meta { margin-bottom: 0; }
+
+        .blog-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem 1rem;
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--off-white);
+        }
+
+        .blog-card-footer .blog-card-label {
+            margin-bottom: 0;
+            padding: 0.2rem 0.55rem;
+            background: var(--forest);
+            color: var(--white);
+            letter-spacing: 0.08em;
+            white-space: nowrap;
+        }
+
+        .blog-card-footer .blog-card-link { white-space: nowrap; }
+
         /* Footer */
         footer {
             background: var(--black);
@@ -619,7 +644,6 @@
             <a href="/blog/er-zit-altijd-iemand-aan-de-knop" class="blog-card fade-in fade-in-delay-1">
                 <div class="blog-card-image"><img src="/blog/er-zit-altijd-iemand-aan-de-knop.jpg" alt="" width="1500" height="844" loading="lazy"></div>
                 <div class="blog-card-body">
-                    <div class="blog-card-label">Soevereine AI</div>
                     <h2 class="blog-card-title">Er zit altijd iemand aan de knop</h2>
                     <p class="blog-card-excerpt">
                         Wat ik als Product Owner van een soeverein AI-platform leerde over taalmodellen, antropomorfisme en wat soevereiniteit echt is.
@@ -628,15 +652,17 @@
                         <span>Oktober 2026</span>
                         <span>7 min leestijd</span>
                     </div>
-                    <span class="blog-card-link">Lees artikel &rarr;</span>
+                    <div class="blog-card-footer">
+                        <span class="blog-card-label">Soevereine AI</span>
+                        <span class="blog-card-link">Lees artikel &rarr;</span>
+                    </div>
                 </div>
             </a>
 
             <a href="/blog/van-waterleiding-tot-waardepropositie" class="blog-card fade-in fade-in-delay-1">
                 <div class="blog-card-image"><img src="/blog/van-waterleiding-tot-waardepropositie-og.jpg" alt="" width="1200" height="630" loading="lazy"></div>
                 <div class="blog-card-body">
-                    <div class="blog-card-label">Productmanagement</div>
-                    <h2 class="blog-card-title">Van waterleiding tot waardepropositie</h2>
+                    <h2 class="blog-card-title">Van waterleiding tot waarde&shy;proposi&shy;tie</h2>
                     <p class="blog-card-excerpt">
                         Maanden klussen in plaats van vergaderen. Over hoogslapers, waterleidingen en waarom een huis verbouwen verdacht veel lijkt op het bouwen van een product.
                     </p>
@@ -644,14 +670,16 @@
                         <span>Juni 2026</span>
                         <span>3 min leestijd</span>
                     </div>
-                    <span class="blog-card-link">Lees artikel &rarr;</span>
+                    <div class="blog-card-footer">
+                        <span class="blog-card-label">Productmanagement</span>
+                        <span class="blog-card-link">Lees artikel &rarr;</span>
+                    </div>
                 </div>
             </a>
 
             <a href="/blog/angine-de-poitrine" class="blog-card fade-in fade-in-delay-2">
                 <div class="blog-card-image"><img src="/blog/angine-de-poitrine.jpg" alt="" loading="lazy"></div>
                 <div class="blog-card-body">
-                    <div class="blog-card-label">Creativiteit</div>
                     <h2 class="blog-card-title">Ik garandeer je een bijzondere ervaring: Angine de Poitrine</h2>
                     <p class="blog-card-excerpt">
                         Een microtonaal mathrock-duo uit Quebec bewijst dat echte originaliteit niet uit een algoritme komt. Over creativiteit, vakmanschap en waarom AI dit nooit had bedacht.
@@ -660,14 +688,16 @@
                         <span>Maart 2026</span>
                         <span>4 min leestijd</span>
                     </div>
-                    <span class="blog-card-link">Lees artikel &rarr;</span>
+                    <div class="blog-card-footer">
+                        <span class="blog-card-label">Creativiteit</span>
+                        <span class="blog-card-link">Lees artikel &rarr;</span>
+                    </div>
                 </div>
             </a>
 
             <a href="/blog/ai-prototypes-pm" class="blog-card fade-in fade-in-delay-2">
                 <div class="blog-card-image"><img src="/blog/ai-prototypes-pm.jpg" alt="" width="1400" height="988" loading="lazy"></div>
                 <div class="blog-card-body">
-                    <div class="blog-card-label">Productmanagement</div>
                     <h2 class="blog-card-title">AI-prototypes bouwen als PM: een superkracht met een schaduwkant</h2>
                     <p class="blog-card-excerpt">
                         Als PM kun je nu zelf werkende software bouwen. Maar hoe lager de drempel,
@@ -677,13 +707,15 @@
                         <span>Maart 2026</span>
                         <span>6 min leestijd</span>
                     </div>
-                    <span class="blog-card-link">Lees artikel &rarr;</span>
+                    <div class="blog-card-footer">
+                        <span class="blog-card-label">Productmanagement</span>
+                        <span class="blog-card-link">Lees artikel &rarr;</span>
+                    </div>
                 </div>
             </a>
 
             <a href="/blog/ai-product-management" class="blog-card blog-card--no-image fade-in fade-in-delay-3">
                 <div class="blog-card-body">
-                    <div class="blog-card-label">Productmanagement</div>
                     <h2 class="blog-card-title">AI in productontwikkeling: tien stellingen vanuit de praktijk</h2>
                     <p class="blog-card-excerpt">
                         Tien stellingen over AI in product management. Hoe zet je AI slim in als
@@ -693,7 +725,10 @@
                         <span>Februari 2026</span>
                         <span>5 min leestijd</span>
                     </div>
-                    <span class="blog-card-link">Lees artikel &rarr;</span>
+                    <div class="blog-card-footer">
+                        <span class="blog-card-label">Productmanagement</span>
+                        <span class="blog-card-link">Lees artikel &rarr;</span>
+                    </div>
                 </div>
             </a>
         </div>

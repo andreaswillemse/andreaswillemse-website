@@ -424,6 +424,31 @@
             color: var(--black);
         }
 
+        .blog-card-title { hyphens: manual; overflow-wrap: break-word; }
+
+        .blog-card-meta { margin-bottom: 0; }
+
+        .blog-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem 1rem;
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--off-white);
+        }
+
+        .blog-card-footer .blog-card-label {
+            margin-bottom: 0;
+            padding: 0.2rem 0.55rem;
+            background: var(--forest);
+            color: var(--white);
+            letter-spacing: 0.08em;
+            white-space: nowrap;
+        }
+
+        .blog-card-footer .blog-card-link { white-space: nowrap; }
+
         /* Footer */
         footer {
             background: var(--black);
@@ -619,7 +644,6 @@
             <a href="/en/blog/er-zit-altijd-iemand-aan-de-knop" class="blog-card fade-in fade-in-delay-1">
                 <div class="blog-card-image"><img src="/blog/er-zit-altijd-iemand-aan-de-knop.jpg" alt="" width="1500" height="844" loading="lazy"></div>
                 <div class="blog-card-body">
-                    <div class="blog-card-label">Sovereign AI</div>
                     <h2 class="blog-card-title">There's always someone at the controls</h2>
                     <p class="blog-card-excerpt">
                         What I learned as Product Owner of a sovereign AI platform about language models, anthropomorphism and what sovereignty really is.
@@ -628,14 +652,16 @@
                         <span>October 2026</span>
                         <span>7 min read</span>
                     </div>
-                    <span class="blog-card-link">Read article &rarr;</span>
+                    <div class="blog-card-footer">
+                        <span class="blog-card-label">Sovereign AI</span>
+                        <span class="blog-card-link">Read article &rarr;</span>
+                    </div>
                 </div>
             </a>
 
             <a href="/en/blog/van-waterleiding-tot-waardepropositie" class="blog-card fade-in fade-in-delay-1">
                 <div class="blog-card-image"><img src="/blog/van-waterleiding-tot-waardepropositie-og.jpg" alt="" width="1200" height="630" loading="lazy"></div>
                 <div class="blog-card-body">
-                    <div class="blog-card-label">Product management</div>
                     <h2 class="blog-card-title">From water pipes to value propositions</h2>
                     <p class="blog-card-excerpt">
                         Months of DIY instead of meetings. On loft beds, water pipes, and why renovating a house looks suspiciously like building a product.
@@ -644,14 +670,16 @@
                         <span>June 2026</span>
                         <span>3 min read</span>
                     </div>
-                    <span class="blog-card-link">Read article &rarr;</span>
+                    <div class="blog-card-footer">
+                        <span class="blog-card-label">Product management</span>
+                        <span class="blog-card-link">Read article &rarr;</span>
+                    </div>
                 </div>
             </a>
 
             <a href="/en/blog/angine-de-poitrine" class="blog-card fade-in fade-in-delay-2">
                 <div class="blog-card-image"><img src="/blog/angine-de-poitrine.jpg" alt="" loading="lazy"></div>
                 <div class="blog-card-body">
-                    <div class="blog-card-label">Creativity</div>
                     <h2 class="blog-card-title">I guarantee you a remarkable experience: Angine de Poitrine</h2>
                     <p class="blog-card-excerpt">
                         A microtonal math rock duo from Quebec proves that true originality doesn't come from an algorithm. On craftsmanship, creativity, and why AI could never have come up with this.
@@ -660,14 +688,16 @@
                         <span>March 2026</span>
                         <span>4 min read</span>
                     </div>
-                    <span class="blog-card-link">Read article &rarr;</span>
+                    <div class="blog-card-footer">
+                        <span class="blog-card-label">Creativity</span>
+                        <span class="blog-card-link">Read article &rarr;</span>
+                    </div>
                 </div>
             </a>
 
             <a href="/en/blog/ai-prototypes-pm" class="blog-card fade-in fade-in-delay-2">
                 <div class="blog-card-image"><img src="/blog/ai-prototypes-pm.jpg" alt="" width="1400" height="988" loading="lazy"></div>
                 <div class="blog-card-body">
-                    <div class="blog-card-label">Product management</div>
                     <h2 class="blog-card-title">Building AI prototypes as a PM: a superpower with a shadow side</h2>
                     <p class="blog-card-excerpt">
                         As a PM, you can now build working software yourself. But the lower the barrier,
@@ -677,13 +707,15 @@
                         <span>March 2026</span>
                         <span>6 min read</span>
                     </div>
-                    <span class="blog-card-link">Read article &rarr;</span>
+                    <div class="blog-card-footer">
+                        <span class="blog-card-label">Product management</span>
+                        <span class="blog-card-link">Read article &rarr;</span>
+                    </div>
                 </div>
             </a>
 
             <a href="/en/blog/ai-product-management" class="blog-card blog-card--no-image fade-in fade-in-delay-3">
                 <div class="blog-card-body">
-                    <div class="blog-card-label">Product management</div>
                     <h2 class="blog-card-title">AI & Product Management: a practitioner's perspective</h2>
                     <p class="blog-card-excerpt">
                         Ten propositions on AI in product management. How do you use AI wisely as a tool
@@ -693,7 +725,10 @@
                         <span>February 2026</span>
                         <span>5 min read</span>
                     </div>
-                    <span class="blog-card-link">Read article &rarr;</span>
+                    <div class="blog-card-footer">
+                        <span class="blog-card-label">Product management</span>
+                        <span class="blog-card-link">Read article &rarr;</span>
+                    </div>
                 </div>
             </a>
         </div>
