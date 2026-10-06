@@ -6,32 +6,7 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(gh repo create:*)",
-      "Bash(python3 -c \":*)",
-      "Bash(gh repo *)",
-      "Bash(node -e \"const fs=require\\('fs'\\); const c=fs.readFileSync\\('/Users/andreaswillemse/Claude Code projects/andreaswillemse website/tools/blueprint/index.html','utf8'\\); const m=c.match\\(/<script>\\([\\\\s\\\\S]*?\\)<\\\\/script>/g\\); const script = m[m.length-1].replace\\(/<script>|<\\\\/script>/g,''\\); try { new Function\\(script\\); console.log\\('JS parses OK — length:', script.length\\); } catch\\(e\\) { console.error\\('Parse error:', e.message\\); }\")",
-      "mcp__Claude_Preview__preview_start",
-      "Bash(node -e ' *)",
-      "mcp__5213d9a2-579b-4f29-af8d-a3188f2e987a__read_file_content",
-      "Bash(ls -lat ~/Downloads | head -30; echo ---; find \"/Users/andreaswillemse/Claude Code projects/andreaswillemse website\" -name \"*.jpg\" -o -name \"*.png\" -o -name \"*.jpeg\" | grep -v node_modules)",
-      "Bash(sips -g pixelWidth -g pixelHeight IMG_6808.JPG IMG_6810.JPG)",
-      "Bash(sed -n '560,620p' blog/index.html)",
-      "Bash(sed -n '1240,1300p' index.html)",
-      "Bash(sips -Z 1400 -s format jpeg -s formatOptions 78 IMG_6808.JPG --out blog/van-waterleiding-tot-waardepropositie-before.jpg)",
-      "Bash(sips -Z 1400 -s format jpeg -s formatOptions 78 IMG_6810.JPG --out blog/van-waterleiding-tot-waardepropositie-after.jpg)",
-      "Bash(python3 .claude/build_post.py)",
-      "Bash(python3 .claude/update_indexes.py)",
-      "Bash(rm .claude/build_post.py .claude/update_indexes.py)",
-      "Bash(git push *)",
-      "Bash(git fetch *)",
-      "Bash(git checkout *)",
-      "Bash(git pull *)",
-      "Bash(git cherry-pick *)",
-      "Bash(curl -s \"https://andreaswillemse.nl/tools/blueprint/\")",
-      "Bash(grep -n \"html {\\\\|html,\\\\|scroll-behavior\" \"/Users/andreaswillemse/Claude Code projects/andreaswillemse website/index.html\" \"/Users/andreaswillemse/Claude Code projects/andreaswillemse website/en/index.html\")",
-      "Bash(git merge *)",
-      "Bash(curl -s https://andreaswillemse.nl/)",
-      "Bash(sed -i '' 's/rook mijn werkdag niet naar koffie en vergaderzalen/rook mijn werkdag niet naar matige koffie en vergaderzalen/' blog/van-waterleiding-tot-waardepropositie.html)",
-      "Bash(sed -i '' \"s/didn't smell like coffee and meeting rooms/didn't smell like mediocre coffee and meeting rooms/\" en/blog/van-waterleiding-tot-waardepropositie.html)"
+      "Bash(python3 -c \":*)"
     ]
   }
 }
