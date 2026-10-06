@@ -771,6 +771,20 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
 
+        .blog-card { display: flex; gap: 1.25rem; align-items: flex-start; }
+        .blog-card-thumb {
+            width: 96px;
+            height: 96px;
+            flex-shrink: 0;
+            object-fit: cover;
+            object-position: center;
+        }
+        .blog-card-body { min-width: 0; }
+        @media (max-width: 600px) {
+            .blog-card { gap: 1rem; padding: 1.5rem; }
+            .blog-card-thumb { width: 72px; height: 72px; }
+        }
+
         .blog-card-label {
             font-family: 'Space Mono', monospace;
             font-size: 0.7rem;
@@ -1247,6 +1261,8 @@
             <div class="blog-grid">
 
                 <a href="/blog/er-zit-altijd-iemand-aan-de-knop" class="blog-card">
+                    <img class="blog-card-thumb" src="/blog/er-zit-altijd-iemand-aan-de-knop.jpg" alt="" width="96" height="96" loading="lazy">
+                    <div class="blog-card-body">
                     <div class="blog-card-label">Soevereine AI</div>
                     <h3 class="blog-card-title">Er zit altijd iemand aan de knop</h3>
                     <p class="blog-card-excerpt">
@@ -1257,8 +1273,11 @@
                         <span>7 min leestijd</span>
                     </div>
                     <span class="blog-card-link">Lees artikel &rarr;</span>
+                    </div>
                 </a>
                 <a href="/blog/van-waterleiding-tot-waardepropositie" class="blog-card">
+                    <img class="blog-card-thumb" src="/blog/van-waterleiding-tot-waardepropositie-og.jpg" alt="" width="96" height="96" loading="lazy">
+                    <div class="blog-card-body">
                     <div class="blog-card-label">Productmanagement</div>
                     <h3 class="blog-card-title">Van waterleiding tot waardepropositie</h3>
                     <p class="blog-card-excerpt">
@@ -1269,8 +1288,11 @@
                         <span>3 min leestijd</span>
                     </div>
                     <span class="blog-card-link">Lees artikel &rarr;</span>
+                    </div>
                 </a>
                 <a href="/blog/angine-de-poitrine" class="blog-card">
+                    <img class="blog-card-thumb" src="/blog/angine-de-poitrine.jpg" alt="" width="96" height="96" loading="lazy">
+                    <div class="blog-card-body">
                     <div class="blog-card-label">Creativiteit</div>
                     <h3 class="blog-card-title">Ik garandeer je een bijzondere ervaring: Angine de Poitrine</h3>
                     <p class="blog-card-excerpt">
@@ -1281,6 +1303,7 @@
                         <span>4 min leestijd</span>
                     </div>
                     <span class="blog-card-link">Lees artikel &rarr;</span>
+                    </div>
                 </a>
             </div>
             <a href="/blog/" class="all-articles-link">Alle artikelen &rarr;</a>
