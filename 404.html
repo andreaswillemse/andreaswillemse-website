@@ -98,7 +98,8 @@
         </div>
     </main>
     <script>
-        if (location.pathname.indexOf('/en/') === 0) {
+        var lang = (navigator.language || 'nl').toLowerCase();
+        if (location.pathname.indexOf('/en/') === 0 || lang.indexOf('nl') !== 0) {
             document.documentElement.lang = 'en';
             document.title = 'Page not found | Andreas Willemse';
             document.getElementById('title').textContent = "This page doesn't exist";
