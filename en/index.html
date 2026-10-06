@@ -654,6 +654,12 @@
             gap: 2rem;
         }
 
+        @media (min-width: 1024px) {
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         .skill-card {
             padding: 1.25rem 1.5rem;
             background: var(--white);
@@ -1072,31 +1078,21 @@
             <h2>What I bring</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3 class="skill-name">Digital Strategy</h3>
+                    <h3 class="skill-name">Digital strategy</h3>
                     <p class="skill-description">
-                        Digital <mark class="hl">strategy</mark> and <mark class="hl">roadmaps</mark>, from <mark class="hl">user research</mark>
-                        to <mark class="hl">AI</mark>-driven decision-making.
+                        Digital strategy and <mark class="hl">roadmaps</mark>, from user research to decision.
                     </p>
                 </div>
                 <div class="skill-card">
-                    <h3 class="skill-name">Agile & Scrum</h3>
+                    <h3 class="skill-name">Agile and Scrum</h3>
                     <p class="skill-description">
-                        <mark class="hl">PSPO II</mark> certified. Scrum, Kanban, Nexus and <mark class="hl">scaled agile</mark>,
-                        including AI tooling in the workflow.
+                        <mark class="hl">PSPO II</mark> certified. Scrum, Kanban and Nexus, also in large organisations.
                     </p>
                 </div>
                 <div class="skill-card">
-                    <h3 class="skill-name">Project Management</h3>
+                    <h3 class="skill-name">Product development</h3>
                     <p class="skill-description">
-                        From <mark class="hl">MVP</mark> to launch. <mark class="hl">Lean</mark> principles, iterative building and
-                        <mark class="hl">AI</mark> prototypes as a validation instrument.
-                    </p>
-                </div>
-                <div class="skill-card">
-                    <h3 class="skill-name">Business Analysis</h3>
-                    <p class="skill-description">
-                        Translating business requirements into technical specifications,
-                        with an eye for <mark class="hl">compliance</mark> and AI risks.
+                        From MVP to launch. Building iteratively, <mark class="hl">AI prototypes</mark> to test assumptions early, and requirements that take technology and regulation into account.
                     </p>
                 </div>
             </div>
