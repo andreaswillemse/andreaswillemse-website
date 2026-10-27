@@ -1,0 +1,4 @@
+# Bij elke deploy worden de RSS-feeds opnieuw gegenereerd uit de blogposts.
+[build]
+  command = "python3 tools/build-feeds.py"
+  publish = "."

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Blog van Andreas Willemse</title>
+<link>https://andreaswillemse.nl/blog/</link>
+<description>Artikelen over AI in productontwikkeling, digitale strategie en product management.</description>
+<language>nl</language>
+<atom:link href="https://andreaswillemse.nl/blog/feed.xml" rel="self" type="application/rss+xml"/>
+<lastBuildDate>Tue, 06 Oct 2026 12:00:00 +0000</lastBuildDate>
+<item>
+<title>Er zit altijd iemand aan de knop</title>
+<link>https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop</link>
+<guid isPermaLink="true">https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop</guid>
+<pubDate>Tue, 06 Oct 2026 12:00:00 +0000</pubDate>
+<description>Wat ik als Product Owner van een soeverein AI-platform leerde over taalmodellen, antropomorfisme en wat soevereiniteit echt is.</description>
+</item>
+<item>
+<title>Van waterleiding tot waardepropositie</title>
+<link>https://andreaswillemse.nl/blog/van-waterleiding-tot-waardepropositie</link>
+<guid isPermaLink="true">https://andreaswillemse.nl/blog/van-waterleiding-tot-waardepropositie</guid>
+<pubDate>Wed, 10 Jun 2026 12:00:00 +0000</pubDate>
+<description>Maanden klussen in plaats van vergaderen: over hoogslapers, waterleidingen en waarom een huis verbouwen verdacht veel lijkt op het bouwen van een product.</description>
+</item>
+<item>
+<title>Ik garandeer je een bijzondere ervaring: Angine de Poitrine</title>
+<link>https://andreaswillemse.nl/blog/angine-de-poitrine</link>
+<guid isPermaLink="true">https://andreaswillemse.nl/blog/angine-de-poitrine</guid>
+<pubDate>Mon, 30 Mar 2026 12:00:00 +0000</pubDate>
+<description>Angine de Poitrine bewijst dat echte originaliteit niet uit een algoritme komt. Over een microtonaal mathrock-duo uit Quebec dat miljoenen mensen raakt.</description>
+</item>
+<item>
+<title>AI-prototypes bouwen als PM: een superkracht met een schaduwkant</title>
+<link>https://andreaswillemse.nl/blog/ai-prototypes-pm</link>
+<guid isPermaLink="true">https://andreaswillemse.nl/blog/ai-prototypes-pm</guid>
+<pubDate>Wed, 18 Mar 2026 12:00:00 +0000</pubDate>
+<description>Als PM kun je nu zelf werkende software bouwen. Een echte verschuiving, maar in gereguleerde markten met een serieuze schaduwkant.</description>
+</item>
+<item>
+<title>AI in productontwikkeling: tien stellingen vanuit de praktijk</title>
+<link>https://andreaswillemse.nl/blog/ai-product-management</link>
+<guid isPermaLink="true">https://andreaswillemse.nl/blog/ai-product-management</guid>
+<pubDate>Tue, 17 Feb 2026 12:00:00 +0000</pubDate>
+<description>Hoe zet je AI slim in bij productontwikkeling? Tien stellingen over AI als hulpmiddel voor product managers.</description>
+</item>
+</channel>
+</rss>

@@ -42,3 +42,7 @@
 ## Vragen?
 
 Neem contact op via LinkedIn: https://linkedin.com/in/andreaswillemse
+
+## RSS
+
+`blog/feed.xml` en `en/blog/feed.xml` worden bij elke Netlify-deploy automatisch gegenereerd (`netlify.toml` draait `tools/build-feeds.py`). Een nieuwe post wordt opgepikt zodra de pagina een `article:published_time` meta-tag heeft. Lokaal bijwerken: `python3 tools/build-feeds.py`.
