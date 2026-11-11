@@ -12,3 +12,8 @@
 /en/blog/angine-de-poitrine  /en/blog/angine-de-poitrine.html  200
 /en/blog/van-waterleiding-tot-waardepropositie  /en/blog/van-waterleiding-tot-waardepropositie.html  200
 /en/blog/er-zit-altijd-iemand-aan-de-knop  /en/blog/er-zit-altijd-iemand-aan-de-knop.html  200
+
+/tools/blueprint/*  /  301
+/tools/blueprint  /  301
+/en/tools/blueprint/*  /en/  301
+/en/tools/blueprint  /en/  301
