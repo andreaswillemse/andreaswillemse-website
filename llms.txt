@@ -1,0 +1,51 @@
+# Andreas Willemse
+
+> Freelance Product Owner and Product Manager based in Amsterdam, the Netherlands. 15+ years of experience in digital product development for healthcare, retail and the (semi-)public sector. PSPO II certified.
+
+Freelance Product Owner and Product Manager. 15+ years of experience in digital product development. I translate strategy into tangible results and align teams, stakeholders and technology around a shared direction.
+
+This site is bilingual: Dutch at https://andreaswillemse.nl/ and English at https://andreaswillemse.nl/en/. Every article exists in both languages.
+
+Availability: Busy on a project. Get in touch for later.
+
+## Track record
+
+- 2026 - present: Product Owner Sovereign AI, Atos, Netherlands. First infrastructure for sovereign AI, currently being delivered.
+- 2024 - 2026: Product Owner & Digitalisation Adviser, Zorg bij jou, Utrecht. Hybrid care pilots made permanent at more than 10 hospitals.
+- 2023 - 2024: Product Owner electronic shelf labels and Wink (store applications), Albert Heijn, Zaandam. New team for price labels in 1,300 stores, with more than 20 million labels.
+- 2020 - 2023: Product Owner Lead & Adviser, Product League, Utrecht. Delivered digital projects for retail clients and coached other Product Owners.
+- 2017 - 2020: Product Manager & Digitalisation Adviser, Medux, Utrecht. Platform grew from 50 to 7,500 professionals, 30%+ share of maternity care orders.
+- 2016 - 2017: Digital Strategy Consultant, DeGoedeZaak, Amsterdam. Delivered architecture and a project plan for a digital campaign platform.
+
+## Expertise
+
+- Digital strategy: Digital strategy and roadmaps, from user research to decision.
+- Agile and Scrum: PSPO II certified. Scrum, Kanban and Nexus, also in large organisations.
+- Product development: From MVP to launch. Building iteratively, AI prototypes to test assumptions early, and requirements that take technology and regulation into account.
+
+## Articles (English)
+
+- [There's always someone at the controls](https://andreaswillemse.nl/en/blog/er-zit-altijd-iemand-aan-de-knop): What I learned as Product Owner of a sovereign AI platform about language models, anthropomorphism and what sovereignty really is.
+- [From water pipes to value propositions](https://andreaswillemse.nl/en/blog/van-waterleiding-tot-waardepropositie): Months of DIY instead of meetings: on loft beds, water pipes, and why renovating a house looks suspiciously like building a product.
+- [I guarantee you a remarkable experience: Angine de Poitrine](https://andreaswillemse.nl/en/blog/angine-de-poitrine): Angine de Poitrine proves that true originality doesn't come from an algorithm. About a microtonal math rock duo from Quebec that moves millions.
+- [Building AI prototypes as a PM: a superpower with a shadow side](https://andreaswillemse.nl/en/blog/ai-prototypes-pm): As a PM, you can now build working software yourself. That is a real shift. But in regulated markets, there is a serious shadow side you cannot ignore.
+- [AI & Product Management: a practitioner's perspective](https://andreaswillemse.nl/en/blog/ai-product-management): Ten propositions on AI in product management. How do you use AI wisely as a tool without surrendering creativity and ownership?
+
+## Artikelen (Nederlands)
+
+- [Er zit altijd iemand aan de knop](https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop): Wat ik als Product Owner van een soeverein AI-platform leerde over taalmodellen, antropomorfisme en wat soevereiniteit echt is.
+- [Van waterleiding tot waardepropositie](https://andreaswillemse.nl/blog/van-waterleiding-tot-waardepropositie): Maanden klussen in plaats van vergaderen: over hoogslapers, waterleidingen en waarom een huis verbouwen verdacht veel lijkt op het bouwen van een product.
+- [Ik garandeer je een bijzondere ervaring: Angine de Poitrine](https://andreaswillemse.nl/blog/angine-de-poitrine): Angine de Poitrine bewijst dat echte originaliteit niet uit een algoritme komt. Over een microtonaal mathrock-duo uit Quebec dat miljoenen mensen raakt.
+- [AI-prototypes bouwen als PM: een superkracht met een schaduwkant](https://andreaswillemse.nl/blog/ai-prototypes-pm): Als PM kun je nu zelf werkende software bouwen. Een echte verschuiving, maar in gereguleerde markten met een serieuze schaduwkant.
+- [AI in productontwikkeling: tien stellingen vanuit de praktijk](https://andreaswillemse.nl/blog/ai-product-management): Hoe zet je AI slim in bij productontwikkeling? Tien stellingen over AI als hulpmiddel voor product managers.
+
+## Contact
+
+- [LinkedIn](https://www.linkedin.com/in/andreaswillemse): the preferred way to get in touch
+
+## Optional
+
+- [Homepage (English)](https://andreaswillemse.nl/en/)
+- [Homepage (Nederlands)](https://andreaswillemse.nl/)
+- [RSS feed (English)](https://andreaswillemse.nl/en/blog/feed.xml)
+- [RSS-feed (Nederlands)](https://andreaswillemse.nl/blog/feed.xml)

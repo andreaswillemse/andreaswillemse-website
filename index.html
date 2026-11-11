@@ -15,6 +15,7 @@
     <link rel="alternate" hreflang="nl" href="https://andreaswillemse.nl/">
     <link rel="alternate" hreflang="en" href="https://andreaswillemse.nl/en/">
     <link rel="alternate" hreflang="x-default" href="https://andreaswillemse.nl/">
+    <link rel="alternate" type="application/rss+xml" title="Blog van Andreas Willemse" href="https://andreaswillemse.nl/blog/feed.xml">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -28,62 +29,123 @@
     <meta property="og:site_name" content="Andreas Willemse">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://andreaswillemse.nl/">
-    <meta property="twitter:title" content="Andreas Willemse | Freelance Product Owner, Amsterdam">
-    <meta property="twitter:description" content="Freelance Product Owner en Product Manager, 15+ jaar ervaring in zorg, retail en (semi-)publieke organisaties. Van idee naar werkend product. Amsterdam.">
-    <meta property="twitter:image" content="https://andreaswillemse.nl/og-home.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://andreaswillemse.nl/">
+    <meta name="twitter:title" content="Andreas Willemse | Freelance Product Owner, Amsterdam">
+    <meta name="twitter:description" content="Freelance Product Owner en Product Manager, 15+ jaar ervaring in zorg, retail en (semi-)publieke organisaties. Van idee naar werkend product. Amsterdam.">
+    <meta name="twitter:image" content="https://andreaswillemse.nl/og-home.jpg">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Andreas Willemse",
-        "jobTitle": "Freelance Product Owner en Product Manager",
-        "description": "Freelance Product Owner en Product Manager met 15+ jaar ervaring in productontwikkeling, Agile en digitale strategie voor retail, zorg en (semi-)publieke organisaties.",
-        "url": "https://andreaswillemse.nl/",
-        "image": "https://andreaswillemse.nl/andreas-photo.jpg",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Amsterdam",
-            "addressCountry": "NL"
-        },
-        "sameAs": [
-            "https://linkedin.com/in/andreaswillemse"
-        ],
-        "knowsAbout": [
-            "Product Management",
-            "Agile",
-            "Scrum",
-            "Digital Strategy",
-            "Product Development",
-            "Lean Startup",
-            "Business Analysis"
-        ],
-        "worksFor": {
-            "@type": "Organization",
-            "name": "Zelfstandig"
-        },
-        "alumniOf": [
+        "@graph": [
             {
-                "@type": "Organization",
-                "name": "Albert Heijn"
+                "@type": "WebSite",
+                "@id": "https://andreaswillemse.nl/#website",
+                "url": "https://andreaswillemse.nl/",
+                "name": "Andreas Willemse",
+                "alternateName": "andreaswillemse.nl",
+                "inLanguage": [
+                    "nl",
+                    "en"
+                ],
+                "publisher": {
+                    "@id": "https://andreaswillemse.nl/#person"
+                }
             },
             {
-                "@type": "Organization", 
-                "name": "Product League"
+                "@type": "ProfilePage",
+                "@id": "https://andreaswillemse.nl/#profilepage",
+                "url": "https://andreaswillemse.nl/",
+                "name": "Andreas Willemse | Freelance Product Owner, Amsterdam",
+                "inLanguage": "nl",
+                "isPartOf": {
+                    "@id": "https://andreaswillemse.nl/#website"
+                },
+                "dateModified": "2026-11-11",
+                "mainEntity": {
+                    "@id": "https://andreaswillemse.nl/#person"
+                }
             },
             {
-                "@type": "Organization",
-                "name": "Medux"
+                "@type": "Person",
+                "@id": "https://andreaswillemse.nl/#person",
+                "name": "Andreas Willemse",
+                "givenName": "Andreas",
+                "familyName": "Willemse",
+                "jobTitle": "Freelance Product Owner en Product Manager",
+                "description": "Freelance Product Owner en Product Manager met 15+ jaar ervaring in productontwikkeling, Agile en digitale strategie voor retail, zorg en (semi-)publieke organisaties.",
+                "url": "https://andreaswillemse.nl/",
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://andreaswillemse.nl/andreas-photo.jpg",
+                    "width": 724,
+                    "height": 1086
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Amsterdam",
+                    "addressCountry": "NL"
+                },
+                "sameAs": [
+                    "https://www.linkedin.com/in/andreaswillemse"
+                ],
+                "hasCredential": {
+                    "@type": "EducationalOccupationalCredential",
+                    "name": "Professional Scrum Product Owner II (PSPO II)",
+                    "credentialCategory": "certification",
+                    "recognizedBy": {
+                        "@type": "Organization",
+                        "name": "Scrum.org",
+                        "url": "https://www.scrum.org/"
+                    }
+                },
+                "knowsAbout": [
+                    "Product Management",
+                    "Product Ownership",
+                    "Agile",
+                    "Scrum",
+                    "Kanban",
+                    "Nexus",
+                    "Digital Strategy",
+                    "Product Roadmaps",
+                    "User Research",
+                    "Product Development",
+                    "Lean Startup",
+                    "Business Analysis",
+                    "AI Prototyping",
+                    "Sovereign AI",
+                    "Digital Health",
+                    "Retail"
+                ],
+                "worksFor": {
+                    "@type": "Organization",
+                    "name": "Witpapier.nl"
+                },
+                "alumniOf": [
+                    {
+                        "@type": "Organization",
+                        "name": "Albert Heijn"
+                    },
+                    {
+                        "@type": "Organization",
+                        "name": "Product League"
+                    },
+                    {
+                        "@type": "Organization",
+                        "name": "Medux"
+                    }
+                ]
             }
         ]
     }
     </script>
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231a3a2e'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='%23fafafa' font-family='monospace' font-weight='bold'>AW</text></svg>">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#1a3a2e">
     

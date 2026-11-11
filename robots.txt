@@ -1,7 +1,30 @@
 # robots.txt for andreaswillemse.nl
 
+# Zoekmachines en AI-zoekdiensten zijn welkom. AI-training niet.
+# De CV-pagina blijft buiten de index via een X-Robots-Tag in _headers.
 User-agent: *
 Allow: /
+
+# AI-zoekdiensten en verzoeken van gebruikers: welkom
+# (ChatGPT search, Claude, Perplexity). Google AI Overviews en Bing Copilot
+# gebruiken de gewone crawlers Googlebot en Bingbot.
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /
+
+# Crawlers voor het trainen van AI-modellen: niet welkom
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: Meta-ExternalAgent
+User-agent: Bytespider
+Disallow: /
 
 # Sitemap location
 Sitemap: https://andreaswillemse.nl/sitemap.xml

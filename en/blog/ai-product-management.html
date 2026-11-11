@@ -34,45 +34,94 @@
     <meta property="article:tag" content="Product Management">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://andreaswillemse.nl/en/blog/ai-product-management">
-    <meta property="twitter:title" content="AI &amp; Product Management: a practitioner's perspective">
-    <meta property="twitter:description" content="Ten propositions on AI in product management. How do you use AI wisely as a tool without surrendering creativity and ownership?">
-    <meta property="twitter:image" content="https://andreaswillemse.nl/blog/ai-product-management-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://andreaswillemse.nl/en/blog/ai-product-management">
+    <meta name="twitter:title" content="AI &amp; Product Management: a practitioner's perspective">
+    <meta name="twitter:description" content="Ten propositions on AI in product management. How do you use AI wisely as a tool without surrendering creativity and ownership?">
+    <meta name="twitter:image" content="https://andreaswillemse.nl/blog/ai-product-management-og.jpg">
 
     <!-- Structured Data - Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": "AI & Product Management: a practitioner's perspective",
-        "description": "Ten propositions on AI in product management. How do you use AI wisely as a tool without surrendering creativity and ownership?",
-        "author": {
-            "@type": "Person",
-            "name": "Andreas Willemse",
-            "url": "https://andreaswillemse.nl/"
-        },
-        "publisher": {
-            "@type": "Person",
-            "name": "Andreas Willemse"
-        },
-        "datePublished": "2026-02-17",
-        "dateModified": "2026-02-17",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://andreaswillemse.nl/en/blog/ai-product-management"
-        },
-        "url": "https://andreaswillemse.nl/en/blog/ai-product-management",
-        "image": "https://andreaswillemse.nl/blog/ai-product-management-og.jpg",
-        "articleSection": "Product management",
-        "keywords": ["AI", "Product Management", "Agile", "creativity", "digital strategy"],
-        "wordCount": 850,
-        "inLanguage": "en"
+        "@graph": [
+            {
+                "@type": "BlogPosting",
+                "@id": "https://andreaswillemse.nl/en/blog/ai-product-management#article",
+                "headline": "AI & Product Management: a practitioner's perspective",
+                "description": "Ten propositions on AI in product management. How do you use AI wisely as a tool without surrendering creativity and ownership?",
+                "author": {
+                    "@type": "Person",
+                    "@id": "https://andreaswillemse.nl/#person",
+                    "name": "Andreas Willemse",
+                    "url": "https://andreaswillemse.nl/"
+                },
+                "publisher": {
+                    "@type": "Person",
+                    "@id": "https://andreaswillemse.nl/#person",
+                    "name": "Andreas Willemse",
+                    "url": "https://andreaswillemse.nl/"
+                },
+                "datePublished": "2026-02-17",
+                "dateModified": "2026-02-17",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://andreaswillemse.nl/en/blog/ai-product-management",
+                    "breadcrumb": {
+                        "@id": "https://andreaswillemse.nl/en/blog/ai-product-management#breadcrumb"
+                    }
+                },
+                "isPartOf": {
+                    "@id": "https://andreaswillemse.nl/#website"
+                },
+                "url": "https://andreaswillemse.nl/en/blog/ai-product-management",
+                "image": "https://andreaswillemse.nl/blog/ai-product-management-og.jpg",
+                "articleSection": "Product management",
+                "keywords": [
+                    "AI",
+                    "Product Management",
+                    "Agile",
+                    "creativity",
+                    "digital strategy"
+                ],
+                "wordCount": 850,
+                "inLanguage": "en",
+                "translationOfWork": {
+                    "@id": "https://andreaswillemse.nl/blog/ai-product-management#article"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://andreaswillemse.nl/en/blog/ai-product-management#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://andreaswillemse.nl/en/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blog",
+                        "item": "https://andreaswillemse.nl/en/blog/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "AI & Product Management: a practitioner's perspective",
+                        "item": "https://andreaswillemse.nl/en/blog/ai-product-management"
+                    }
+                ]
+            }
+        ]
     }
     </script>
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231a3a2e'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='%23fafafa' font-family='monospace' font-weight='bold'>AW</text></svg>">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#1a3a2e">
 
@@ -676,7 +725,7 @@
             <div class="article-meta fade-in fade-in-delay-1">
                 <span>Product management</span>
                 <span class="divider"></span>
-                <span>February 2026</span>
+                <span><time datetime="2026-02-17">February 2026</time></span>
                 <span class="divider"></span>
                 <span>5 min read</span>
             </div>

@@ -1,4 +1,4 @@
-# Bij elke deploy worden de RSS-feeds opnieuw gegenereerd uit de blogposts.
+# Bij elke deploy worden de RSS-feeds, sitemap.xml en llms.txt opnieuw gegenereerd uit de pagina's.
 [build]
-  command = "python3 tools/build-feeds.py"
+  command = "python3 tools/build-feeds.py && python3 tools/build-seo.py"
   publish = "."

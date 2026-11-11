@@ -32,43 +32,93 @@
     <meta property="article:tag" content="Prototypes">
     <meta property="article:tag" content="Product Management">
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://andreaswillemse.nl/en/blog/ai-prototypes-pm">
-    <meta property="twitter:title" content="Building AI prototypes as a PM: a superpower with a shadow side">
-    <meta property="twitter:description" content="As a PM, you can now build working software yourself. That is a real shift. But in regulated markets, there is a serious shadow side you cannot ignore.">
-    <meta property="twitter:image" content="https://andreaswillemse.nl/blog/ai-prototypes-pm-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://andreaswillemse.nl/en/blog/ai-prototypes-pm">
+    <meta name="twitter:title" content="Building AI prototypes as a PM: a superpower with a shadow side">
+    <meta name="twitter:description" content="As a PM, you can now build working software yourself. That is a real shift. But in regulated markets, there is a serious shadow side you cannot ignore.">
+    <meta name="twitter:image" content="https://andreaswillemse.nl/blog/ai-prototypes-pm-og.jpg">
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Building AI prototypes as a PM: a superpower with a shadow side",
-        "description": "As a PM, you can now build working software yourself. That is a real shift. But in regulated markets, there is a serious shadow side you cannot ignore.",
-        "author": {
-            "@type": "Person",
-            "name": "Andreas Willemse",
-            "url": "https://andreaswillemse.nl/"
-        },
-        "publisher": {
-            "@type": "Person",
-            "name": "Andreas Willemse"
-        },
-        "datePublished": "2026-03-18",
-        "dateModified": "2026-03-18",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://andreaswillemse.nl/en/blog/ai-prototypes-pm"
-        },
-        "url": "https://andreaswillemse.nl/en/blog/ai-prototypes-pm",
-        "image": "https://andreaswillemse.nl/blog/ai-prototypes-pm-og.jpg",
-        "articleSection": "Product management",
-        "keywords": ["AI", "prototypes", "Product Management", "compliance", "CI/CD", "agents"],
-        "wordCount": 900,
-        "inLanguage": "en"
+        "@graph": [
+            {
+                "@type": "BlogPosting",
+                "@id": "https://andreaswillemse.nl/en/blog/ai-prototypes-pm#article",
+                "headline": "Building AI prototypes as a PM: a superpower with a shadow side",
+                "description": "As a PM, you can now build working software yourself. That is a real shift. But in regulated markets, there is a serious shadow side you cannot ignore.",
+                "author": {
+                    "@type": "Person",
+                    "@id": "https://andreaswillemse.nl/#person",
+                    "name": "Andreas Willemse",
+                    "url": "https://andreaswillemse.nl/"
+                },
+                "publisher": {
+                    "@type": "Person",
+                    "@id": "https://andreaswillemse.nl/#person",
+                    "name": "Andreas Willemse",
+                    "url": "https://andreaswillemse.nl/"
+                },
+                "datePublished": "2026-03-18",
+                "dateModified": "2026-03-18",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://andreaswillemse.nl/en/blog/ai-prototypes-pm",
+                    "breadcrumb": {
+                        "@id": "https://andreaswillemse.nl/en/blog/ai-prototypes-pm#breadcrumb"
+                    }
+                },
+                "isPartOf": {
+                    "@id": "https://andreaswillemse.nl/#website"
+                },
+                "url": "https://andreaswillemse.nl/en/blog/ai-prototypes-pm",
+                "image": "https://andreaswillemse.nl/blog/ai-prototypes-pm-og.jpg",
+                "articleSection": "Product management",
+                "keywords": [
+                    "AI",
+                    "prototypes",
+                    "Product Management",
+                    "compliance",
+                    "CI/CD",
+                    "agents"
+                ],
+                "wordCount": 900,
+                "inLanguage": "en",
+                "translationOfWork": {
+                    "@id": "https://andreaswillemse.nl/blog/ai-prototypes-pm#article"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://andreaswillemse.nl/en/blog/ai-prototypes-pm#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://andreaswillemse.nl/en/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blog",
+                        "item": "https://andreaswillemse.nl/en/blog/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Building AI prototypes as a PM: a superpower with a shadow side",
+                        "item": "https://andreaswillemse.nl/en/blog/ai-prototypes-pm"
+                    }
+                ]
+            }
+        ]
     }
     </script>
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231a3a2e'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='%23fafafa' font-family='monospace' font-weight='bold'>AW</text></svg>">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#1a3a2e">
     <!-- Fonts -->
@@ -630,7 +680,7 @@
             <div class="article-meta fade-in fade-in-delay-1">
                 <span>Product management</span>
                 <span class="divider"></span>
-                <span>March 2026</span>
+                <span><time datetime="2026-03-18">March 2026</time></span>
                 <span class="divider"></span>
                 <span>6 min read</span>
             </div>
