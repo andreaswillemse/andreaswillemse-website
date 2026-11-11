@@ -25,6 +25,7 @@ Availability: Busy on a project. Get in touch for later.
 
 ## Articles (English)
 
+- [Who can pull your plug?](https://andreaswillemse.nl/en/blog/digitale-soevereiniteit): Digital sovereignty: what it is, why it matters and why it is so hard. With the International Criminal Court, a French judge without a credit card, a Dutch bank that fell to sanctions and the new Dutch government cloud policy.
 - [There's always someone at the controls](https://andreaswillemse.nl/en/blog/er-zit-altijd-iemand-aan-de-knop): What I learned as Product Owner of a sovereign AI platform about language models, anthropomorphism and what sovereignty really is.
 - [From water pipes to value propositions](https://andreaswillemse.nl/en/blog/van-waterleiding-tot-waardepropositie): Months of DIY instead of meetings: on loft beds, water pipes, and why renovating a house looks suspiciously like building a product.
 - [I guarantee you a remarkable experience: Angine de Poitrine](https://andreaswillemse.nl/en/blog/angine-de-poitrine): Angine de Poitrine proves that true originality doesn't come from an algorithm. About a microtonal math rock duo from Quebec that moves millions.
@@ -33,6 +34,7 @@ Availability: Busy on a project. Get in touch for later.
 
 ## Artikelen (Nederlands)
 
+- [Wie kan jouw stekker eruit trekken?](https://andreaswillemse.nl/blog/digitale-soevereiniteit): Digitale soevereiniteit: wat het is, waarom het nodig is en waarom het zo moeilijk is. Met het Strafhof, een Franse rechter zonder creditcard, een Nederlandse bank die omviel door sancties en het nieuwe Rijkscloudbeleid.
 - [Er zit altijd iemand aan de knop](https://andreaswillemse.nl/blog/er-zit-altijd-iemand-aan-de-knop): Wat ik als Product Owner van een soeverein AI-platform leerde over taalmodellen, antropomorfisme en wat soevereiniteit echt is.
 - [Van waterleiding tot waardepropositie](https://andreaswillemse.nl/blog/van-waterleiding-tot-waardepropositie): Maanden klussen in plaats van vergaderen: over hoogslapers, waterleidingen en waarom een huis verbouwen verdacht veel lijkt op het bouwen van een product.
 - [Ik garandeer je een bijzondere ervaring: Angine de Poitrine](https://andreaswillemse.nl/blog/angine-de-poitrine): Angine de Poitrine bewijst dat echte originaliteit niet uit een algoritme komt. Over een microtonaal mathrock-duo uit Quebec dat miljoenen mensen raakt.
