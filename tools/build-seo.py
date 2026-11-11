@@ -5,6 +5,8 @@ Draait bij elke Netlify-deploy (zie netlify.toml). Lokaal: python3 tools/build-s
 
 - Een post komt in de sitemap en in llms.txt zodra hij een article:published_time meta-tag heeft.
 - lastmod van een post is dateModified uit de JSON-LD. Pas die aan bij een inhoudelijke wijziging.
+  Datums in de JSON-LD hebben een tijd en tijdzone (2026-10-06T00:00:00+02:00), anders waarschuwt
+  Google. In de sitemap komt alleen de datum.
 - lastmod van de homepage is dateModified van de ProfilePage in de JSON-LD van index.html,
   of de datum van de nieuwste post als die later is.
 - Track record, expertise en beschikbaarheid in llms.txt komen uit en/index.html.
@@ -57,7 +59,7 @@ def posts(lang):
             "title": title,
             "desc": html.unescape(desc.group(1)) if desc else "",
             "published": published.group(1),
-            "modified": max(modified or published.group(1), published.group(1)),
+            "modified": max((modified or "")[:10], published.group(1)[:10]),
         }
     return sorted(found.values(), key=lambda p: p["published"], reverse=True)
 
@@ -65,7 +67,7 @@ def posts(lang):
 def home_modified():
     for node in json_ld(read("index.html")):
         if node.get("@type") == "ProfilePage" and node.get("dateModified"):
-            return node["dateModified"]
+            return node["dateModified"][:10]
     return None
 
 

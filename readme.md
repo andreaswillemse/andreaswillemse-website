@@ -55,6 +55,7 @@ Neem contact op via LinkedIn: https://linkedin.com/in/andreaswillemse
 
 - Een nieuwe post komt er vanzelf in zodra hij een `article:published_time` meta-tag heeft.
 - Pas je een post inhoudelijk aan, zet dan `dateModified` in de JSON-LD van die post op de nieuwe datum. Dat wordt de `lastmod` in de sitemap.
+- Datums in de JSON-LD (`datePublished`, `dateModified`) altijd met tijd en tijdzone, anders waarschuwt de Rich Results Test van Google. Zomertijd: `2026-10-06T00:00:00+02:00`, wintertijd: `2026-11-11T00:00:00+01:00`.
 - Pas je de homepage inhoudelijk aan, zet dan `dateModified` van de `ProfilePage` in de JSON-LD van `index.html` en `en/index.html` op de nieuwe datum.
 - Track record, expertise en beschikbaarheid in `llms.txt` komen uit `en/index.html`.
 - Op deploy previews en branch deploys (zoals `dev`) zet het script een `X-Robots-Tag: noindex` op alle pagina's. Productie blijft indexeerbaar.
